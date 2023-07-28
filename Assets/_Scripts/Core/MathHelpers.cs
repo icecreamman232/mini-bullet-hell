@@ -40,6 +40,20 @@ namespace JustGame.Scripts.Managers
         {
             return (min < f) && (f < max);
         }
+
+        /// <summary>
+        /// Reset position, localScale and rotation value to default value. <br/>
+        /// Position => Vector3 (0,0,0) <br/>
+        /// LocalScale => Vector3(1,1,1) <br/>
+        /// Rotation => Quaternion Identity <br/>
+        /// </summary>
+        /// <param name="tf"></param>
+        public static void Reset(this Transform tf)
+        {
+            tf.position = Vector3.zero;
+            tf.localScale = Vector3.one;
+            tf.rotation = Quaternion.identity;
+        }
     }
 
 }

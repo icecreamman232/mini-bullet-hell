@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 
@@ -11,6 +12,10 @@ namespace JustGame.Scripts.Player
         private InputManager m_inputManager;
         private Vector2 m_aimDirection;
         private float m_angle;
+
+        public Action<Quaternion> RotateCallback;
+        
+        public Vector2 AimDirection => m_aimDirection;
         public override void Initialize()
         {
             base.Initialize();
@@ -23,6 +28,8 @@ namespace JustGame.Scripts.Player
             m_angle = Mathf.Atan2(m_aimDirection.y, m_aimDirection.x) * Mathf.Rad2Deg + m_offsetAngle;
             
             m_transformToRotate.rotation = Quaternion.AngleAxis(m_angle,Vector3.forward);
+            
+            RotateCallback?.Invoke(Quaternion.AngleAxis(m_angle,Vector3.forward));
             
             base.HandleInput();
         }

@@ -2,20 +2,14 @@ using System.Collections;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
-namespace JustGame.Scripts.Player
+namespace JustGame.Scripts.Weapons
 {
-    public class PlayerHealth : PlayerAbility
+    public class PlayerHealth : Health
     {
-        [SerializeField] private FloatEvent m_healthEvent;
-        [SerializeField] private float m_maxHealth;
-        [SerializeField] private float m_curHealth;
-        [SerializeField] private float m_invulnerableDuration;
-        private bool m_isInvulnerable;
-
-        public override void Initialize()
+        protected override void Initialize()
         {
-            base.Initialize();
             m_curHealth = m_maxHealth;
+            base.Initialize();
         }
         
         #if UNITY_EDITOR
@@ -27,7 +21,7 @@ namespace JustGame.Scripts.Player
         
         #endif
         
-        public void TakeDamage(int damage, GameObject instigator)
+        public override void TakeDamage(int damage, GameObject instigator)
         {
             if (!AuthorizeTakingDamage()) return;
 
@@ -45,32 +39,16 @@ namespace JustGame.Scripts.Player
             }
 
             ProcessKill();
+            base.TakeDamage(damage, instigator);
         }
 
-        private bool AuthorizeTakingDamage()
+        protected override bool AuthorizeTakingDamage()
         {
             if (m_isInvulnerable)
             {
                 return false;
             }
             return true;
-        }
-
-        private IEnumerator OnInvulnerable()
-        {
-            if (m_isInvulnerable)
-            {
-                yield break;
-            }
-            m_isInvulnerable = true;
-            yield return new WaitForSeconds(m_invulnerableDuration);
-            m_isInvulnerable = false;
-        }
-        
-        private void ProcessKill()
-        {
-            //place holder script
-            gameObject.SetActive(false);
         }
     } 
 }
