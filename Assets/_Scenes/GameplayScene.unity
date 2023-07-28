@@ -1047,10 +1047,6 @@ PrefabInstance:
       propertyPath: AimController
       value: 
       objectReference: {fileID: 1711648350}
-    - target: {fileID: 4392109976417253279, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
-      propertyPath: Parent
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6474685904893959034, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: m_RootOrder
       value: -1

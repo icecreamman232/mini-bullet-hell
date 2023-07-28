@@ -8,6 +8,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected float m_delayBeforeDestruction;
         [SerializeField] protected float m_maxDistanceTravel;
+        [SerializeField] protected Transform m_bulletBody;
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
         protected Vector2 m_originalPos;
@@ -18,8 +19,8 @@ namespace JustGame.Scripts.Weapons
             m_originalPos = position;
             transform.position = position;
             
-            var angle = Mathf.Atan2(m_moveDirection.y, m_moveDirection.x) * Mathf.Rad2Deg - 90;
-            transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
+            var angle = Mathf.Atan2(m_moveDirection.y, m_moveDirection.x) * Mathf.Rad2Deg + 90;
+            m_bulletBody.transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
         }
 
         protected virtual void Movement()
