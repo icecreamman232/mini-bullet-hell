@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d199d6ac11eb90d499eb7412467a2b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 200
+  m_moveSpeed: 250
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 20
   m_bulletBody: {fileID: 8106000571504492118}

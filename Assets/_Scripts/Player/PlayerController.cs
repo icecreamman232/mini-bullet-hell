@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
 namespace JustGame.Scripts.Player
@@ -14,13 +15,15 @@ namespace JustGame.Scripts.Player
     }
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private PlayerComponentSet m_componentSet;
+        
         public FacingDirection FacingDirection;
-
         private List<PlayerAbility> m_cachedAbilities;
 
         protected virtual void Start()
         {
             Initialize();
+            m_componentSet.SetPlayer(this);
         }
 
         protected virtual void Initialize()

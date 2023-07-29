@@ -1,15 +1,17 @@
-using System.Collections;
-using JustGame.Scripts.ScriptableEvent;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
 {
     public class PlayerHealth : Health
     {
+        [SerializeField] private PlayerComponentSet m_componentSet;
+        
         protected override void Initialize()
         {
             m_curHealth = m_maxHealth;
             base.Initialize();
+            m_componentSet.SetHealth(this);
         }
         
         #if UNITY_EDITOR
