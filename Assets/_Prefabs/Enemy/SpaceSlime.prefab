@@ -213,6 +213,8 @@ MonoBehaviour:
   m_maxHealth: 50
   m_curHealth: 0
   m_invulnerableDuration: 0.2
+  m_flickingColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
+  m_delayBetweenFlicks: 0.1
 --- !u!114 &111512908221176413
 MonoBehaviour:
   m_ObjectHideFlags: 0

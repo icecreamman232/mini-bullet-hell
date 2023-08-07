@@ -8,7 +8,15 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] protected float m_maxHealth;
         [SerializeField] protected float m_curHealth;
+        
+        [Header("Flicking color")]
         [SerializeField] protected float m_invulnerableDuration;
+
+        [SerializeField] protected Color m_flickingColor;
+        [SerializeField] protected float m_delayBetweenFlicks;
+
+        protected SpriteRenderer m_spriteRenderer;
+        protected Color m_initColor;
         protected bool m_isInvulnerable;
         public Action OnDeath;
         
@@ -20,6 +28,8 @@ namespace JustGame.Scripts.Weapons
         protected virtual void Initialize()
         {
             m_curHealth = m_maxHealth;
+            m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            m_initColor = m_spriteRenderer.color;
         }
 
         public virtual void TakeDamage(int damage, GameObject instigator)
@@ -52,7 +62,17 @@ namespace JustGame.Scripts.Weapons
                 yield break;
             }
             m_isInvulnerable = true;
-            yield return new WaitForSeconds(m_invulnerableDuration);
+
+            var flickStop = Time.time + m_invulnerableDuration;
+            while (Time.time < flickStop)
+            {
+                m_spriteRenderer.material.color = m_flickingColor;
+                yield return new WaitForSeconds(m_delayBetweenFlicks);
+                m_spriteRenderer.material.color = m_initColor;
+                yield return new WaitForSeconds(m_delayBetweenFlicks);
+            }
+            m_spriteRenderer.material.color = m_initColor;
+            
             m_isInvulnerable = false;
         }
 
