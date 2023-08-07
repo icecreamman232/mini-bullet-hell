@@ -197,3 +197,4 @@ MonoBehaviour:
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 20
   m_bulletBody: {fileID: 8106000571504492118}
+  m_damageHandler: {fileID: 6115035109323062156}

@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 
@@ -9,10 +10,18 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_delayBeforeDestruction;
         [SerializeField] protected float m_maxDistanceTravel;
         [SerializeField] protected Transform m_bulletBody;
+        [SerializeField] protected DamageHandler m_damageHandler;
+        
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
         protected Vector2 m_originalPos;
-        
+
+        private void Start()
+        {
+            m_damageHandler.OnHit += ()=>Invoke(nameof(OnDestroy), m_delayBeforeDestruction);
+        }
+
+
         public virtual void SpawnProjectile(Vector2 position, Vector2 direction)
         {
             m_moveDirection = direction;
@@ -40,11 +49,12 @@ namespace JustGame.Scripts.Weapons
             m_distanceTraveled = Vector2.Distance(m_originalPos, transform.position);
             if (m_distanceTraveled >= m_maxDistanceTravel)
             {
-                Invoke("OnDestroy", m_delayBeforeDestruction);
+                Invoke(nameof(OnDestroy), m_delayBeforeDestruction);
             }
         }
         
-        protected virtual void OnDestroy()
+        
+        public virtual void OnDestroy()
         {
             transform.Reset();
             this.gameObject.SetActive(false);
