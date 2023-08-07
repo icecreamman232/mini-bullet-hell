@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+namespace JustGame.Scripts.Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyController : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private EnemyBrain m_brain;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected virtual void Start()
+        {
+            Initialize();
+        }
+
+        protected virtual void Initialize()
+        {
+            if (m_brain == null)
+            {
+                m_brain = GetComponentInChildren<EnemyBrain>();
+            }
+            m_brain.BrainActive = true;
+        }
     }
 }

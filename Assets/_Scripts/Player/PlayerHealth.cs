@@ -9,6 +9,8 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
         
+        public bool IsDead => m_curHealth <= 0;
+        
         protected override void Initialize()
         {
             base.Initialize();

@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
-public class BrainActionSetTargetPlayer : MonoBehaviour
+namespace JustGame.Scripts.Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Set player as brain target
+    /// </summary>
+    public class BrainActionSetTargetPlayer : BrainAction
     {
+        [SerializeField] private PlayerComponentSet m_playerComponentSet;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void DoAction()
+        {
+            m_brain.Target = m_playerComponentSet.Player.transform;
+        }
     }
 }
+
