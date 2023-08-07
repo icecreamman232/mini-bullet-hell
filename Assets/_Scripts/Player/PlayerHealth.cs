@@ -1,4 +1,5 @@
 using JustGame.Scripts.RuntimeSet;
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
@@ -6,10 +7,10 @@ namespace JustGame.Scripts.Weapons
     public class PlayerHealth : Health
     {
         [SerializeField] private PlayerComponentSet m_componentSet;
+        [SerializeField] protected FloatEvent m_healthEvent;
         
         protected override void Initialize()
         {
-            m_curHealth = m_maxHealth;
             base.Initialize();
             m_componentSet.SetHealth(this);
         }
@@ -42,6 +43,15 @@ namespace JustGame.Scripts.Weapons
 
             ProcessKill();
             base.TakeDamage(damage, instigator);
+        }
+
+        protected override void UpdateUI()
+        {
+            if (m_healthEvent != null)
+            {
+                m_healthEvent.Raise(m_curHealth/m_maxHealth);
+            }
+            base.UpdateUI();
         }
 
         protected override bool AuthorizeTakingDamage()

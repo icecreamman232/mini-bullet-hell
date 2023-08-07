@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 607607816061499673}
   - component: {fileID: 6115035109323062156}
   m_Layer: 7
-  m_Name: Sprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_maxDamageCause: 15
   m_targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &826045983694793967
 GameObject:
   m_ObjectHideFlags: 0

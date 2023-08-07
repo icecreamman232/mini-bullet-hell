@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
-using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] protected FloatEvent m_healthEvent;
         [SerializeField] protected float m_maxHealth;
         [SerializeField] protected float m_curHealth;
         [SerializeField] protected float m_invulnerableDuration;
@@ -21,7 +19,7 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void Initialize()
         {
-            
+            m_curHealth = m_maxHealth;
         }
 
         public virtual void TakeDamage(int damage, GameObject instigator)
@@ -30,10 +28,8 @@ namespace JustGame.Scripts.Weapons
 
             m_curHealth -= damage;
 
-            if (m_healthEvent != null)
-            {
-                m_healthEvent.Raise(m_curHealth/m_maxHealth);
-            }
+
+            UpdateUI();
 
             if (m_curHealth >= 0)
             {
@@ -58,6 +54,11 @@ namespace JustGame.Scripts.Weapons
             m_isInvulnerable = true;
             yield return new WaitForSeconds(m_invulnerableDuration);
             m_isInvulnerable = false;
+        }
+
+        protected virtual void UpdateUI()
+        {
+            
         }
         
         protected virtual void ProcessKill()
