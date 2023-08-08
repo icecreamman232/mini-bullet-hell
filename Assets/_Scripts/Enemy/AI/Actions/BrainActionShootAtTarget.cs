@@ -10,7 +10,8 @@ namespace JustGame.Scripts.Enemy
         public override void DoAction()
         {
             if (m_weapon == null) return;
-            var shootDir = (m_brain.Target.position -m_brain.transform.parent.position).normalized; 
+            if (m_brain.Target == null) return;
+            var shootDir = (m_brain.Target.position - m_brain.transform.parent.position).normalized; 
             m_weapon.SetShootingDirection(shootDir);
             m_weapon.WeaponStart();
         }

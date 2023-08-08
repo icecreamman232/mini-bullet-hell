@@ -44,6 +44,13 @@ namespace JustGame.Scripts.Weapons
                     enemyMovement.ApplyKnockBack(m_knockBackForce, m_knockBackDuration);
                 }
             }
+            
+            //Destroy bullet on hit
+            if (target.gameObject.layer == LayerManager.ProjectileLayer)
+            {
+                var projectile = target.gameObject.GetComponentInParent<Projectile>();
+                projectile.OnDestroy();
+            }
         }
     } 
 }
