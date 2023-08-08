@@ -252,11 +252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90d0b8775cf45648a73e8dc8f57d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
   m_maxHealth: 100
   m_curHealth: 0
+  m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.5
+  m_flickingColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
+  m_delayBetweenFlicks: 0
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
+  m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
 --- !u!114 &475158028898315706
 MonoBehaviour:
   m_ObjectHideFlags: 0
