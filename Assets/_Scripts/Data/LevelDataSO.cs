@@ -25,7 +25,7 @@ namespace JustGame.Scripts.Data
         {
             //TODO:Store level to save game. Here is just reset level every time we press Play Button
             m_curLevel = 0;
-            if (m_maxLevel != m_levels.Length - 1)
+            if (m_maxLevel != m_levels.Length)
             {
                 Debug.LogError("Level array not match MaxLevel");
             }

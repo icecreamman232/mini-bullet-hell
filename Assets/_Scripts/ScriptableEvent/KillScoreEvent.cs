@@ -32,6 +32,12 @@ namespace JustGame.Scripts.ScriptableEvent
         public void AddKillScore(int value)
         {
             m_killScore += value;
+            
+            if (m_killScore >= m_levelData.CurrentLvlData.KillRequires)
+            {
+                m_killScore = 0;
+                m_levelData.LevelUp();
+            }
             m_OnUpdateKillScore?.Invoke(m_killScore);
         }
     }

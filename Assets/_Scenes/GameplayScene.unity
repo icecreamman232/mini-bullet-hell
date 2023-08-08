@@ -744,9 +744,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_killScoreEvent: {fileID: 11400000, guid: fe643e54868879344b4e66256cd6783a, type: 2}
+  m_levelData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
   m_curBarImg: {fileID: 622439764}
   m_killNumberTxt: {fileID: 1964874508}
-  m_max: 30
 --- !u!1001 &818886369
 PrefabInstance:
   m_ObjectHideFlags: 0
