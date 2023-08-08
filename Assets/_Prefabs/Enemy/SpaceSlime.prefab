@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_knockBackForce: 10
+  m_knockBackForce: 20
   m_knockBackDuration: 0.3
   m_minDamageCause: 10
   m_maxDamageCause: 20
