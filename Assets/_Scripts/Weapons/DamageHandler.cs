@@ -1,4 +1,5 @@
 using System;
+using JustGame.Scripts.Enemy;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,11 +8,15 @@ namespace JustGame.Scripts.Weapons
 {
     public class DamageHandler : MonoBehaviour
     {
+        [SerializeField] private float m_knockBackForce;
+        [SerializeField] private float m_knockBackDuration;
         [SerializeField] private int m_minDamageCause;
         [SerializeField] private int m_maxDamageCause;
         [SerializeField] private LayerMask m_targetMask;
 
         public Action OnHit;
+        
+
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
@@ -32,6 +37,12 @@ namespace JustGame.Scripts.Weapons
             {
                 OnHit?.Invoke();
                 targetHealth.TakeDamage(GetDamage(), this.gameObject);
+
+                if (target.gameObject.layer == LayerManager.EnemyLayer)
+                {
+                    var enemyMovement = target.gameObject.GetComponent<EnemyMovement>();
+                    enemyMovement.ApplyKnockBack(m_knockBackForce, m_knockBackDuration);
+                }
             }
         }
     } 

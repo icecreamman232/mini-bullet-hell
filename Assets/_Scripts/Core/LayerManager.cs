@@ -5,13 +5,15 @@ namespace JustGame.Scripts.Managers
     public static class LayerManager
     {
         #region Layers
-        //public static int WaterLayer = 4;
+        public static int PlayerLayer = 6;
+        public static int EnemyLayer = 8;
         #endregion
 
         #region Layer Masks
 
-        // public static int WaterMask = 1 << WaterLayer;
-        // public static int PlatformMask = DoorMask | WallMask;
+        public static int EnemyMask = 1 << EnemyLayer;
+        public static int PlayerMask = 1 << PlayerLayer;
+        //public static int PlayerMask = DoorMask | WallMask;
         #endregion
         
         
