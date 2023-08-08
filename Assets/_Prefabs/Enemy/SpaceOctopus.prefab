@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 7479394047214657503}
   - component: {fileID: 4286163753507955578}
   - component: {fileID: 3134863628032331133}
+  - component: {fileID: 4098401586466904886}
   m_Layer: 8
   m_Name: SpaceOctopus
   m_TagString: Untagged
@@ -372,7 +373,7 @@ Transform:
   - {fileID: 2167308728638468388}
   - {fileID: 8091498336435351276}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8138164150242833539
 BoxCollider2D:
@@ -515,6 +516,20 @@ MonoBehaviour:
   m_targetMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &4098401586466904886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669416357976832700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11d09e0d9d0ea14d8e9e2f4d111f77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_killScore: 1
+  m_killScoreEvent: {fileID: 11400000, guid: fe643e54868879344b4e66256cd6783a, type: 2}
 --- !u!1 &7689933659731950181
 GameObject:
   m_ObjectHideFlags: 0
