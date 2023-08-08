@@ -149,7 +149,7 @@ MonoBehaviour:
   m_maxDamageCause: 15
   m_targetMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64
 --- !u!1 &826045983694793967
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 2706779099953236331}
   - component: {fileID: 7204674245637290038}
   m_Layer: 7
-  m_Name: NormalBullet
+  m_Name: OctopusBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -114,7 +114,7 @@ Transform:
   - {fileID: 8625968458742829573}
   - {fileID: 1221448547978800614}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2580080408094603174
 BoxCollider2D:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.2
-  m_flickingColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
+  m_flickingColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
   m_delayBetweenFlicks: 0.1
   m_explodeAnim: {fileID: 3276978936527755707}
 --- !u!114 &111512908221176413

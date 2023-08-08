@@ -7,6 +7,7 @@ namespace JustGame.Scripts.Enemy
     public enum MovementState
     {
         MOVING,
+        MOVING_TO_POINT,
         KNOCK_BACK,
     }
     public class EnemyMovement : MonoBehaviour
@@ -22,6 +23,7 @@ namespace JustGame.Scripts.Enemy
         
         protected float m_curSpeed;
         protected Health m_health;
+        protected Vector2 m_movingTarget;
         
         private void Start()
         {
@@ -46,6 +48,13 @@ namespace JustGame.Scripts.Enemy
             m_movingDirection = newDirection;
         }
 
+        public virtual void SetTarget(Vector2 newTarget)
+        {
+            if (m_movementState == MovementState.KNOCK_BACK) return;
+            m_movingTarget = newTarget;
+            m_movingDirection = (m_movingTarget - (Vector2)transform.position).normalized;
+            m_movementState = MovementState.MOVING_TO_POINT;
+        }
         public virtual void SetOverrideSpeed(float newSpeed)
         {
             m_curSpeed = newSpeed;
@@ -81,7 +90,17 @@ namespace JustGame.Scripts.Enemy
         
         protected virtual void Movement()
         {
-            transform.Translate(m_movingDirection * (Time.deltaTime * m_curSpeed/10));
+            switch (m_movementState)
+            {
+                case MovementState.MOVING_TO_POINT:
+                    transform.position = Vector2.MoveTowards(transform.position, m_movingTarget,
+                        (Time.deltaTime * m_curSpeed / 10));
+                    break;
+                case MovementState.MOVING:
+                case MovementState.KNOCK_BACK:
+                    transform.Translate(m_movingDirection * (Time.deltaTime * m_curSpeed/10));
+                    break;
+            }
         }
         
         public void ApplyKnockBack(float knockBackForce, float knockBackDuration)
