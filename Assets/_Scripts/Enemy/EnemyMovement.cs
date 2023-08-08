@@ -1,4 +1,5 @@
 using System.Collections;
+using JustGame.Scripts.Weapons;
 using UnityEngine;
 
 namespace JustGame.Scripts.Enemy
@@ -20,10 +21,13 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] protected float m_deceleration;
         
         protected float m_curSpeed;
-
+        protected Health m_health;
+        
         private void Start()
         {
             m_curSpeed = m_moveSpeed;
+            m_health = GetComponent<Health>();
+            m_health.OnDeath += StopMoving;
         }
 
         public virtual void StartMoving()

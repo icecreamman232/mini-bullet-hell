@@ -8,7 +8,7 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] protected float m_maxHealth;
         [SerializeField] protected float m_curHealth;
-        
+        [SerializeField] protected float m_delayBeforeDeath;
         [Header("Flicking color")]
         [SerializeField] protected float m_invulnerableDuration;
 
@@ -16,8 +16,12 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_delayBetweenFlicks;
 
         protected SpriteRenderer m_spriteRenderer;
+        protected Collider2D m_collider;
         protected Color m_initColor;
+        protected bool m_isDead;
         protected bool m_isInvulnerable;
+
+        public bool IsDead => m_isDead;
         public Action OnDeath;
         
         protected virtual void Start()
@@ -29,6 +33,8 @@ namespace JustGame.Scripts.Weapons
         {
             m_curHealth = m_maxHealth;
             m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            m_collider = GetComponent<Collider2D>();
+            m_spriteRenderer.enabled = true;
             m_initColor = m_spriteRenderer.color;
         }
 
@@ -85,6 +91,14 @@ namespace JustGame.Scripts.Weapons
         {
             //place holder script
             OnDeath?.Invoke();
+            StartCoroutine(KillRoutine());
+        }
+
+        protected virtual IEnumerator KillRoutine()
+        {
+            m_spriteRenderer.enabled = false;
+            m_collider.enabled = false;
+            yield return new WaitForSeconds(m_delayBeforeDeath);
             gameObject.SetActive(false);
         }
     }
