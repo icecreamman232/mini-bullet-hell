@@ -19,6 +19,7 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected Vector2 m_movingDirection;
         [SerializeField] protected bool m_canMove = true;
+        [SerializeField] protected bool m_forbiddenMoving;
         [Header("KnockBack")]
         [SerializeField] protected bool m_immuneKnockBack;
         [SerializeField] protected float m_deceleration;
@@ -37,12 +38,20 @@ namespace JustGame.Scripts.Enemy
         public virtual void StartMoving()
         {
             m_canMove = true;
+            m_forbiddenMoving = false;
+        }
+
+        public virtual void PauseMoving()
+        {
+            m_canMove = false;
         }
 
         public virtual void StopMoving()
         {
             m_canMove = false;
+            m_forbiddenMoving = true;
         }
+        
         
         public virtual void SetDirection(Vector2 newDirection)
         {
@@ -69,7 +78,8 @@ namespace JustGame.Scripts.Enemy
         
         protected virtual void Update()
         {
-            if (!m_canMove) return;
+            if (m_forbiddenMoving) return;
+            if (!m_canMove && m_movementState != MovementState.KNOCK_BACK) return;
             ComputeSpeed();
             Movement();
         }

@@ -31,7 +31,7 @@ namespace JustGame.Scripts.Enemy
         public override void OnExitState()
         {
             base.OnExitState();
-            m_movement.StopMoving();
+            m_movement.PauseMoving();
         }
     }
 }
