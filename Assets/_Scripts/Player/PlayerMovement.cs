@@ -1,4 +1,5 @@
 using JustGame.Scripts.Managers;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
 namespace JustGame.Scripts.Player
@@ -8,6 +9,7 @@ namespace JustGame.Scripts.Player
     /// </summary>
     public class PlayerMovement : PlayerAbility
     {
+        [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField] private float m_moveSpeed;
         [SerializeField] private Vector2 m_movingDirection;
 
@@ -63,6 +65,10 @@ namespace JustGame.Scripts.Player
         private void Movement()
         {
             transform.Translate(m_movingDirection * ((m_moveSpeed/10) * Time.deltaTime));
+            if (!m_worldSet.LevelBounds.IsInBounds(transform.position))
+            {
+                transform.position = m_worldSet.LevelBounds.InversedPoint(transform.position);
+            }
         }
     }  
 }

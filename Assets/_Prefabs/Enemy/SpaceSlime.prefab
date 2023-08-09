@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8f9d962fc96624c9f460a739b7dd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_movementState: 0
   m_moveSpeed: 20
   m_movingDirection: {x: 0, y: 0}

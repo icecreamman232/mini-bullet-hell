@@ -1,4 +1,5 @@
 using System.Collections;
+using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.Weapons;
 using UnityEngine;
 
@@ -12,7 +13,8 @@ namespace JustGame.Scripts.Enemy
     }
     public class EnemyMovement : MonoBehaviour
     {
-        [Header("Common")]
+        [Header("Common")] 
+        [SerializeField] protected RuntimeWorldSet m_worldSet;
         [SerializeField] protected MovementState m_movementState;
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected Vector2 m_movingDirection;
@@ -100,6 +102,11 @@ namespace JustGame.Scripts.Enemy
                 case MovementState.KNOCK_BACK:
                     transform.Translate(m_movingDirection * (Time.deltaTime * m_curSpeed/10));
                     break;
+            }
+
+            if (!(m_worldSet.LevelBounds.IsInBounds(transform.position)))
+            {
+                transform.position = m_worldSet.LevelBounds.InversedPoint(transform.position);
             }
         }
         
