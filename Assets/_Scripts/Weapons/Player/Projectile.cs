@@ -1,3 +1,5 @@
+using System.Collections;
+using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 
@@ -10,19 +12,22 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_maxDistanceTravel;
         [SerializeField] protected Transform m_bulletBody;
         [SerializeField] protected DamageHandler m_damageHandler;
+        [SerializeField] protected AnimationParameter m_destroyAnim;
         
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
         protected Vector2 m_originalPos;
-
+        protected bool m_isDestroying;
+        
         private void Start()
         {
-            m_damageHandler.OnHit += ()=>Invoke(nameof(OnDestroy), m_delayBeforeDestruction);
+            m_damageHandler.OnHit += DestroyBullet;
         }
 
 
         public virtual void SpawnProjectile(Vector2 position, Vector2 direction)
         {
+            m_isDestroying = false;
             m_moveDirection = direction;
             m_originalPos = position;
             transform.position = position;
@@ -33,6 +38,7 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void Movement()
         {
+            if (m_isDestroying) return;
             transform.Translate(m_moveDirection * ((m_moveSpeed / 10) * Time.deltaTime));
         }
 
@@ -48,12 +54,34 @@ namespace JustGame.Scripts.Weapons
             m_distanceTraveled = Vector2.Distance(m_originalPos, transform.position);
             if (m_distanceTraveled >= m_maxDistanceTravel)
             {
-                Invoke(nameof(OnDestroy), m_delayBeforeDestruction);
+                DestroyBullet();
             }
         }
         
+        public void DestroyBullet()
+        {
+            StartCoroutine(DestroyRoutine());
+        }
         
-        public virtual void OnDestroy()
+        protected virtual IEnumerator DestroyRoutine()
+        {
+            if (m_isDestroying)
+            {
+                yield break;
+            }
+
+            m_isDestroying = true;
+            yield return new WaitForSeconds(m_delayBeforeDestruction);
+            
+            if (m_destroyAnim != null)
+            {
+                m_destroyAnim.SetTrigger();
+                yield return new WaitForSeconds(m_destroyAnim.Duration);
+            }
+            OnDestroy();
+        }
+
+        protected virtual void OnDestroy()
         {
             transform.Reset();
             this.gameObject.SetActive(false);

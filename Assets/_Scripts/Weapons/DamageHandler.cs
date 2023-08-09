@@ -50,7 +50,7 @@ namespace JustGame.Scripts.Weapons
             if (target.gameObject.layer == LayerManager.ProjectileLayer)
             {
                 var projectile = target.gameObject.GetComponentInParent<Projectile>();
-                projectile.OnDestroy();
+                projectile.DestroyBullet();
             }
         }
     } 
