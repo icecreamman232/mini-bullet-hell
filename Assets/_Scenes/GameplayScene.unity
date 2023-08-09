@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 50292818}
   - component: {fileID: 50292819}
   - component: {fileID: 50292820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SquareBomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,8 @@ GameObject:
   - component: {fileID: 227804739}
   - component: {fileID: 227804740}
   - component: {fileID: 227804741}
-  m_Layer: 0
+  - component: {fileID: 227804742}
+  m_Layer: 8
   m_Name: Decisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,6 +466,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: True
+--- !u!114 &227804742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227804737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1c598d25f2aa489dd7be485be239d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Idle time
+  m_minTime: 1
+  m_maxTime: 2
 --- !u!1 &373401810
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695269728}
   - component: {fileID: 695269729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1096,7 @@ GameObject:
   - component: {fileID: 744943645}
   - component: {fileID: 744943644}
   - component: {fileID: 744943646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Actions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1437,7 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1286803752}
   - component: {fileID: 1286803753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,6 +1504,13 @@ MonoBehaviour:
     - BrainDecision: {fileID: 227804739}
       TrueStateName: 
       FalseStateName: Run away
+  - StateName: Run away
+    Actions:
+    - {fileID: 744943646}
+    Transitions:
+    - BrainDecision: {fileID: 227804740}
+      TrueStateName: Idle
+      FalseStateName: 
   - StateName: Run away
     Actions:
     - {fileID: 744943646}
@@ -1861,6 +1884,10 @@ PrefabInstance:
     - target: {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150499309721954730, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4359182628706539289, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
       propertyPath: m_RootOrder

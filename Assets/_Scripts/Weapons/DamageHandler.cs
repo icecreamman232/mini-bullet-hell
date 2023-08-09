@@ -41,7 +41,8 @@ namespace JustGame.Scripts.Weapons
                 if (target.gameObject.layer == LayerManager.EnemyLayer)
                 {
                     var enemyMovement = target.gameObject.GetComponent<EnemyMovement>();
-                    enemyMovement.ApplyKnockBack(m_knockBackForce, m_knockBackDuration);
+                    var knockBackDir = (target.transform.position - transform.position).normalized; 
+                    enemyMovement.ApplyKnockBack(knockBackDir,m_knockBackForce, m_knockBackDuration);
                 }
             }
             

@@ -110,13 +110,13 @@ namespace JustGame.Scripts.Enemy
             }
         }
         
-        public void ApplyKnockBack(float knockBackForce, float knockBackDuration)
+        public void ApplyKnockBack(Vector2 knockBackDirection, float knockBackForce, float knockBackDuration)
         {
             if (m_immuneKnockBack) return;
 
             if (!gameObject.activeSelf) return;
-            
-            var knockBackDir = m_movingDirection * -1;
+
+            var knockBackDir = knockBackDirection;//m_movingDirection * -1;
             StartCoroutine(KnockBackCoroutine(knockBackForce, knockBackDir, knockBackDuration));
         }
 
@@ -128,6 +128,7 @@ namespace JustGame.Scripts.Enemy
             }
 
             m_movementState = MovementState.KNOCK_BACK;
+            var prevDir = m_movingDirection;
             m_movingDirection = knockBackDir;
             m_curSpeed = force;
             float timer = 0;
@@ -138,6 +139,7 @@ namespace JustGame.Scripts.Enemy
                 yield return null;
             }
 
+            m_movingDirection = prevDir;
             m_movementState = MovementState.MOVING;
             m_curSpeed = m_moveSpeed;
         }
