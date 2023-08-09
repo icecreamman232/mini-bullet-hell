@@ -1,6 +1,7 @@
 using System;
 using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Common
 {
@@ -26,6 +27,17 @@ namespace JustGame.Scripts.Common
         public Vector2 InversedPoint(Vector2 point)
         {
             return new Vector2(-point.x, -point.y);
+        }
+        
+        /// <summary>
+        /// Get random point which is within the bounds
+        /// </summary>
+        /// <returns></returns>
+        public Vector2 GetRandomPoint()
+        {
+            var xCoord = Random.Range(m_topLeft.x, m_topRight.x);
+            var yCoord = Random.Range(m_topLeft.y, m_botLeft.y);
+            return new Vector2(xCoord, yCoord);
         }
         
         private void OnDrawGizmos()

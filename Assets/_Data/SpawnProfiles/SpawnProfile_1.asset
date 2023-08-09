@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b94d11657a2db042a8e90b5aa852435, type: 3}
+  m_Name: SpawnProfile_1
+  m_EditorClassIdentifier: 
+  m_weights:
+  - Weight: 2
+    RangeFrom: 0
+    RangeTo: 20
+  - Weight: 3
+    RangeFrom: 20
+    RangeTo: 50
+  - Weight: 5
+    RangeFrom: 50
+    RangeTo: 100
+  m_spawnArray:
+  - {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
+  - {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
+  - {fileID: 7669416357976832700, guid: 35535f014ec5afd4ba3cc0ee9b5369f5, type: 3}
