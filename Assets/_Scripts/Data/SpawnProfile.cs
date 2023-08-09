@@ -6,6 +6,7 @@ namespace JustGame.Scripts.Data
     [CreateAssetMenu(menuName = "JustGame/Data/Spawn profile")]
     public class SpawnProfile : ScriptableObject
     {
+        public float DelayTimeBetweenTwoSpawn;
         [SerializeField] private WeightObject[] m_weights;
         [SerializeField] private GameObject[] m_spawnArray;
 

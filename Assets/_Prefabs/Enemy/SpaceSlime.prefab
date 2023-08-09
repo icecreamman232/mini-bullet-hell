@@ -213,12 +213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e40896416c879e4f869d2b2e30eb3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 50
+  m_maxHealth: 15
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.2
   m_flickingColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
   m_delayBetweenFlicks: 0.1
+  m_levelData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
   m_explodeAnim: {fileID: 3276978936527755707}
 --- !u!114 &111512908221176413
 MonoBehaviour:
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_moveSpeed: 20
   m_movingDirection: {x: 0, y: 0}
   m_canMove: 1
+  m_forbiddenMoving: 0
   m_immuneKnockBack: 0
   m_deceleration: 10
 --- !u!114 &6421690311943597527

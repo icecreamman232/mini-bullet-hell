@@ -13,7 +13,7 @@ namespace JustGame.Scripts.Enemy
         private void Update()
         {
             m_timer += Time.deltaTime;
-            if (m_timer > 2)
+            if (m_timer > m_spawnProfile.DelayTimeBetweenTwoSpawn)
             {
                 Instantiate(m_spawnProfile.GetNextSpawn(), m_worldSet.LevelBounds.GetRandomPoint(),
                     Quaternion.identity);

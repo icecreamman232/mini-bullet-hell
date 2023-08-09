@@ -12,17 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b94d11657a2db042a8e90b5aa852435, type: 3}
   m_Name: SpawnProfile_1
   m_EditorClassIdentifier: 
+  DelayTimeBetweenTwoSpawn: 2
   m_weights:
-  - Weight: 2
+  - Weight: 5
     RangeFrom: 0
     RangeTo: 20
-  - Weight: 3
+  - Weight: 2
     RangeFrom: 20
     RangeTo: 50
-  - Weight: 5
-    RangeFrom: 50
-    RangeTo: 100
   m_spawnArray:
-  - {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
   - {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
   - {fileID: 7669416357976832700, guid: 35535f014ec5afd4ba3cc0ee9b5369f5, type: 3}
