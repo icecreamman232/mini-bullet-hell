@@ -154,13 +154,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50292812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: 3.22, z: 0}
+  m_LocalPosition: {x: 2.43, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 695269728}
   - {fileID: 1286803752}
   - {fileID: 1105989949}
+  - {fileID: 341406076}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -481,6 +482,72 @@ MonoBehaviour:
   Label: Idle time
   m_minTime: 1
   m_maxTime: 2
+--- !u!1 &341406075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341406076}
+  - component: {fileID: 341406077}
+  - component: {fileID: 341406078}
+  m_Layer: 8
+  m_Name: BombGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &341406076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341406075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 50292813}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341406077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341406075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95793f1bd3ba0e84186105c2e70c7b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isActive: 0
+  m_initialzeOnStart: 1
+  m_owner: {fileID: 0}
+  m_weaponOffsetPosition: {x: 0, y: 0, z: 0}
+  m_objectPooler: {fileID: 341406078}
+  m_delayBetweenTwoShot: 1
+--- !u!114 &341406078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341406075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ea111697e74ad4380eb9f3efd8560f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  ObjectToPool: {fileID: 3644360371549774562, guid: c1b4cdd5feba1514cae35e7fd2367361, type: 3}
+  PoolSize: 20
 --- !u!1 &373401810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1163,7 @@ GameObject:
   - component: {fileID: 744943645}
   - component: {fileID: 744943644}
   - component: {fileID: 744943646}
+  - component: {fileID: 744943647}
   m_Layer: 8
   m_Name: Actions
   m_TagString: Untagged
@@ -1159,6 +1227,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Label: Run away
   m_minDistance: 4
+--- !u!114 &744943647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744943642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdf7cc6b5d23a249b431021e4a824cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Drop bombs
+  m_weapon: {fileID: 341406077}
 --- !u!1 &794392900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,13 +1589,7 @@ MonoBehaviour:
   - StateName: Run away
     Actions:
     - {fileID: 744943646}
-    Transitions:
-    - BrainDecision: {fileID: 227804740}
-      TrueStateName: Idle
-      FalseStateName: 
-  - StateName: Run away
-    Actions:
-    - {fileID: 744943646}
+    - {fileID: 744943647}
     Transitions:
     - BrainDecision: {fileID: 227804740}
       TrueStateName: Idle
@@ -2078,11 +2154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104089811888605498, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 104089811888605498, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 104089811888605498, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_LocalPosition.z
