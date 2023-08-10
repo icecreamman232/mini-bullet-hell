@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5717428420957280846}
   - component: {fileID: 576377788818398030}
   m_Layer: 6
-  m_Name: Sprite
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1829548549730746918}
   m_Father: {fileID: 104089811888605498}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -120,9 +121,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5717428420957280846}
-  - {fileID: 1829548549730746918}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1615824096984971379
 BoxCollider2D:
@@ -281,7 +281,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 104089811888605498}
+    m_TransformParent: {fileID: 5717428420957280846}
     m_Modifications:
     - target: {fileID: 2267709457532989504, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: AimController
@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6474685904893959034, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6474685904893959034, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: m_LocalPosition.z
