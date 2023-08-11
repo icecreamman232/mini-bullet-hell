@@ -1,3 +1,4 @@
+using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.Player;
 using JustGame.Scripts.ScriptableEvent;
@@ -25,7 +26,6 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private IntEvent m_magazineSizeEvent;
         public PlayerAim AimController;
         public ProjectileWeaponState CurrentState;
-        public bool InitializeOnStart = true;
         [Header("Magazine")] 
         public GunType GunType;
         public float ReloadTime;
@@ -261,6 +261,11 @@ namespace JustGame.Scripts.Weapons
         {
             m_inputStop = true;
             base.WeaponStop();
+        }
+
+        private void TriggerDoubleShotPowerUp()
+        {
+            
         }
     }
 }

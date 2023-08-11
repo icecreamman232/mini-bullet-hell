@@ -56,20 +56,20 @@ namespace JustGame.Scripts.UI
         }
         private void ProcessNextWave()
         {
-            var profile = m_profiles[m_selectedCard];
-            switch (profile.ComponentType)
-            {
-                case ComponentType.REACTOR:
-                    m_playerData.IncreaseReactorPoint(profile.BonusValue);
-                    break;
-                case ComponentType.ENGINE:
-                    m_playerData.IncreaseEnginePoint(profile.BonusValue);
-                    break;
-                case ComponentType.HULL:
-                    m_playerData.IncreaseHullPoint(profile.BonusValue);
-                    break;
-            }
-            
+            // var profile = m_profiles[m_selectedCard];
+            // switch (profile.ComponentType)
+            // {
+            //     case ComponentType.REACTOR:
+            //         m_playerData.IncreaseReactorPoint(profile.BonusValue);
+            //         break;
+            //     case ComponentType.ENGINE:
+            //         m_playerData.IncreaseEnginePoint(profile.BonusValue);
+            //         break;
+            //     case ComponentType.HULL:
+            //         m_playerData.IncreaseHullPoint(profile.BonusValue);
+            //         break;
+            // }
+            //
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }
 
