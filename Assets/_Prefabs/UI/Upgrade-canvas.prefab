@@ -346,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_selectCardEvent: {fileID: 11400000, guid: b32584a03b581654ca2e120ad8765f0e, type: 2}
+  m_playerData: {fileID: 11400000, guid: 48c26793a645b914cada3f4208fe339a, type: 2}
   m_canvasGroup: {fileID: 3294660349149626445}
   m_nextWaveButton: {fileID: 6989226917735236430}
   m_card1: {fileID: 1160029609826252584}

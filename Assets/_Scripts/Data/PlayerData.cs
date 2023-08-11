@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace JustGame.Scripts.Data
@@ -22,7 +23,18 @@ namespace JustGame.Scripts.Data
 
         public int EnergyConversionRate => m_energyConversionRate;
         public int Energy => m_energy;
-        
+
+
+        private void OnEnable()
+        {
+            m_reactorPoint = 0;
+            m_enginePoint = 0;
+            m_hullPoint = 0;
+
+            m_energyConversionRate = 0;
+            m_energy = 0;
+        }
+
         public void SetDefaultValue(int reactorPts, int enginePts, int hullPts)
         {
             m_reactorPoint = reactorPts;

@@ -294,6 +294,7 @@ MonoBehaviour:
   m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_playerData: {fileID: 11400000, guid: 48c26793a645b914cada3f4208fe339a, type: 2}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
 --- !u!1001 &4663873448234621276
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ namespace JustGame.Scripts.UI
         public override void OnSelect(BaseEventData eventData)
         {
             m_outLine.gameObject.SetActive(true);
-            m_selectCardEvent.Raise(m_cardIndex);
+            m_selectCardEvent.Raise(m_cardIndex - 1);
             base.OnSelect(eventData);
         }
         
