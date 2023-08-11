@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shipName: Beginner
   m_baseReactorPoint: 10
-  m_baseEnginePoint: 10
+  m_baseEnginePoint: 6
   m_baseHullPoint: 10

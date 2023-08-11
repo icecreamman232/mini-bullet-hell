@@ -226,7 +226,7 @@ MonoBehaviour:
   IsPermit: 1
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
-  m_moveSpeed: 50
+  m_moveSpeed: 35
   m_movingDirection: {x: 0, y: 0}
 --- !u!114 &1958232211951765236
 MonoBehaviour:

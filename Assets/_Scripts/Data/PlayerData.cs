@@ -35,12 +35,12 @@ namespace JustGame.Scripts.Data
             m_energy = 0;
         }
 
-        public void SetDefaultValue(int reactorPts, int enginePts, int hullPts)
-        {
-            m_reactorPoint = reactorPts;
-            m_enginePoint = enginePts;
-            m_hullPoint = hullPts;
-        }
+        // public void SetDefaultValue(int reactorPts, int enginePts, int hullPts)
+        // {
+        //     m_reactorPoint = reactorPts;
+        //     m_enginePoint = enginePts;
+        //     m_hullPoint = hullPts;
+        // }
         
         public void IncreaseReactorPoint(int addValue)
         {

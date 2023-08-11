@@ -13,10 +13,10 @@ namespace JustGame.Scripts.Player
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         private void Start()
         {
-            m_playerData.SetDefaultValue(
-                m_shipProfile.BaseReactorPoint,
-                m_shipProfile.BaseEnginePoint, 
-                m_shipProfile.BaseHullPoint);
+            // m_playerData.SetDefaultValue(
+            //     m_shipProfile.BaseReactorPoint,
+            //     m_shipProfile.BaseEnginePoint, 
+            //     m_shipProfile.BaseHullPoint);
 
             ApplyValue();
 
@@ -33,8 +33,8 @@ namespace JustGame.Scripts.Player
         
         private void ApplyValue()
         {
-            var movementSpeed = m_playerData.EnginePts * 5;
-            var health = m_playerData.HullPts * 10;
+            var movementSpeed =  m_shipProfile.BaseEnginePoint * 5 +  m_playerData.EnginePts * 0.5f;
+            var health = m_shipProfile.BaseHullPoint * 10 + m_playerData.HullPts * 5;
             
             m_playerComponentSet.Movement.SetSpeed(movementSpeed);
             m_playerComponentSet.Health.SetMaxHealth(health);
