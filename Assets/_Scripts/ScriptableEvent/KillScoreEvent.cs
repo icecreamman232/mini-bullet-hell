@@ -9,6 +9,7 @@ namespace JustGame.Scripts.ScriptableEvent
     {
         [SerializeField] private int m_killScore;
         [SerializeField] private LevelDataSO m_levelData;
+        [SerializeField] private GameCoreEvent m_gameCoreEvent;
         
         public int KillScore => m_killScore;
         private Action<int> m_OnUpdateKillScore;
@@ -36,9 +37,16 @@ namespace JustGame.Scripts.ScriptableEvent
             if (m_killScore >= m_levelData.CurrentLvlData.KillRequires)
             {
                 m_killScore = 0;
+                m_OnUpdateKillScore?.Invoke(m_killScore);
                 m_levelData.LevelUp();
+                
+                //Pause game to pick upgrades
+                m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
             }
-            m_OnUpdateKillScore?.Invoke(m_killScore);
+            else
+            {
+                m_OnUpdateKillScore?.Invoke(m_killScore);
+            }
         }
     }
 }

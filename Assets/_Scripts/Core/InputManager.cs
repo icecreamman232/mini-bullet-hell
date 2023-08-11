@@ -95,7 +95,6 @@ namespace JustGame.Scripts.Managers
                     m_buttonDictionary[buttonsAssigns[i].keyAction] = ButtonStates.ButtonReleased;
                 }
             }
-            
         }
 
         public bool GetKeyClicked(BindingAction keyAction)
@@ -142,6 +141,25 @@ namespace JustGame.Scripts.Managers
             var pos = m_mainCamera.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0;
             return pos;
+        }
+
+        public void Reset()
+        {
+            for (int i = 0; i < buttonsAssigns.Length; i++)
+            {
+                if (Input.GetKeyDown(buttonsAssigns[i].keyCode))
+                {
+                    m_buttonDictionary[buttonsAssigns[i].keyAction] = ButtonStates.ButtonClicked;
+                }
+                else if (Input.GetKey(buttonsAssigns[i].keyCode))
+                {
+                    m_buttonDictionary[buttonsAssigns[i].keyAction] = ButtonStates.ButtonDown;
+                }
+                else if (Input.GetKeyUp(buttonsAssigns[i].keyCode))
+                {
+                    m_buttonDictionary[buttonsAssigns[i].keyAction] = ButtonStates.ButtonReleased;
+                }
+            }
         }
     }
 }

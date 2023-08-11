@@ -6,6 +6,7 @@ namespace JustGame.Scripts.Weapons
 {
     public class PlayerHealth : Health
     {
+        [SerializeField] private bool m_immuneDamage;
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
 
@@ -56,6 +57,11 @@ namespace JustGame.Scripts.Weapons
 
         protected override bool AuthorizeTakingDamage()
         {
+            if (m_immuneDamage)
+            {
+                return false;
+            }
+            
             if (m_isInvulnerable)
             {
                 return false;

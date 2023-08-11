@@ -24,7 +24,7 @@ namespace JustGame.Scripts.Weapons
             m_collider.enabled = false;
             m_explodeAnim.SetTrigger();
             yield return new WaitForSeconds(m_explodeAnim.Duration + m_delayBeforeDeath);
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

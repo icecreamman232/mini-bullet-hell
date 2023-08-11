@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3551c28cefca2194a853f1338eeea2e2, type: 3}
-  m_Name: KillScoreEvent
+  m_Script: {fileID: 11500000, guid: 297c5bf231f30574691289c9f1885541, type: 3}
+  m_Name: GameCoreEvent
   m_EditorClassIdentifier: 
-  m_killScore: 0
-  m_levelData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
-  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
+  m_curState: 0
