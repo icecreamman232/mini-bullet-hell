@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using JustGame.Scripts.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;

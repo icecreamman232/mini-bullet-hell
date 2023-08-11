@@ -8,16 +8,14 @@ namespace JustGame.Scripts.Weapons
 {
     public class DamageHandler : MonoBehaviour
     {
-        [SerializeField] private float m_knockBackForce;
-        [SerializeField] private float m_knockBackDuration;
-        [SerializeField] private int m_minDamageCause;
-        [SerializeField] private int m_maxDamageCause;
-        [SerializeField] private LayerMask m_targetMask;
+        [SerializeField] protected float m_knockBackForce;
+        [SerializeField] protected float m_knockBackDuration;
+        [SerializeField] protected int m_minDamageCause;
+        [SerializeField] protected int m_maxDamageCause;
+        [SerializeField] protected LayerMask m_targetMask;
 
         public Action OnHit;
         
-
-
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (!LayerManager.IsInLayerMask(other.gameObject.layer, m_targetMask)) return;

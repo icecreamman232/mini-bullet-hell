@@ -209,8 +209,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2706779099953236331}
-  - component: {fileID: 7204674245637290038}
   - component: {fileID: 4398213999460654538}
+  - component: {fileID: 5950644307418890154}
   m_Layer: 9
   m_Name: NormalBullet
   m_TagString: Untagged
@@ -234,24 +234,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7204674245637290038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826045983694793967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d199d6ac11eb90d499eb7412467a2b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_moveSpeed: 250
-  m_delayBeforeDestruction: 0
-  m_maxDistanceTravel: 20
-  m_bulletBody: {fileID: 8106000571504492118}
-  m_damageHandler: {fileID: 6115035109323062156}
-  m_destroyAnim: {fileID: 4398213999460654538}
 --- !u!114 &4398213999460654538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,3 +249,22 @@ MonoBehaviour:
   TargetAnimator: {fileID: 8521125407515485922}
   ParameterName: trigger_Explode
   Duration: 0.342
+--- !u!114 &5950644307418890154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826045983694793967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c733acff6edce48b9699fe24b6d7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moveSpeed: 250
+  m_delayBeforeDestruction: 0
+  m_maxDistanceTravel: 20
+  m_bulletBody: {fileID: 8106000571504492118}
+  m_damageHandler: {fileID: 6115035109323062156}
+  m_destroyAnim: {fileID: 4398213999460654538}
+  m_piercingShotPowerUp: {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}

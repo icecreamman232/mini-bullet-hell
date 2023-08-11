@@ -7,19 +7,20 @@ namespace JustGame.Scripts.Weapons
 {
     public class Projectile : MonoBehaviour
     {
+        [Header("Base")]
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected float m_delayBeforeDestruction;
         [SerializeField] protected float m_maxDistanceTravel;
         [SerializeField] protected Transform m_bulletBody;
         [SerializeField] protected DamageHandler m_damageHandler;
         [SerializeField] protected AnimationParameter m_destroyAnim;
-        
+
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
         protected Vector2 m_originalPos;
         protected bool m_isDestroying;
         
-        private void Start()
+        protected virtual void Start()
         {
             m_damageHandler.OnHit += DestroyBullet;
         }
