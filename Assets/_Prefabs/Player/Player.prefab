@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPermit: 1
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_offsetAngle: -90
   m_transformToRotate: {fileID: 5717428420957280846}
 --- !u!114 &2188775962517278194

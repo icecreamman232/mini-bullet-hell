@@ -1,4 +1,5 @@
 using System.Collections;
+using JustGame.Scripts.Managers;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ namespace JustGame.Scripts.UI
         [Header("UI References")]
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private NextWaveButton m_nextWaveButton;
+        [SerializeField] private UpgradeCardController m_card1;
+        [SerializeField] private UpgradeCardController m_card2;
+        [SerializeField] private UpgradeCardController m_card3;
+        
         private bool m_hasProcess;
         
         private void Start()
@@ -55,6 +60,7 @@ namespace JustGame.Scripts.UI
         
         private void Show()
         {
+            SetupCards();
             m_canvasGroup.alpha = 1;
             m_canvasGroup.interactable = true;
         }
@@ -63,6 +69,17 @@ namespace JustGame.Scripts.UI
         {
             m_canvasGroup.alpha = 0;
             m_canvasGroup.interactable = false;
+        }
+
+        private void SetupCards()
+        {
+            var profile1 = UpgradeManager.Instance.GetRandomProfile();
+            var profile2 = UpgradeManager.Instance.GetRandomProfile();
+            var profile3 = UpgradeManager.Instance.GetRandomProfile();
+            
+            m_card1.SetUpgrade(profile1);
+            m_card2.SetUpgrade(profile2);
+            m_card3.SetUpgrade(profile3);
         }
     }
 }

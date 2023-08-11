@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3161648d681f14b96d10661d1a4da6, type: 3}
+  m_Name: CommonEngineUpgradeProfile
+  m_EditorClassIdentifier: 
+  ComponentType: 1
+  Grade: 0
+  Icon: {fileID: -1044809886, guid: 13cf074dc998c18428dbf7a90cbf6c33, type: 3}
+  Title: Engine I
+  Description: engine
+  BonusValue: 1

@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7668cada867564ea68a36350b062f5, type: 3}
   m_Name: RuntimeWorldSet
   m_EditorClassIdentifier: 
+  m_gameManager: {fileID: 0}
   m_levelBounds: {fileID: 0}
+  m_commonColor: {r: 0.3372549, g: 0.34901962, b: 0.44705886, a: 1}
+  m_uncommonColor: {r: 0.025593476, g: 0.4811321, b: 0, a: 1}
+  m_rareColor: {r: 0.2, g: 0.45882353, b: 0.6431373, a: 1}
+  m_legendColor: {r: 0.754717, g: 0.27434984, b: 0.19579923, a: 1}

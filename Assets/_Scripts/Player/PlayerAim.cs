@@ -1,11 +1,13 @@
 using System;
 using JustGame.Scripts.Managers;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
 namespace JustGame.Scripts.Player
 {
     public class PlayerAim : PlayerAbility
     {
+        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private float m_offsetAngle;
         [SerializeField] private Transform m_transformToRotate;
         
@@ -24,6 +26,8 @@ namespace JustGame.Scripts.Player
 
         protected override void HandleInput()
         {
+            if (m_runtimeWorldSet.GameManager.IsPaused) return;
+            
             m_aimDirection = (m_inputManager.GetWorldMousePos() - transform.position).normalized;
             m_angle = Mathf.Atan2(m_aimDirection.y, m_aimDirection.x) * Mathf.Rad2Deg + m_offsetAngle;
             
