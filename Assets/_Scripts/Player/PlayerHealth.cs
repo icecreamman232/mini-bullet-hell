@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -10,10 +11,14 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
 
-        protected override void Initialize()
+        private void Awake()
         {
-            base.Initialize();
             m_componentSet.SetHealth(this);
+        }
+        
+        public void SetMaxHealth(float value)
+        {
+            m_maxHealth = value;
         }
         
         #if UNITY_EDITOR

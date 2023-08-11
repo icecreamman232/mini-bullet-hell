@@ -13,10 +13,11 @@ namespace JustGame.Scripts.RuntimeSet
     {
         [SerializeField] private PlayerController m_playerController;
         [SerializeField] private PlayerHealth m_health;
+        [SerializeField] private PlayerMovement m_movement;
         
         public PlayerController Player => m_playerController;
         public PlayerHealth Health => m_health;
-        
+        public PlayerMovement Movement => m_movement;
         
         public void SetPlayer(PlayerController controller)
         {
@@ -26,6 +27,11 @@ namespace JustGame.Scripts.RuntimeSet
         public void SetHealth(PlayerHealth health)
         {
             m_health = health;
+        }
+
+        public void SetMovement(PlayerMovement movement)
+        {
+            m_movement = movement;
         }
     }
 }

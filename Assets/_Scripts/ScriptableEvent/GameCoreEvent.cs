@@ -19,7 +19,13 @@ namespace JustGame.Scripts.ScriptableEvent
         public GameState CurrentState => m_curState;
 
         public Action<GameState,GameState> OnChangeStateCallback;
-        
+
+
+        private void OnEnable()
+        {
+            m_curState = GameState.FIGHTING;
+        }
+
         public void SetGameState(GameState newState)
         {
             OnChangeStateCallback?.Invoke(m_curState, newState);

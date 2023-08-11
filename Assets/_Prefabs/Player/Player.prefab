@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 1958232211951765236}
   - component: {fileID: 2188775962517278194}
   - component: {fileID: 475158028898315706}
+  - component: {fileID: 649892123954887307}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -223,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPermit: 1
+  m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_moveSpeed: 50
   m_movingDirection: {x: 0, y: 0}
@@ -253,12 +255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90d0b8775cf45648a73e8dc8f57d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 100
+  m_maxHealth: 50
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.5
   m_flickingColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
   m_delayBetweenFlicks: 0.1
+  m_immuneDamage: 0
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
 --- !u!114 &475158028898315706
@@ -275,6 +278,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPermit: 1
   m_curWeapon: {fileID: 6900057290757024028}
+--- !u!114 &649892123954887307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8551608225418914206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af43601220d2644caca04503b580d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  m_playerData: {fileID: 11400000, guid: 48c26793a645b914cada3f4208fe339a, type: 2}
+  m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
 --- !u!1001 &4663873448234621276
 PrefabInstance:
   m_ObjectHideFlags: 0

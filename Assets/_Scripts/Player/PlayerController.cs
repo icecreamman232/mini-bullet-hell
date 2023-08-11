@@ -20,10 +20,14 @@ namespace JustGame.Scripts.Player
         public FacingDirection FacingDirection;
         private List<PlayerAbility> m_cachedAbilities;
 
+        private void Awake()
+        {
+            m_componentSet.SetPlayer(this);
+        }
+
         protected virtual void Start()
         {
             Initialize();
-            m_componentSet.SetPlayer(this);
         }
 
         protected virtual void Initialize()

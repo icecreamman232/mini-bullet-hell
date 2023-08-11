@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
@@ -9,11 +10,17 @@ namespace JustGame.Scripts.Player
     /// </summary>
     public class PlayerMovement : PlayerAbility
     {
+        [SerializeField] private PlayerComponentSet m_playerComponentSet;
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField] private float m_moveSpeed;
         [SerializeField] private Vector2 m_movingDirection;
 
         private InputManager m_inputManager;
+
+        private void Awake()
+        {
+            m_playerComponentSet.SetMovement(this);
+        }
 
         public override void Initialize()
         {
@@ -21,6 +28,12 @@ namespace JustGame.Scripts.Player
             base.Initialize();
         }
 
+        public void SetSpeed(float newSpeed)
+        {
+            m_moveSpeed = newSpeed;
+        }
+        
+        
         protected override void HandleInput()
         {
             if (!m_inputManager.IsInputActive) return;
