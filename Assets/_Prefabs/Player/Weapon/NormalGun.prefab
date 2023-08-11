@@ -49,6 +49,7 @@ MonoBehaviour:
   m_initialzeOnStart: 1
   m_owner: {fileID: 0}
   m_weaponOffsetPosition: {x: 0, y: 0, z: 0}
+  m_magazineSizeEvent: {fileID: 11400000, guid: 192b11c9007d999468a0937517f3e683, type: 2}
   AimController: {fileID: 0}
   CurrentState: 1
   InitializeOnStart: 1

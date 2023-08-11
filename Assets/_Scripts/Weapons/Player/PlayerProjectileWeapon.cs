@@ -1,5 +1,6 @@
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.Player;
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
@@ -21,6 +22,7 @@ namespace JustGame.Scripts.Weapons
     }
     public class PlayerProjectileWeapon : Weapon
     {
+        [SerializeField] private IntEvent m_magazineSizeEvent;
         public PlayerAim AimController;
         public ProjectileWeaponState CurrentState;
         public bool InitializeOnStart = true;
@@ -152,6 +154,7 @@ namespace JustGame.Scripts.Weapons
                 m_reloadTimer = 0;
                 //Refill magazine;
                 m_curMagazine = Magazine;
+                m_magazineSizeEvent.Raise(m_curMagazine);
                 //player still pressing and gun type is AUTO, we keep shooting
                 if (GunType == GunType.AUTO)
                 {
@@ -192,6 +195,7 @@ namespace JustGame.Scripts.Weapons
             {
                 ShootProjectile();
                 m_curMagazine--;
+                m_magazineSizeEvent.Raise(m_curMagazine);
                 if (m_curMagazine <= 0)
                 {
                     CurrentState = ProjectileWeaponState.Reload;
@@ -207,6 +211,7 @@ namespace JustGame.Scripts.Weapons
             {
                 ShootProjectile();
                 m_curMagazine--;
+                m_magazineSizeEvent.Raise(m_curMagazine);
                 if (m_curMagazine <= 0)
                 {
                     CurrentState = ProjectileWeaponState.Reload;
