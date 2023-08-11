@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3163968678540281205}
   - component: {fileID: 6115035109323062156}
   - component: {fileID: 8521125407515485922}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 2706779099953236331}
   - component: {fileID: 7204674245637290038}
   - component: {fileID: 4398213999460654538}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: NormalBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

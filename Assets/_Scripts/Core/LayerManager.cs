@@ -6,15 +6,17 @@ namespace JustGame.Scripts.Managers
     {
         #region Layers
         public static int PlayerLayer = 6;
-        public static int ProjectileLayer = 7;
+        public static int EnemyProjectileLayer = 7;
         public static int EnemyLayer = 8;
+        public static int PlayerProjectileLayer = 9;
         #endregion
 
         #region Layer Masks
 
         public static int EnemyMask = 1 << EnemyLayer;
-        public static int ProjectileMask = 1 << ProjectileLayer;
+        public static int EnemyProjectileMask = 1 << EnemyProjectileLayer;
         public static int PlayerMask = 1 << PlayerLayer;
+        public static int PlayerProjectileMask = 1 << PlayerProjectileLayer;
         //public static int PlayerMask = DoorMask | WallMask;
         #endregion
         

@@ -47,7 +47,8 @@ namespace JustGame.Scripts.Weapons
             }
             
             //Destroy bullet on hit
-            if (target.gameObject.layer == LayerManager.ProjectileLayer)
+            if (target.gameObject.layer == LayerManager.PlayerProjectileLayer
+                && this.gameObject.layer == LayerManager.EnemyProjectileLayer)
             {
                 var projectile = target.gameObject.GetComponentInParent<Projectile>();
                 projectile.DestroyBullet();
