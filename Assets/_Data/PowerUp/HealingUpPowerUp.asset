@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22adbcf3be858b498d78cffc5aeb960, type: 3}
-  m_Name: TripleShotPowerUp
+  m_Script: {fileID: 11500000, guid: 0a64ec26d963e9040b21dd5aeccfea13, type: 3}
+  m_Name: HealingUpPowerUp
   m_EditorClassIdentifier: 
-  Name: Triple Shot
-  Description: Triple current weapon
-  Icon: {fileID: -1414492075, guid: a64aa8bab3c7fd0419ad1e6637f2a7eb, type: 3}
+  Name: Healing Up
+  Description: Heal 3% of max health
+  Icon: {fileID: -1849966532, guid: a64aa8bab3c7fd0419ad1e6637f2a7eb, type: 3}
   IsActive: 0
+  HealingUpPercent: 5

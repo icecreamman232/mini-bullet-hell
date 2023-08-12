@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef1e290bc157df46a36fb9dfa5aede3, type: 3}
   m_Name: DoubleShotPowerUp
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
+  Name: Double Shot
+  Description: Double current weapon
+  Icon: {fileID: 723165187, guid: a64aa8bab3c7fd0419ad1e6637f2a7eb, type: 3}
   IsActive: 0

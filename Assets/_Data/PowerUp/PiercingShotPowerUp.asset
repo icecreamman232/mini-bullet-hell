@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d74e03404283e4eb42c0fc28a207be, type: 3}
   m_Name: PiercingShotPowerUp
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
-  IsActive: 1
+  Name: Piercing Shot
+  Description: Make bullet can go through one more enemy
+  Icon: {fileID: 296034968, guid: a64aa8bab3c7fd0419ad1e6637f2a7eb, type: 3}
+  IsActive: 0

@@ -1,4 +1,6 @@
 using System;
+using JustGame.Scripts.Data;
+using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -10,15 +12,31 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private bool m_immuneDamage;
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
+        [SerializeField] protected HealingPowerUp m_healingPowerUp;
 
         private void Awake()
         {
             m_componentSet.SetHealth(this);
         }
-        
+
+        protected override void Start()
+        {
+            base.Start();
+            m_healingPowerUp.OnApplyPowerUp += HealingUp;
+        }
+
         public void SetMaxHealth(float value)
         {
             m_maxHealth = value;
+        }
+
+        private void HealingUp()
+        {
+            m_curHealth += MathHelpers.Percent(m_maxHealth, m_healingPowerUp.HealingUpPercent);
+            if (m_healthEvent != null)
+            {
+                m_healthEvent.Raise(m_curHealth/m_maxHealth);
+            }
         }
         
         #if UNITY_EDITOR

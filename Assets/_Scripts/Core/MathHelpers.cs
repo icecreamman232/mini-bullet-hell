@@ -55,9 +55,19 @@ namespace JustGame.Scripts.Managers
             tf.rotation = Quaternion.identity;
         }
 
+        /// <summary>
+        /// 1% of the value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static float PercentOf(float value)
         {
             return value / 100;
+        }
+
+        public static float Percent(float x, float percent)
+        {
+            return (x / 100f * percent);
         }
     }
 
