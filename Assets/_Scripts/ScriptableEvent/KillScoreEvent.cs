@@ -41,7 +41,7 @@ namespace JustGame.Scripts.ScriptableEvent
                 m_levelData.LevelUp();
                 
                 //Pause game to pick upgrades
-                m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
+                //m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
             }
             else
             {

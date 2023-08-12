@@ -19,6 +19,14 @@ namespace JustGame.Scripts.UI
         [SerializeField] private Image m_icon;
         [SerializeField] private TextMeshProUGUI m_title;
         [SerializeField] private TextMeshProUGUI m_desc;
+
+
+        public void SetPowerUp(PowerUpData powerUp)
+        {
+            m_icon.sprite = powerUp.Icon;
+            m_title.text = powerUp.Name;
+            m_desc.text = powerUp.Description;
+        }
         
         public void SetUpgrade(ComponentProfile profile)
         {
