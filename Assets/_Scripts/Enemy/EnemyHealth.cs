@@ -1,6 +1,7 @@
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
+using JustGame.Scripts.Enemy;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
@@ -9,7 +10,15 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] private LevelDataSO m_levelData;
         [SerializeField] private AnimationParameter m_explodeAnim;
-        
+
+        private Loot m_loot;
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            m_loot = GetComponent<Loot>();
+        }
+
         private void OnEnable()
         {
             if (m_levelData.CurrentLvl <= 1) return;
@@ -22,6 +31,10 @@ namespace JustGame.Scripts.Weapons
             m_collider.enabled = false;
             m_explodeAnim.SetTrigger();
             yield return new WaitForSeconds(m_explodeAnim.Duration);
+            if (m_loot != null)
+            {
+                m_loot.SpawnLoot();
+            }
             Destroy(this.gameObject);
         }
     }
