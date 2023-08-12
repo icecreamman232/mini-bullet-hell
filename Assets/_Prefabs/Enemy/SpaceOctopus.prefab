@@ -601,8 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  IsSharePool: 1
   ObjectToPool: {fileID: 826045983694793967, guid: 602b6f11ad91d4c43a08e0f40bb7c9d6, type: 3}
-  PoolSize: 10
+  PoolSize: 20
 --- !u!1001 &3218743551552923516
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,11 +6,14 @@ namespace JustGame.Scripts.Managers
     public class ObjectPooler : MonoBehaviour
     {
         public Transform Parent;
+        public bool IsSharePool;
         public GameObject ObjectToPool;
         public int PoolSize;
 
         private List<GameObject> m_pool;
 
+        public List<GameObject> CurrentPool => m_pool;
+        
         private void Awake()
         {
             CreatePool();
@@ -19,11 +22,27 @@ namespace JustGame.Scripts.Managers
         private void CreatePool()
         {
             if (ObjectToPool == null) return;
+            
             if (m_pool == null)
             {
                 m_pool = new List<GameObject>();
             }
 
+            //Find existing pool with same name
+            if (IsSharePool)
+            {
+                var pools = FindObjectsOfType<ObjectPooler>();
+                for (int i = 0; i < pools.Length; i++)
+                {
+                    if(pools[i] == this) continue;
+                    if (pools[i].ObjectToPool.name == ObjectToPool.name && pools[i].ObjectToPool!=null)
+                    {
+                        m_pool = pools[i].CurrentPool;
+                        return;
+                    }
+                }
+            }
+            
             for (int i = 0; i < PoolSize; i++)
             {
                 var pooledObject = Instantiate(ObjectToPool, Parent);
