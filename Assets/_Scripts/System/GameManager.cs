@@ -7,6 +7,9 @@ namespace JustGame.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("Wave")] 
+        [SerializeField] private WaveEvent m_waveEvent;
+        [SerializeField] private IntEvent m_waveCountEvent;
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private Clock m_clock;
@@ -18,13 +21,23 @@ namespace JustGame.Scripts.Managers
         
         private void Start()
         {
-            m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
             
-            m_clock.SetTime( 3 * 60);
+            m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
+            m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
+            
+            m_clock.OnEndClock += OnFinishWaveTime;
+            m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
+            m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }
 
+        private void PauseGame(bool value)
+        {
+            m_isPaused = value;
+            Time.timeScale = m_isPaused ? 0 : 1;
+        }
+        
         private void OnChangeGameState(GameState prevState, GameState newState)
         {
             switch (newState)
@@ -40,13 +53,10 @@ namespace JustGame.Scripts.Managers
                     break;
             }
         }
-        
-        
-        
-        private void PauseGame(bool value)
+
+        private void OnFinishWaveTime()
         {
-            m_isPaused = value;
-            Time.timeScale = m_isPaused ? 0 : 1;
+            m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
         }
     }
 }
