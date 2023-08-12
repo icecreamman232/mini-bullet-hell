@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  IsSharePool: 0
   ObjectToPool: {fileID: 3644360371549774562, guid: c1b4cdd5feba1514cae35e7fd2367361, type: 3}
   PoolSize: 20
 --- !u!1 &5341628877282589449
@@ -536,6 +537,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_brain: {fileID: 5304460639981239164}
+  m_spawnVFX: {fileID: 0}
+  m_sprite: {fileID: 0}
+  m_collider2D: {fileID: 0}
 --- !u!114 &4957291818224064516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +558,7 @@ MonoBehaviour:
   m_invulnerableDuration: 0.2
   m_flickingColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
   m_delayBetweenFlicks: 0.1
-  m_levelData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
+  m_waveEvent: {fileID: 11400000, guid: 2de0fff9a737bba488eaede4dde02d95, type: 2}
   m_explodeAnim: {fileID: 4129819211174996970}
 --- !u!114 &6330879172542091162
 MonoBehaviour:

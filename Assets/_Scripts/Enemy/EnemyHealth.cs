@@ -2,13 +2,15 @@ using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Enemy;
+using JustGame.Scripts.Managers;
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
 {
     public class EnemyHealth : Health
     {
-        [SerializeField] private LevelDataSO m_levelData;
+        [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private AnimationParameter m_explodeAnim;
 
         private Loot m_loot;
@@ -21,8 +23,8 @@ namespace JustGame.Scripts.Weapons
 
         private void OnEnable()
         {
-            if (m_levelData.CurrentLvl <= 1) return;
-            m_maxHealth *= (m_levelData.CurrentLvl * 102f / 100f);
+            if (m_waveEvent.CurrentWave <= 1) return;
+            m_maxHealth += (m_waveEvent.CurrentWave * MathHelpers.PercentOf(m_maxHealth) * 2); // Increase 2% HP per wave
         }
 
         protected override IEnumerator KillRoutine()

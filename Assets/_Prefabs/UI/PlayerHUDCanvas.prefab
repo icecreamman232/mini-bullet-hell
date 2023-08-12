@@ -1183,4 +1183,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_waveNameTxt: {fileID: 4999340089880627847}
   m_waveTimeTxt: {fileID: 5997735305350587279}
+  m_waveCountEvent: {fileID: 11400000, guid: c816fb68cc5cfc7438878d7088dffa86, type: 2}
   m_waveTimeEvent: {fileID: 11400000, guid: 6b7de6bff64f45c4c9cdd3aa760db04f, type: 2}

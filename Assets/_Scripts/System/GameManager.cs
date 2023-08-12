@@ -1,4 +1,5 @@
 using JustGame.Scripts.Common;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private IntEvent m_waveCountEvent;
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
+        [SerializeField] private LevelDataSO m_levelData;
         [SerializeField] private Clock m_clock;
         [SerializeField] private BoolEvent m_pauseGameEvent;
         [SerializeField] private bool m_isPaused;
@@ -23,9 +25,6 @@ namespace JustGame.Scripts.Managers
         {
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
-            
-            m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
-            m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
             
             m_clock.OnEndClock += OnFinishWaveTime;
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
@@ -45,6 +44,9 @@ namespace JustGame.Scripts.Managers
                 case GameState.FIGHTING:
                     m_pauseGameEvent.Raise(false);
                     PauseGame(false);
+                    m_waveEvent.IncreaseWave();
+                    m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
+                    m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
                     break;
                 case GameState.PICK_UPGRADE:
                     m_inputManager.Reset();
@@ -57,6 +59,7 @@ namespace JustGame.Scripts.Managers
         private void OnFinishWaveTime()
         {
             m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
+            m_levelData.LevelUp();
         }
     }
 }

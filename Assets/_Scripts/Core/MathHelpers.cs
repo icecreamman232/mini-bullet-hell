@@ -54,6 +54,11 @@ namespace JustGame.Scripts.Managers
             tf.localScale = Vector3.one;
             tf.rotation = Quaternion.identity;
         }
+
+        public static float PercentOf(float value)
+        {
+            return value / 100;
+        }
     }
 
 }

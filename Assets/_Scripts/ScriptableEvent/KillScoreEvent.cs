@@ -38,7 +38,7 @@ namespace JustGame.Scripts.ScriptableEvent
             {
                 m_killScore = 0;
                 m_OnUpdateKillScore?.Invoke(m_killScore);
-                m_levelData.LevelUp();
+                //m_levelData.LevelUp();
                 
                 //Pause game to pick upgrades
                 //m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);

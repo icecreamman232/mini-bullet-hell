@@ -483,7 +483,7 @@ MonoBehaviour:
   m_invulnerableDuration: 0.2
   m_flickingColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
   m_delayBetweenFlicks: 0.1
-  m_levelData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
+  m_waveEvent: {fileID: 11400000, guid: 2de0fff9a737bba488eaede4dde02d95, type: 2}
   m_explodeAnim: {fileID: 2565518857343370617}
 --- !u!114 &4286163753507955578
 MonoBehaviour:

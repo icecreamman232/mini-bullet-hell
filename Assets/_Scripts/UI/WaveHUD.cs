@@ -9,7 +9,7 @@ namespace JustGame.Scripts.UI
     {
         [SerializeField] private TextMeshProUGUI m_waveNameTxt;
         [SerializeField] private TextMeshProUGUI m_waveTimeTxt;
-
+        [SerializeField] private IntEvent m_waveCountEvent;
         [SerializeField] private FloatEvent m_waveTimeEvent;
 
         private int m_minute;
@@ -18,8 +18,14 @@ namespace JustGame.Scripts.UI
         private void Start()
         {
             m_waveTimeEvent.AddListener(UpdateTime);
+            m_waveCountEvent.AddListener(UpdateWaveTxt);
         }
 
+        private void UpdateWaveTxt(int waveCount)
+        {
+            m_waveNameTxt.text = $"Wave {waveCount.ToString()}";
+        }
+        
         private void UpdateTime(float time)
         {
             m_minute = Mathf.FloorToInt(time / 60f);
