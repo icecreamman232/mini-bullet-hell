@@ -22,7 +22,7 @@ namespace JustGame.Scripts.Enemy
                 m_brain = GetComponentInChildren<EnemyBrain>();
             }
 
-            m_sprite.gameObject.SetActive(false);
+            m_sprite.enabled = false;
             m_collider2D.enabled = false;
             m_spawnVFX.OnFinishVFX += Spawn;
             m_spawnVFX.PlayVFX();
@@ -30,7 +30,7 @@ namespace JustGame.Scripts.Enemy
 
         private void Spawn()
         {
-            m_sprite.gameObject.SetActive(true);
+            m_sprite.enabled = true;
             m_collider2D.enabled = true;
             m_brain.BrainActive = true;
         }

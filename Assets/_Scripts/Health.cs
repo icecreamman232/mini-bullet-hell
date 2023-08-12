@@ -34,7 +34,6 @@ namespace JustGame.Scripts.Weapons
             m_curHealth = m_maxHealth;
             m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             m_collider = GetComponent<Collider2D>();
-            m_spriteRenderer.enabled = true;
             m_initColor = m_spriteRenderer.color;
         }
 

@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
@@ -23,7 +21,7 @@ namespace JustGame.Scripts.Weapons
             m_spriteRenderer.enabled = false;
             m_collider.enabled = false;
             m_explodeAnim.SetTrigger();
-            yield return new WaitForSeconds(m_explodeAnim.Duration + m_delayBeforeDeath);
+            yield return new WaitForSeconds(m_explodeAnim.Duration);
             Destroy(this.gameObject);
         }
     }
