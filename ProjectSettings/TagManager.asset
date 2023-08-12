@@ -47,6 +47,12 @@ TagManager:
   - name: Enemy
     uniqueID: 1767091455
     locked: 0
+  - name: EnemyProjectile
+    uniqueID: 406991757
+    locked: 0
+  - name: PlayerProjectile
+    uniqueID: 1314837843
+    locked: 0
   - name: VFX
     uniqueID: 39609693
     locked: 0

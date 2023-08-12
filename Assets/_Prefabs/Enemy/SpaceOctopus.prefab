@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ea111697e74ad4380eb9f3efd8560f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 8091498336435351276}
+  Parent: {fileID: 0}
   ObjectToPool: {fileID: 826045983694793967, guid: 602b6f11ad91d4c43a08e0f40bb7c9d6, type: 3}
   PoolSize: 10
 --- !u!1001 &3218743551552923516

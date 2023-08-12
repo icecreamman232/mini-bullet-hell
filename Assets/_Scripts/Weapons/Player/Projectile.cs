@@ -71,6 +71,7 @@ namespace JustGame.Scripts.Weapons
                 yield break;
             }
 
+            m_moveDirection = Vector2.zero;
             m_isDestroying = true;
             yield return new WaitForSeconds(m_delayBeforeDestruction);
             
