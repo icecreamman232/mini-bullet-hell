@@ -39,9 +39,12 @@ namespace JustGame.Scripts.Managers
         
         private void OnChangeGameState(GameState prevState, GameState newState)
         {
+            m_inputManager.Reset();
+            
             switch (newState)
             {
                 case GameState.FIGHTING:
+                    m_inputManager.IsInputActive = true;
                     m_pauseGameEvent.Raise(false);
                     PauseGame(false);
                     m_waveEvent.IncreaseWave();
@@ -49,9 +52,14 @@ namespace JustGame.Scripts.Managers
                     m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
                     break;
                 case GameState.PICK_UPGRADE:
-                    m_inputManager.Reset();
                     m_pauseGameEvent.Raise(true);
                     PauseGame(true);
+                    break;
+                case GameState.GAME_OVER:
+                    m_inputManager.IsInputActive = false;
+                    m_clock.Stop();
+                    // m_pauseGameEvent.Raise(true);
+                    // PauseGame(true);
                     break;
             }
         }

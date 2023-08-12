@@ -70,5 +70,4 @@ namespace JustGame.Scripts.Managers
             return (x / 100f * percent);
         }
     }
-
 }

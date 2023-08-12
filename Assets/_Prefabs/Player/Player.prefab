@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5717428420957280846}
   - component: {fileID: 576377788818398030}
+  - component: {fileID: 4523313314822633144}
+  - component: {fileID: 1531630398566175568}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -87,6 +89,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4523313314822633144
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426304099507826291}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6bcf989e15c245246b7e3001095f9c43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1531630398566175568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426304099507826291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0398481e7dcc89a4cbcface01c9b6811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetAnimator: {fileID: 4523313314822633144}
+  ParameterName: trigger_Dead
+  Duration: 0.33
 --- !u!1 &3322094865980636366
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,11 +379,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxHealth: 50
   m_curHealth: 0
-  m_delayBeforeDeath: 0
+  m_delayBeforeDeath: 0.33
   m_invulnerableDuration: 0.5
   m_flickingColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
   m_delayBetweenFlicks: 0.1
   m_immuneDamage: 0
+  m_deadAnim: {fileID: 1531630398566175568}
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
   m_healingPowerUp: {fileID: 11400000, guid: 6c54b5a0047ceab46800c7734ef0fd1b, type: 2}

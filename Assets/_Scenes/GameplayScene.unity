@@ -220,7 +220,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -753,6 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac387260946e11443ae81295d2a08be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_spawnProfile: {fileID: 11400000, guid: 28e69a9b81708ff4dba1580b067aee37, type: 2}
 --- !u!4 &1986079078
@@ -792,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7902671146763092633, guid: aaf0ea88aad251644be130199228ef33, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7902671146763092633, guid: aaf0ea88aad251644be130199228ef33, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1095,7 +1096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188775962517278194, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_immuneDamage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8551608225418914206, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_Name

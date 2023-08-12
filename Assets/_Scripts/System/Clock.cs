@@ -19,6 +19,12 @@ namespace JustGame.Scripts.Common
             m_durationEvent.Raise(m_duration);
         }
 
+        public void Stop()
+        {
+            m_duration = 0;
+            m_durationEvent.Raise(m_duration);
+        }
+        
         private void Update()
         {
             if (m_duration == 0) return;

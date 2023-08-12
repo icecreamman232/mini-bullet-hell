@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
@@ -10,6 +12,8 @@ namespace JustGame.Scripts.Weapons
     public class PlayerHealth : Health
     {
         [SerializeField] private bool m_immuneDamage;
+        [SerializeField] private AnimationParameter m_deadAnim;
+        [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
         [SerializeField] protected HealingPowerUp m_healingPowerUp;
@@ -84,12 +88,27 @@ namespace JustGame.Scripts.Weapons
             {
                 return false;
             }
+
+            if (m_isDead)
+            {
+                return false;
+            }
             
             if (m_isInvulnerable)
             {
                 return false;
             }
             return true;
+        }
+
+        protected override IEnumerator KillRoutine()
+        {
+            m_isDead = true;
+            m_collider.enabled = false;
+            m_deadAnim.SetTrigger();
+            yield return new WaitForSeconds(m_delayBeforeDeath);
+            gameObject.SetActive(false);
+            m_gameCoreEvent.SetGameState(GameState.GAME_OVER);
         }
     } 
 }
