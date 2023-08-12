@@ -17,7 +17,7 @@ namespace JustGame.Scripts.RuntimeSet
     {
         [SerializeField] private GameManager m_gameManager;
         [SerializeField] private LevelBounds m_levelBounds;
-        
+
         [Header("Code Color")] 
         [SerializeField] private Color m_commonColor;
         [SerializeField] private Color m_uncommonColor;

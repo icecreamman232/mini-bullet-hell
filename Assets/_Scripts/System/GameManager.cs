@@ -1,3 +1,4 @@
+using JustGame.Scripts.Common;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace JustGame.Scripts.Managers
     {
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
+        [SerializeField] private Clock m_clock;
         [SerializeField] private BoolEvent m_pauseGameEvent;
         [SerializeField] private bool m_isPaused;
         private InputManager m_inputManager;
@@ -19,6 +21,8 @@ namespace JustGame.Scripts.Managers
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
+            
+            m_clock.SetTime( 3 * 60);
         }
 
         private void OnChangeGameState(GameState prevState, GameState newState)

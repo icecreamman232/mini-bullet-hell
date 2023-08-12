@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace JustGame.Scripts.Data
@@ -10,12 +9,14 @@ namespace JustGame.Scripts.Data
         [SerializeField] private int m_reactorPoint;
         [SerializeField] private int m_enginePoint;
         [SerializeField] private int m_hullPoint;
-
+        
         [Header("Secondary Stats")]
         //Conversion rate from reactor point to energy. Ex: 2 mean rate 1:2 (reactor:energy)
         [SerializeField] private int m_energyConversionRate;
         [SerializeField] private int m_energy;
-        
+
+        [Header("Exp")] 
+        [SerializeField] private float m_expRate;
         
         public int ReactorPts => m_reactorPoint;
         public int EnginePts => m_enginePoint;
@@ -24,7 +25,8 @@ namespace JustGame.Scripts.Data
         public int EnergyConversionRate => m_energyConversionRate;
         public int Energy => m_energy;
 
-
+        public float ExpRate => m_expRate;
+        
         private void OnEnable()
         {
             m_reactorPoint = 0;
@@ -33,14 +35,9 @@ namespace JustGame.Scripts.Data
 
             m_energyConversionRate = 0;
             m_energy = 0;
-        }
 
-        // public void SetDefaultValue(int reactorPts, int enginePts, int hullPts)
-        // {
-        //     m_reactorPoint = reactorPts;
-        //     m_enginePoint = enginePts;
-        //     m_hullPoint = hullPts;
-        // }
+            m_expRate = 100;
+        }
         
         public void IncreaseReactorPoint(int addValue)
         {
@@ -55,6 +52,11 @@ namespace JustGame.Scripts.Data
         public void IncreaseHullPoint(int addValue)
         {
             m_hullPoint += addValue;
+        }
+
+        public void IncreaseXpRate(float AddPercent)
+        {
+            m_expRate += AddPercent;
         }
     }
 }
