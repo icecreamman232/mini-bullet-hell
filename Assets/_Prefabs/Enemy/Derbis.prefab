@@ -146,4 +146,4 @@ MonoBehaviour:
   m_movingSpeed: 200
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_liveDuration: 3
-  m_collectEvent: {fileID: 11400000, guid: b370f075f856c654d9bfbc62f41af8e3, type: 2}
+  m_resourceEvent: {fileID: 11400000, guid: b64ef2acd89d0ec41ac82eb9b467c6b8, type: 2}

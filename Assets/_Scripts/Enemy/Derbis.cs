@@ -6,7 +6,7 @@ namespace JustGame.Scripts.Items
     public class Derbis : Item
     {
         [SerializeField] private float m_liveDuration;
-        [SerializeField] private IntEvent m_collectEvent;
+        [SerializeField] private ResourceEvent m_resourceEvent;
         
         private void OnEnable()
         {
@@ -15,7 +15,7 @@ namespace JustGame.Scripts.Items
 
         protected override void OnSetDestroy()
         {
-            m_collectEvent.Raise(1);
+            m_resourceEvent.AddDerbis(1);
             base.OnSetDestroy();
         }
     }
