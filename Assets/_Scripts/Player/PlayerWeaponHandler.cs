@@ -31,12 +31,14 @@ namespace JustGame.Scripts.Player
                 if (m_doubleShotPowerUp.IsActive)
                 {
                     m_secondWeapon.WeaponStart();
+                    return;
                 }
 
                 if (m_tripleShotPowerUp.IsActive)
                 {
                     m_secondWeapon.WeaponStart();
                     m_thirdWeapon.WeaponStart();
+                    return;
                 }
             }
 
@@ -46,11 +48,13 @@ namespace JustGame.Scripts.Player
                 if (m_doubleShotPowerUp.IsActive)
                 {
                     m_secondWeapon.WeaponStop();
+                    return;
                 }
                 if (m_tripleShotPowerUp.IsActive)
                 {
                     m_secondWeapon.WeaponStop();
                     m_thirdWeapon.WeaponStop();
+                    return;
                 }
             }
             base.HandleInput();
@@ -64,9 +68,12 @@ namespace JustGame.Scripts.Player
         private void TriggerDoubleShotPowerUp()
         {
             m_curWeapon.transform.localPosition = new Vector3(-0.3f, 0.3f, 0);
-            
+
             m_secondWeapon.gameObject.SetActive(true);
             m_secondWeapon.transform.localPosition = new Vector3(0.3f, 0.3f, 0);
+
+            m_curWeapon.ResetWeapon();
+            m_secondWeapon.ResetWeapon();
             m_doubleShotPowerUp.IsActive = true;
         }
 
@@ -79,6 +86,11 @@ namespace JustGame.Scripts.Player
             
             m_thirdWeapon.gameObject.SetActive(true);
             m_thirdWeapon.transform.localPosition = new Vector3(-0.3f, 0.3f, 0);
+            
+            
+            m_curWeapon.ResetWeapon();
+            m_secondWeapon.ResetWeapon();
+            m_thirdWeapon.ResetWeapon();
             
             m_tripleShotPowerUp.IsActive = true;
         }

@@ -48,6 +48,11 @@ namespace JustGame.Scripts.Weapons
             
         }
 
+        public virtual void ResetWeapon()
+        {
+            
+        }
+        
         protected virtual void Update()
         {
             

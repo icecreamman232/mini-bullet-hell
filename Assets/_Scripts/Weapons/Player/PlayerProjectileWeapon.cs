@@ -263,9 +263,12 @@ namespace JustGame.Scripts.Weapons
             base.WeaponStop();
         }
 
-        private void TriggerDoubleShotPowerUp()
+        public override void ResetWeapon()
         {
-            
+            WeaponStop();
+            CurrentState = ProjectileWeaponState.Idle;
+            m_curMagazine = Magazine;
+            base.ResetWeapon();
         }
     }
 }

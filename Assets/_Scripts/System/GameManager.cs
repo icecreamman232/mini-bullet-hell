@@ -9,6 +9,7 @@ namespace JustGame.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         [Header("Wave")] 
+        [SerializeField] private bool m_endless;
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private IntEvent m_waveCountEvent;
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
@@ -70,7 +71,10 @@ namespace JustGame.Scripts.Managers
 
         private void OnFinishWaveTime()
         {
-            m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
+            if (!m_endless)
+            {
+                m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
+            }
             m_levelData.LevelUp();
         }
     }
