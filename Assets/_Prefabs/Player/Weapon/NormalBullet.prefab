@@ -263,8 +263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_moveSpeed: 250
   m_delayBeforeDestruction: 0
-  m_maxDistanceTravel: 20
+  m_maxDistanceTravel: 5
   m_bulletBody: {fileID: 8106000571504492118}
   m_damageHandler: {fileID: 6115035109323062156}
   m_destroyAnim: {fileID: 4398213999460654538}
   m_piercingShotPowerUp: {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}
+  m_increaseRangePowerUp: {fileID: 11400000, guid: 40f85dda8c197e846a29ffbba4158015, type: 2}

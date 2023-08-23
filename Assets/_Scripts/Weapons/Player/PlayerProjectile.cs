@@ -8,15 +8,23 @@ namespace JustGame.Scripts.Weapons
     {
         [Header("PowerUp")]
         [SerializeField] private PiercingShotPowerUp m_piercingShotPowerUp;
-
+        [SerializeField] private IncreaseRangePowerUp m_increaseRangePowerUp;
+        
         private int m_piercingNumber;
         
         protected override void Start()
         {
             base.Start();
             m_piercingShotPowerUp.OnApplyPowerUp += TriggerPiercingShotPowerUp;
+            m_increaseRangePowerUp.OnApplyPowerUp += TriggerIncreaseRangePowerUp;
         }
 
+
+        private void TriggerIncreaseRangePowerUp()
+        {
+            m_maxDistanceTravel += m_increaseRangePowerUp.RangeIncreasePerTime;
+        }
+        
         private void TriggerPiercingShotPowerUp()
         {
             m_piercingShotPowerUp.IsActive = true;
