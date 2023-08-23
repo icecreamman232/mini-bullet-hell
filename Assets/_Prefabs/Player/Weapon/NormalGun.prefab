@@ -52,11 +52,10 @@ MonoBehaviour:
   m_magazineSizeEvent: {fileID: 11400000, guid: 192b11c9007d999468a0937517f3e683, type: 2}
   AimController: {fileID: 0}
   CurrentState: 1
-  InitializeOnStart: 1
   GunType: 1
   ReloadTime: 1
   Magazine: 10
-  DelayBetweenTwoShot: 0.1
+  DelayBetweenTwoShot: 0.3
   ObjectPooler: {fileID: 4392109976417253279}
 --- !u!114 &4392109976417253279
 MonoBehaviour:
@@ -71,5 +70,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  IsSharePool: 0
   ObjectToPool: {fileID: 826045983694793967, guid: 5735617bfe7fbcd4db268024f211d2f1, type: 3}
   PoolSize: 15

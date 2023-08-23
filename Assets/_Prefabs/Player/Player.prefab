@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 2188775962517278194}
   - component: {fileID: 475158028898315706}
   - component: {fileID: 649892123954887307}
-  - component: {fileID: 6842706458548302341}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -424,20 +423,6 @@ MonoBehaviour:
   m_playerData: {fileID: 11400000, guid: 48c26793a645b914cada3f4208fe339a, type: 2}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
---- !u!114 &6842706458548302341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8551608225418914206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6af7407c05084349ad7f07768eef2fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_derbisCollectEvent: {fileID: 11400000, guid: b370f075f856c654d9bfbc62f41af8e3, type: 2}
-  m_derbisAmount: 0
 --- !u!1001 &4648929994918397430
 PrefabInstance:
   m_ObjectHideFlags: 0

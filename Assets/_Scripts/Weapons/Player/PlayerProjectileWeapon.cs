@@ -134,14 +134,14 @@ namespace JustGame.Scripts.Weapons
                 return;
             }
             m_inputStop = false;
-            if (m_curMagazine <= 0)
-            {
-                m_reloadTimer = ReloadTime;
-                CurrentState = ProjectileWeaponState.Reload;
-                //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
-                //Debug.Log("Reload again?");
-                return;
-            }
+            // if (m_curMagazine <= 0)
+            // {
+            //     m_reloadTimer = ReloadTime;
+            //     CurrentState = ProjectileWeaponState.Reload;
+            //     //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
+            //     //Debug.Log("Reload again?");
+            //     return;
+            // }
             CurrentState = ProjectileWeaponState.RequestShoot;
             //Debug.Log("WeaponStart");
         }
@@ -171,14 +171,14 @@ namespace JustGame.Scripts.Weapons
         }
         protected virtual void CaseWeaponShootRequest()
         {
-            //Not enough bullet
-            if (m_curMagazine <= 0)
-            {
-                m_reloadTimer = ReloadTime;
-                CurrentState = ProjectileWeaponState.Reload;
-                //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
-                return;
-            }
+            // //Not enough bullet
+            // if (m_curMagazine <= 0)
+            // {
+            //     m_reloadTimer = ReloadTime;
+            //     CurrentState = ProjectileWeaponState.Reload;
+            //     //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
+            //     return;
+            // }
 
             if (GunType == GunType.AUTO && m_inputStop)
             {
@@ -194,31 +194,32 @@ namespace JustGame.Scripts.Weapons
             if (GunType == GunType.SEMI_AUTO)
             {
                 ShootProjectile();
-                m_curMagazine--;
-                m_magazineSizeEvent.Raise(m_curMagazine);
-                if (m_curMagazine <= 0)
+                // m_curMagazine--;
+                // m_magazineSizeEvent.Raise(m_curMagazine);
+                // if (m_curMagazine <= 0)
+                // {
+                //     CurrentState = ProjectileWeaponState.Reload;
+                //     m_reloadTimer = ReloadTime;
+                //     //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
+                // }
+                // else
                 {
-                    CurrentState = ProjectileWeaponState.Reload;
-                    m_reloadTimer = ReloadTime;
-                    //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
-                }
-                else
-                {
-                    CurrentState = ProjectileWeaponState.End;
+                    m_delayBetweenTwoShotTimer = DelayBetweenTwoShot;
+                    CurrentState = ProjectileWeaponState.DelayBetweenTwoShot;
                 }
             }
             else if (GunType == GunType.AUTO)
             {
                 ShootProjectile();
-                m_curMagazine--;
-                m_magazineSizeEvent.Raise(m_curMagazine);
-                if (m_curMagazine <= 0)
-                {
-                    CurrentState = ProjectileWeaponState.Reload;
-                    m_reloadTimer = ReloadTime;
-                    //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
-                }
-                else
+                // m_curMagazine--;
+                // m_magazineSizeEvent.Raise(m_curMagazine);
+                // if (m_curMagazine <= 0)
+                // {
+                //     CurrentState = ProjectileWeaponState.Reload;
+                //     m_reloadTimer = ReloadTime;
+                //     //CooldownClockUI.SetCooldownClock(m_reloadTimer, ReloadTime);
+                // }
+                // else
                 {
                     CurrentState = ProjectileWeaponState.DelayBetweenTwoShot;
                     m_delayBetweenTwoShotTimer = DelayBetweenTwoShot;
