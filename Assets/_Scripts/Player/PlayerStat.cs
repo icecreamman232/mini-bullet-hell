@@ -13,11 +13,6 @@ namespace JustGame.Scripts.Player
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         private void Start()
         {
-            // m_playerData.SetDefaultValue(
-            //     m_shipProfile.BaseReactorPoint,
-            //     m_shipProfile.BaseEnginePoint, 
-            //     m_shipProfile.BaseHullPoint);
-
             ApplyValue();
 
             m_gameCoreEvent.OnChangeStateCallback += OnGameStateChange;

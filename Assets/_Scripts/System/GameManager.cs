@@ -55,6 +55,10 @@ namespace JustGame.Scripts.Managers
                     m_pauseGameEvent.Raise(true);
                     PauseGame(true);
                     break;
+                case GameState.PICK_SKILL:
+                    m_pauseGameEvent.Raise(true);
+                    PauseGame(true);
+                    break;
                 case GameState.GAME_OVER:
                     m_inputManager.IsInputActive = false;
                     m_clock.Stop();
@@ -66,7 +70,7 @@ namespace JustGame.Scripts.Managers
 
         private void OnFinishWaveTime()
         {
-            m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
+            m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
             m_levelData.LevelUp();
         }
     }

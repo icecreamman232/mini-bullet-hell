@@ -1,4 +1,5 @@
 using JustGame.Scripts.Common;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 
@@ -16,8 +17,10 @@ namespace JustGame.Scripts.RuntimeSet
     public class RuntimeWorldSet : ScriptableObject
     {
         [SerializeField] private GameManager m_gameManager;
+        [SerializeField] private PowerUpManager m_powerUpManager;
         [SerializeField] private LevelBounds m_levelBounds;
-
+        
+        
         [Header("Code Color")] 
         [SerializeField] private Color m_commonColor;
         [SerializeField] private Color m_uncommonColor;
@@ -25,8 +28,10 @@ namespace JustGame.Scripts.RuntimeSet
         [SerializeField] private Color m_legendColor;
         
         public GameManager GameManager => m_gameManager;
+        public PowerUpManager PowerUpManager => m_powerUpManager;
         public LevelBounds LevelBounds => m_levelBounds;
-
+       
+        
         public Color CommonColor => m_commonColor;
         public Color UncommonColor => m_uncommonColor;
         public Color RareColor => m_rareColor;
@@ -37,6 +42,10 @@ namespace JustGame.Scripts.RuntimeSet
             m_levelBounds = bounds;
         }
 
+        public void SetPowerUpManager(PowerUpManager powerUpManager)
+        {
+            m_powerUpManager = powerUpManager;
+        }
         public void SetGameManager(GameManager gm)
         {
             m_gameManager = gm;

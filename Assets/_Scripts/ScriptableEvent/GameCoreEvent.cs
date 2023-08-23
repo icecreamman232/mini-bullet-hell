@@ -6,6 +6,7 @@ namespace JustGame.Scripts.ScriptableEvent
     public enum GameState
     {
         FIGHTING,
+        PICK_SKILL,
         PICK_UPGRADE,
         GAME_OVER,
     }
