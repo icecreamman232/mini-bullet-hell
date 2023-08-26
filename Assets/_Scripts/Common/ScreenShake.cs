@@ -32,6 +32,14 @@ namespace JustGame.Scripts.Common
                 yield return new WaitForSeconds(profile.Frequency);
                 duration -= profile.Frequency;
             }
+            ResetCamera();
+        }
+
+        private void ResetCamera()
+        {
+            var pos = Vector3.zero;
+            pos.z = -10;
+            m_camera.transform.position = pos;
         }
     }
 }
