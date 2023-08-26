@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JustGame.Scripts.Data
 {
-    [CreateAssetMenu(menuName = "JustGame/PowerUp/Increase range")]
+    [CreateAssetMenu(menuName = "JustGame/PowerUp/Increase Range")]
     public class IncreaseRangePowerUp : PowerUpData
     {
         [SerializeField] private float m_rangeIncreasePerPowerUp;

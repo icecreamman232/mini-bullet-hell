@@ -24,6 +24,7 @@ namespace JustGame.Scripts.Weapons
     public class PlayerProjectileWeapon : Weapon
     {
         [SerializeField] private IntEvent m_magazineSizeEvent;
+        [SerializeField] private IncreaseAttackSpeedPowerUp m_increaseAttackSpeedPowerUp;
         public PlayerAim AimController;
         public ProjectileWeaponState CurrentState;
         [Header("Magazine")] 
@@ -49,6 +50,8 @@ namespace JustGame.Scripts.Weapons
             transform.position += m_weaponOffsetPosition;
             ActivateWeapon(true);
             base.Initialize();
+
+            m_increaseAttackSpeedPowerUp.OnApplyPowerUp += OnApplyIncreaseAtkSpeedPowerUp;
         }
         
         public override void ActivateWeapon(bool value)
@@ -270,6 +273,11 @@ namespace JustGame.Scripts.Weapons
             CurrentState = ProjectileWeaponState.Idle;
             m_curMagazine = Magazine;
             base.ResetWeapon();
+        }
+
+        private void OnApplyIncreaseAtkSpeedPowerUp()
+        {
+            DelayBetweenTwoShot -= m_increaseAttackSpeedPowerUp.AtkSpeedIncreasePerTime;
         }
     }
 }
