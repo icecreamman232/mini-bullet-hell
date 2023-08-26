@@ -52,7 +52,11 @@ namespace JustGame.Scripts.Enemy
 
         public void StopDash()
         {
-            StopCoroutine(m_dashCoroutine);
+            if (m_dashCoroutine != null)
+            {
+                StopCoroutine(m_dashCoroutine);
+            }
+            
             if (m_invulnerableWhileDashing)
             {
                 m_Health.DisableDamageImmune();
