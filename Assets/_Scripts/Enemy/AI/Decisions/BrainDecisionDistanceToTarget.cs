@@ -1,9 +1,19 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Enemy
 {
+    public enum ComparisonMode
+    {
+        LESSER,
+        LESSER_AND_EQUAL,
+        GREATER_AND_EQUAL,
+        GREATER,
+    }
     public class BrainDecisionDistanceToTarget : BrainDecision
     {
+        [SerializeField] private ComparisonMode m_comparisonMode;
         [SerializeField] private float m_minDistance;
         [SerializeField] private float m_maxDistance;
 
@@ -23,7 +33,20 @@ namespace JustGame.Scripts.Enemy
             }
 
             var curDistance = Vector2.Distance(m_brain.Target.position, m_brain.transform.parent.position);
-            return curDistance >= m_distance;
+
+            switch (m_comparisonMode)
+            {
+                case ComparisonMode.LESSER:
+                    return curDistance < m_distance;
+                case ComparisonMode.LESSER_AND_EQUAL:
+                    return curDistance <= m_distance;
+                case ComparisonMode.GREATER_AND_EQUAL:
+                    return curDistance >= m_distance;
+                case ComparisonMode.GREATER:
+                    return curDistance > m_distance;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

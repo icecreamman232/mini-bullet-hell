@@ -12,7 +12,7 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private AnimationParameter m_explodeAnim;
-
+        [SerializeField] private bool m_immuneDamage;
         private Loot m_loot;
 
         protected override void Initialize()
@@ -25,6 +25,25 @@ namespace JustGame.Scripts.Weapons
         {
             if (m_waveEvent.CurrentWave <= 1) return;
             m_maxHealth += (m_waveEvent.CurrentWave * MathHelpers.PercentOf(m_maxHealth) * 2); // Increase 2% HP per wave
+        }
+
+        public void EnableDamageImmune()
+        {
+            m_immuneDamage = true;
+        }
+        
+        public void DisableDamageImmune()
+        {
+            m_immuneDamage = false;
+        }
+
+        protected override bool AuthorizeTakingDamage()
+        {
+            if (m_immuneDamage)
+            {
+                return false;
+            }
+            return true;
         }
 
         protected override IEnumerator KillRoutine()

@@ -22,6 +22,11 @@ namespace JustGame.Scripts.Enemy
             CurrentState.EnterState();
         }
 
+        public void ResetBrain()
+        {
+            CurrentState = States[0];
+        }
+        
         private void Update()
         {
             if (!BrainActive) return;
