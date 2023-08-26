@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Double Shot
   Description: Double current weapon
-  Icon: {fileID: 723165187, guid: a64aa8bab3c7fd0419ad1e6637f2a7eb, type: 3}
+  Icon: {fileID: 21300000, guid: d5c28a333ee8f2741a7f4e9c2e6476ca, type: 3}
   IsActive: 1

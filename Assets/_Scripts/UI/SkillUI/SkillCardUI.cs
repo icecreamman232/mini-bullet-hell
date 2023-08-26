@@ -10,6 +10,7 @@ namespace JustGame.Scripts.UI
     public class SkillCardUI : Selectable
     {
         [SerializeField] private Image m_outline;
+        [SerializeField] private Image m_icon;
         [SerializeField] private TextMeshProUGUI m_powerUpName;
         [SerializeField] private PowerUpData m_powerUp;
 
@@ -25,6 +26,7 @@ namespace JustGame.Scripts.UI
         {
             m_powerUp = powerUpData;
             m_powerUpName.text = m_powerUp.Name;
+            m_icon.sprite = powerUpData.Icon;
         }
         
         public override void OnSelect(BaseEventData eventData)
