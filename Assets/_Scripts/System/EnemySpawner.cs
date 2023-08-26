@@ -11,8 +11,9 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField] private SpawnProfile m_spawnProfile;
+        [SerializeField] private bool m_canSpawn;
         private float m_timer;
-        private bool m_canSpawn;
+        
 
         private void Awake()
         {

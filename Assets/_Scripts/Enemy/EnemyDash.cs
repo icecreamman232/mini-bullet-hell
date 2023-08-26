@@ -12,12 +12,18 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] private float m_minDistance;
         [SerializeField] private bool m_invulnerableWhileDashing;
         [SerializeField] private EnemyHealth m_Health;
-
-        public Action OnFinishDash;
         
+        public Action OnFinishDash;
+        private Coroutine m_dashCoroutine;
+
+        private void Start()
+        {
+            m_Health.OnDeath += StopDash;
+        }
+
         public void StartDash(Vector2 destination)
         {
-            StartCoroutine(DashRoutine(destination));
+            m_dashCoroutine = StartCoroutine(DashRoutine(destination));
         }
 
         private IEnumerator DashRoutine(Vector2 destination)
@@ -44,6 +50,17 @@ namespace JustGame.Scripts.Enemy
             OnFinishDash?.Invoke();
         }
 
+        public void StopDash()
+        {
+            StopCoroutine(m_dashCoroutine);
+            if (m_invulnerableWhileDashing)
+            {
+                m_Health.DisableDamageImmune();
+            }
+            
+            OnFinishDash?.Invoke();
+        }
+        
         private bool CheckDistanceToDestination(Vector2 destination)
         {
             var dist = Vector2.Distance(transform.position, destination);
