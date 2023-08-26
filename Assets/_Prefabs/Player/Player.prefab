@@ -389,6 +389,8 @@ MonoBehaviour:
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
   m_healingPowerUp: {fileID: 11400000, guid: 6c54b5a0047ceab46800c7734ef0fd1b, type: 2}
+  m_shakeEvent: {fileID: 11400000, guid: 2f313db4303590048b04cca66b5bdbc4, type: 2}
+  m_shakeProfile: {fileID: 11400000, guid: 24758f34594ae9d4582e9cd1306ba222, type: 2}
 --- !u!114 &475158028898315706
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -402,6 +403,20 @@ MonoBehaviour:
   m_topRight: {x: 10.5, y: 6}
   m_botLeft: {x: -10.5, y: -6}
   m_botRight: {x: 10.5, y: -6}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff65cf752c874b74e867179dd38ae3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_camera: {fileID: 519420031}
+  m_shakeEvent: {fileID: 11400000, guid: 2f313db4303590048b04cca66b5bdbc4, type: 2}
 --- !u!1 &613428519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188775962517278194, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_immuneDamage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8551608225418914206, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_Name

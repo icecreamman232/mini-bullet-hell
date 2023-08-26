@@ -17,7 +17,9 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
         [SerializeField] protected HealingPowerUp m_healingPowerUp;
-
+        [Header("Shaking")]
+        [SerializeField] private ScreenShakeEvent m_shakeEvent;
+        [SerializeField] private ShakeProfile m_shakeProfile;
         private void Awake()
         {
             m_componentSet.SetHealth(this);
@@ -57,7 +59,9 @@ namespace JustGame.Scripts.Weapons
             if (!AuthorizeTakingDamage()) return;
 
             m_curHealth -= damage;
-
+            
+            m_shakeEvent.DoShake(m_shakeProfile);
+            
             if (m_healthEvent != null)
             {
                 m_healthEvent.Raise(m_curHealth/m_maxHealth);
