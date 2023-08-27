@@ -56,7 +56,7 @@ namespace JustGame.Scripts.Managers
         }
 
         /// <summary>
-        /// 1% of the value
+        /// Convert number to percentage
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -65,6 +65,12 @@ namespace JustGame.Scripts.Managers
             return value / 100;
         }
 
+        /// <summary>
+        /// Return percent of value x
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="percent"></param>
+        /// <returns></returns>
         public static float Percent(float x, float percent)
         {
             return (x / 100f * percent);

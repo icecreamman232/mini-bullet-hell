@@ -32,7 +32,11 @@ namespace JustGame.Scripts.Enemy
         {
             m_sprite.enabled = true;
             m_collider2D.enabled = true;
-            m_brain.BrainActive = true;
+            
+            if (m_brain != null)
+            {
+                m_brain.BrainActive = true;
+            }
         }
     }
 }
