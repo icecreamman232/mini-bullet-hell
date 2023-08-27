@@ -176,7 +176,7 @@ Transform:
   m_Children:
   - {fileID: 2653878622261561504}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2267709457532989504
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isActive: 0
-  m_initialzeOnStart: 1
+  m_initialzeOnStart: 0
   m_owner: {fileID: 0}
   m_weaponOffsetPosition: {x: 0, y: 0, z: 0}
   m_magazineSizeEvent: {fileID: 11400000, guid: 192b11c9007d999468a0937517f3e683, type: 2}

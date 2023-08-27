@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: AimController
       value: 
       objectReference: {fileID: 1958232211951765236}
+    - target: {fileID: 2267709457532989504, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
+      propertyPath: m_initialzeOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6474685904893959034, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -603,6 +607,10 @@ PrefabInstance:
       propertyPath: AimController
       value: 
       objectReference: {fileID: 1958232211951765236}
+    - target: {fileID: 2267709457532989504, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
+      propertyPath: m_initialzeOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6474685904893959034, guid: 06896e9271387754287edbd42f4a8ae1, type: 3}
       propertyPath: m_RootOrder
       value: -1
