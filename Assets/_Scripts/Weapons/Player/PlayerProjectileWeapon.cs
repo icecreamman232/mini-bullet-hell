@@ -1,3 +1,4 @@
+using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.Player;
@@ -24,6 +25,7 @@ namespace JustGame.Scripts.Weapons
     public class PlayerProjectileWeapon : Weapon
     {
         [SerializeField] private IntEvent m_magazineSizeEvent;
+        [SerializeField] private PlaySoundFX m_shootSFX;
         [SerializeField] private IncreaseAttackSpeedPowerUp m_increaseAttackSpeedPowerUp;
         public PlayerAim AimController;
         public ProjectileWeaponState CurrentState;
@@ -253,6 +255,11 @@ namespace JustGame.Scripts.Weapons
             var projectile = ObjectPooler.GetPooledGameObject().GetComponent<Projectile>();
             
             projectile.SpawnProjectile(transform.position, AimController.AimDirection);
+            
+            if (m_shootSFX != null)
+            {
+                m_shootSFX.PlaySFX();
+            }
         }
         
         public virtual void SetDirection(Vector2 newDirection)
