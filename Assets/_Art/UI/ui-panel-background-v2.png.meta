@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 123dc1f17d97da341b8c55819add456f
+guid: fb5ea4f8cc2acd647b6bd9538878ad3c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 1, y: 2, z: 2, w: 1}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,43 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hp-bar-background_0
+      name: ui-panel-background-v2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 2, z: 2, w: 2}
+      border: {x: 1, y: 2, z: 2, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90efd6bb3d66a146889448f286952b2
-      internalID: -1350694680
+      spriteID: 9ec70db1acb548e4691525070733bd04
+      internalID: -323587151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hp-bar-background_1
+      name: ui-panel-background-v2_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 2, z: 2, w: 2}
+      border: {x: 5, y: 5, z: 5, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc21cfbe320a21c4b934828a62c802d7
-      internalID: -572975715
+      spriteID: 46f1fe09b8abd2a48a79f860143a6e16
+      internalID: -615659714
       vertices: []
       indices: 
       edges: []
@@ -155,15 +155,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hp-bar-background_0: -1350694680
-      hp-bar-background_1: -572975715
+      ui-panel-background-v2_0: -323587151
+      ui-panel-background-v2_1: -615659714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -216,8 +216,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280687643
+  m_fontColor: {r: 0.10466359, g: 0.10929156, b: 0.1509434, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -344,8 +344,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 3cec1fb500c6cf74b913a20a438707c5, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.32
 --- !u!114 &5724856317173536504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,10 +528,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1004923410687402510}
     m_Modifications:
-    - target: {fileID: 595846200632861603, guid: 50ef856337d71b145b4cd520adadd63d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2632727348573828428, guid: 50ef856337d71b145b4cd520adadd63d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

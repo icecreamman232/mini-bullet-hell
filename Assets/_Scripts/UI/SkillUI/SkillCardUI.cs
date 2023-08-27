@@ -33,12 +33,14 @@ namespace JustGame.Scripts.UI
         {
             base.OnSelect(eventData);
             m_outline.enabled = true;
+            transform.localScale = Vector3.one * 1.15f;
         }
 
         public override void OnDeselect(BaseEventData eventData)
         {
             base.OnDeselect(eventData);
             m_outline.enabled = false;
+            transform.localScale = Vector3.one;
         }
 
         public override void OnPointerUp(PointerEventData eventData)
