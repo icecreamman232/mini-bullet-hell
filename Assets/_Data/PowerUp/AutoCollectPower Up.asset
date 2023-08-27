@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Auto Collect
   Description: Auto collect all resources
   Icon: {fileID: 0}
-  IsActive: 0
+  IsActive: 1
   m_delayBeforeAutoCollect: 0.3
