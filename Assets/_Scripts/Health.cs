@@ -22,6 +22,8 @@ namespace JustGame.Scripts.Weapons
         protected bool m_isInvulnerable;
 
         public bool IsDead => m_isDead;
+
+        public Action OnHit;
         public Action OnDeath;
         
         protected virtual void Start()
@@ -42,7 +44,8 @@ namespace JustGame.Scripts.Weapons
             if (!AuthorizeTakingDamage()) return;
 
             m_curHealth -= damage;
-
+            
+            OnHit?.Invoke();
 
             UpdateUI();
 

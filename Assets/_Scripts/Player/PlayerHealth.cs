@@ -60,6 +60,8 @@ namespace JustGame.Scripts.Weapons
 
             m_curHealth -= damage;
             
+            OnHit?.Invoke();
+            
             m_shakeEvent.DoShake(m_shakeProfile);
             
             if (m_healthEvent != null)

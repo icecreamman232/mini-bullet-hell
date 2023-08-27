@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_soundFxList:
   - Type: 0
-    Audio: {fileID: 8300000, guid: 8c9e59ebbc389c549921e04256dad4da, type: 3}
+    Audio: {fileID: 8300000, guid: 2a1595026baff8b4a8ba4cad4f4d275a, type: 3}
   - Type: 100
     Audio: {fileID: 8300000, guid: 349f118159ef8794cb3b9356296c39cc, type: 3}
+  - Type: 101
+    Audio: {fileID: 8300000, guid: e58a10c251ee0984589a2e5e283e4806, type: 3}

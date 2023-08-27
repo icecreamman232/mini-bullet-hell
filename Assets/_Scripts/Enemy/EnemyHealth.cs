@@ -1,6 +1,5 @@
 using System.Collections;
 using JustGame.Scripts.Common;
-using JustGame.Scripts.Data;
 using JustGame.Scripts.Enemy;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.ScriptableEvent;
@@ -12,6 +11,7 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private AnimationParameter m_explodeAnim;
+        [SerializeField] private PlaySoundFX m_hitSFX;
         [SerializeField] private bool m_immuneDamage;
         private Loot m_loot;
 
@@ -19,6 +19,10 @@ namespace JustGame.Scripts.Weapons
         {
             base.Initialize();
             m_loot = GetComponent<Loot>();
+            if (m_hitSFX != null)
+            {
+                OnHit += m_hitSFX.PlaySFX;
+            }
         }
 
         private void OnEnable()

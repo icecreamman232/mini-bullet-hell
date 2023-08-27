@@ -11,6 +11,7 @@ namespace JustGame.Scripts.RuntimeSet
         
         //======ENEMY BEGIN WITH 100===//
         ENEMY_EXPLOSION = 100,
+        ENEMY_GET_HIT = 101,
     }
     
     [Serializable]
