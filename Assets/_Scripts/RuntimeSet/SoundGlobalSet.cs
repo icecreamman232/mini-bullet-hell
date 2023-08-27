@@ -7,11 +7,12 @@ namespace JustGame.Scripts.RuntimeSet
     public enum SoundEffectType
     {
         PLAYER_GUN = 0,
-        
+        PLAY_GET_HIT,
         
         //======ENEMY BEGIN WITH 100===//
         ENEMY_EXPLOSION = 100,
-        ENEMY_GET_HIT = 101,
+        ENEMY_GET_HIT,
+        OCTOPUS_GUN_SHOOT,
     }
     
     [Serializable]

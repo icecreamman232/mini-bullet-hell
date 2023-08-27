@@ -20,6 +20,8 @@ namespace JustGame.Scripts.Weapons
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
+        [Header("SFX")] 
+        [SerializeField] private PlaySoundFX m_hitSFX;
         private void Awake()
         {
             m_componentSet.SetHealth(this);
@@ -59,6 +61,11 @@ namespace JustGame.Scripts.Weapons
             if (!AuthorizeTakingDamage()) return;
 
             m_curHealth -= damage;
+            
+            if (m_hitSFX != null)
+            {
+                m_hitSFX.PlaySFX();
+            }
             
             OnHit?.Invoke();
             

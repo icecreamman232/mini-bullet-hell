@@ -15,7 +15,11 @@ MonoBehaviour:
   m_soundFxList:
   - Type: 0
     Audio: {fileID: 8300000, guid: 2a1595026baff8b4a8ba4cad4f4d275a, type: 3}
+  - Type: 1
+    Audio: {fileID: 8300000, guid: 4d54ca330efc09a42a0d8a7a237cc375, type: 3}
   - Type: 100
     Audio: {fileID: 8300000, guid: 349f118159ef8794cb3b9356296c39cc, type: 3}
   - Type: 101
     Audio: {fileID: 8300000, guid: e58a10c251ee0984589a2e5e283e4806, type: 3}
+  - Type: 102
+    Audio: {fileID: 8300000, guid: 52d07e90a35e0b241822c394bf6457bb, type: 3}

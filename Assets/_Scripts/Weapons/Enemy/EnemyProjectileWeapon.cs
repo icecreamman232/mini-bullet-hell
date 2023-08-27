@@ -1,3 +1,4 @@
+using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] protected ObjectPooler m_objectPooler;
         [SerializeField] protected float m_delayBetweenTwoShot;
+        [SerializeField] protected PlaySoundFX m_shootSFX;
         
         protected Vector2 m_shootingDirection;
         protected EnemyHealth m_health;
@@ -40,6 +42,11 @@ namespace JustGame.Scripts.Weapons
             projectile.SpawnProjectile(transform.position,m_shootingDirection);
             m_isCoolDown = true;
             m_delayBetweenTwoShotTimer = m_delayBetweenTwoShot;
+
+            if (m_shootSFX != null)
+            {
+                m_shootSFX.PlaySFX();
+            }
         }
 
         protected override void Update()
