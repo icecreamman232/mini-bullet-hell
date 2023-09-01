@@ -15,7 +15,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected Transform m_bulletBody;
         [SerializeField] protected DamageHandler m_damageHandler;
         [SerializeField] protected AnimationParameter m_destroyAnim;
-
+        [SerializeField] protected SpriteRenderer m_spriteRenderer;
         protected float m_initialSpeed;
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;

@@ -10,10 +10,11 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] protected float m_knockBackForce;
         [SerializeField] protected float m_knockBackDuration;
+        [SerializeField] protected float m_damageMultiplier;
         [SerializeField] protected int m_minDamageCause;
         [SerializeField] protected int m_maxDamageCause;
         [SerializeField] protected LayerMask m_targetMask;
-
+        
         public Action OnHit;
         
         protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -23,9 +24,14 @@ namespace JustGame.Scripts.Weapons
             CauseDamage(other);
         }
 
-        protected virtual int GetDamage()
+        protected virtual float GetDamage()
         {
-            return Random.Range(m_minDamageCause, m_maxDamageCause + 1);
+            return Random.Range(m_minDamageCause, m_maxDamageCause + 1) * m_damageMultiplier;
+        }
+
+        public virtual void SetDamageMultiplier(float newValue)
+        {
+            m_damageMultiplier = newValue;
         }
         
         protected virtual void CauseDamage(Collider2D target)

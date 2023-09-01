@@ -56,7 +56,7 @@ namespace JustGame.Scripts.Weapons
         
         #endif
         
-        public override void TakeDamage(int damage, GameObject instigator)
+        public override void TakeDamage(float damage, GameObject instigator)
         {
             if (!AuthorizeTakingDamage()) return;
 

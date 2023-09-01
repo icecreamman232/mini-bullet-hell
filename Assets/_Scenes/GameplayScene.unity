@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf99028c08d90294c9fd308459e4c4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_endless: 1
+  m_endless: 0
   m_waveEvent: {fileID: 11400000, guid: 2de0fff9a737bba488eaede4dde02d95, type: 2}
   m_waveCountEvent: {fileID: 11400000, guid: c816fb68cc5cfc7438878d7088dffa86, type: 2}
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_spawnProfile: {fileID: 11400000, guid: 28e69a9b81708ff4dba1580b067aee37, type: 2}
   m_canSpawn: 0
-  m_noEnemy: 1
+  m_noEnemy: 0
 --- !u!4 &1986079078
 Transform:
   m_ObjectHideFlags: 0

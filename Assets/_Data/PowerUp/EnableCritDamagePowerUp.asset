@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b13c8900d6dd264c84bdecee7dbfa33, type: 3}
+  m_Name: EnableCritDamagePowerUp
+  m_EditorClassIdentifier: 
+  Name: Critical Damage
+  Description: 
+  Icon: {fileID: 0}
+  IsActive: 0
+  m_averageCritMultiplier: 1.5
+  m_greatCritMultiplier: 3
+  m_critChance: 30
+  m_greatCritChance: 10
+  m_averageColor: {r: 1, g: 0.7402892, b: 0, a: 1}
+  m_greatColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
