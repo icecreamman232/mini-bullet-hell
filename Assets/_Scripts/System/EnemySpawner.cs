@@ -12,6 +12,7 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField] private SpawnProfile m_spawnProfile;
         [SerializeField] private bool m_canSpawn;
+        [SerializeField] private bool m_noEnemy;
         private float m_timer;
         
 
@@ -22,6 +23,10 @@ namespace JustGame.Scripts.Enemy
         
         private void Update()
         {
+            if (m_noEnemy)
+            {
+                return;
+            }
             if (!m_canSpawn) return;
             m_timer += Time.deltaTime;
             if (m_timer > m_spawnProfile.DelayTimeBetweenTwoSpawn)

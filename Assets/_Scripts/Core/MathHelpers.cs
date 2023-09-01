@@ -48,10 +48,13 @@ namespace JustGame.Scripts.Managers
         /// Rotation => Quaternion Identity <br/>
         /// </summary>
         /// <param name="tf"></param>
-        public static void Reset(this Transform tf)
+        public static void Reset(this Transform tf, bool ignoreScale = false)
         {
             tf.position = Vector3.zero;
-            tf.localScale = Vector3.one;
+            if (!ignoreScale)
+            {
+                tf.localScale = Vector3.one;
+            }
             tf.rotation = Quaternion.identity;
         }
 

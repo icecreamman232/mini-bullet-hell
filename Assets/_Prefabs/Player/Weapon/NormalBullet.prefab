@@ -269,3 +269,4 @@ MonoBehaviour:
   m_destroyAnim: {fileID: 4398213999460654538}
   m_piercingShotPowerUp: {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}
   m_increaseRangePowerUp: {fileID: 11400000, guid: 40f85dda8c197e846a29ffbba4158015, type: 2}
+  m_increaseBulletSizePowerUp: {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}

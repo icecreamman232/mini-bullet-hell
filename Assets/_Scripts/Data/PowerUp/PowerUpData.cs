@@ -13,7 +13,7 @@ namespace JustGame.Scripts.Data
         public bool IsActive;
         public Action OnApplyPowerUp;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             IsActive = false;
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JustGame.Scripts.Data;
 using UnityEngine;
@@ -9,9 +10,20 @@ namespace JustGame.Scripts.Weapons
         [Header("PowerUp")]
         [SerializeField] private PiercingShotPowerUp m_piercingShotPowerUp;
         [SerializeField] private IncreaseRangePowerUp m_increaseRangePowerUp;
-        
+        [SerializeField] private IncreaseBulletSizePowerUp m_increaseBulletSizePowerUp;
+
         private int m_piercingNumber;
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            if (m_increaseBulletSizePowerUp.IsActive)
+            {
+                transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
+                m_moveSpeed -= m_increaseBulletSizePowerUp.TotalSpeedReduce;
+            }
+        }
+
         protected override void Start()
         {
             base.Start();
@@ -19,6 +31,12 @@ namespace JustGame.Scripts.Weapons
             m_increaseRangePowerUp.OnApplyPowerUp += TriggerIncreaseRangePowerUp;
         }
 
+        public override void SpawnProjectile(Vector2 position, Vector2 direction)
+        {
+            transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
+            m_moveSpeed = m_initialSpeed - m_increaseBulletSizePowerUp.TotalSpeedReduce;
+            base.SpawnProjectile(position, direction);
+        }
 
         private void TriggerIncreaseRangePowerUp()
         {

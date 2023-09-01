@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
@@ -15,11 +16,18 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected DamageHandler m_damageHandler;
         [SerializeField] protected AnimationParameter m_destroyAnim;
 
+        protected float m_initialSpeed;
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
         protected Vector2 m_originalPos;
         protected bool m_isDestroying;
-        
+
+
+        protected virtual void Awake()
+        {
+            m_initialSpeed = m_moveSpeed;
+        }
+
         protected virtual void Start()
         {
             m_damageHandler.OnHit += DestroyBullet;
@@ -85,7 +93,7 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void OnDestroy()
         {
-            transform.Reset();
+            transform.Reset(ignoreScale:true);
             this.gameObject.SetActive(false);
         }
     }

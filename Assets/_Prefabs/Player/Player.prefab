@@ -555,6 +555,7 @@ MonoBehaviour:
   m_thirdWeapon: {fileID: 7288709741485605833}
   m_doubleShotPowerUp: {fileID: 11400000, guid: de131638d189dde489d54b529fb1e6b4, type: 2}
   m_tripleShotPowerUp: {fileID: 11400000, guid: f97e8ff262678b343bc43ae0ca85df6a, type: 2}
+  m_increaseBulletSizePowerUp: {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}
 --- !u!114 &649892123954887307
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef1e290bc157df46a36fb9dfa5aede3, type: 3}
-  m_Name: DoubleShotPowerUp
+  m_Script: {fileID: 11500000, guid: 70c9fa1e4dc0a7e4daa4be9ff7ada4cb, type: 3}
+  m_Name: IncreaseBulletSizePowerUp
   m_EditorClassIdentifier: 
-  Name: Double Shot
-  Description: Double current weapon
-  Icon: {fileID: 21300000, guid: d5c28a333ee8f2741a7f4e9c2e6476ca, type: 3}
+  Name: Increase Bullet Size
+  Description: Make bullet bigger
+  Icon: {fileID: 0}
   IsActive: 0
+  m_sizeIncreasePerTime: 0.2
+  m_speedReducePerTime: 20
+  m_maxSize: 2
+  m_curScale: 1
+  totalSpeedReduce: 0

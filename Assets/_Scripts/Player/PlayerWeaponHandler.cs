@@ -12,6 +12,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] protected Weapon m_thirdWeapon;
         [SerializeField] private DoubleShotPowerUp m_doubleShotPowerUp;
         [SerializeField] private TripleShotPowerUp m_tripleShotPowerUp;
+        [SerializeField] private IncreaseBulletSizePowerUp m_increaseBulletSizePowerUp;
         
         public override void Initialize()
         {
@@ -21,6 +22,7 @@ namespace JustGame.Scripts.Player
 
             m_doubleShotPowerUp.OnApplyPowerUp += TriggerDoubleShotPowerUp;
             m_tripleShotPowerUp.OnApplyPowerUp += TriggerTripleShotPowerUp;
+            m_increaseBulletSizePowerUp.OnApplyPowerUp += TriggerIncreaseBulletSizePowerUp;
         }
         
         protected override void HandleInput()
@@ -28,7 +30,7 @@ namespace JustGame.Scripts.Player
             if (InputManager.Instance.GetLeftClickDown())
             {
                 m_curWeapon.WeaponStart();
-                if (m_doubleShotPowerUp.IsActive)
+                if (m_doubleShotPowerUp.IsActive && !m_tripleShotPowerUp.IsActive)
                 {
                     m_secondWeapon.WeaponStart();
                     return;
@@ -38,7 +40,6 @@ namespace JustGame.Scripts.Player
                 {
                     m_secondWeapon.WeaponStart();
                     m_thirdWeapon.WeaponStart();
-                    return;
                 }
             }
 
@@ -54,7 +55,6 @@ namespace JustGame.Scripts.Player
                 {
                     m_secondWeapon.WeaponStop();
                     m_thirdWeapon.WeaponStop();
-                    return;
                 }
             }
             base.HandleInput();
@@ -65,12 +65,35 @@ namespace JustGame.Scripts.Player
             m_curWeapon.ActivateWeapon(value);
         }
 
+        private void TriggerIncreaseBulletSizePowerUp()
+        {
+            var offsetPos = (m_increaseBulletSizePowerUp.CurrentScale - 1) * 0.5f;
+            if (m_doubleShotPowerUp.IsActive && !m_tripleShotPowerUp.IsActive)
+            {
+                m_curWeapon.transform.localPosition = new Vector3(-0.3f - offsetPos, 0.3f, 0);
+                m_secondWeapon.transform.localPosition = new Vector3(0.3f + offsetPos, 0.3f, 0);
+                return;
+            }
+
+            if (m_tripleShotPowerUp.IsActive)
+            {
+                m_curWeapon.transform.localPosition = new Vector3(0, 0.6f ,0);
+                m_secondWeapon.transform.localPosition = new Vector3(0.3f + offsetPos, 0.3f, 0);
+                m_thirdWeapon.transform.localPosition = new Vector3(-0.3f - offsetPos, 0.3f, 0);
+            }
+        }
+        
         private void TriggerDoubleShotPowerUp()
         {
-            m_curWeapon.transform.localPosition = new Vector3(-0.3f, 0.3f, 0);
+            float offsetPos = 0;
+            if (m_increaseBulletSizePowerUp.IsActive)
+            {
+                offsetPos = (m_increaseBulletSizePowerUp.CurrentScale - 1) * 0.5f;
+            }
+            m_curWeapon.transform.localPosition = new Vector3(-0.3f - offsetPos, 0.3f, 0);
 
             m_secondWeapon.gameObject.SetActive(true);
-            m_secondWeapon.transform.localPosition = new Vector3(0.3f, 0.3f, 0);
+            m_secondWeapon.transform.localPosition = new Vector3(0.3f + offsetPos, 0.3f, 0);
 
             m_curWeapon.ResetWeapon();
             m_secondWeapon.ResetWeapon();
@@ -79,13 +102,19 @@ namespace JustGame.Scripts.Player
 
         private void TriggerTripleShotPowerUp()
         {
+            float offsetPos = 0;
+            if (m_increaseBulletSizePowerUp.IsActive)
+            {
+                offsetPos = (m_increaseBulletSizePowerUp.CurrentScale - 1) * 0.5f;
+            }
+            
             m_curWeapon.transform.localPosition = new Vector3(0, 0.6f ,0);
             
             m_secondWeapon.gameObject.SetActive(true);
-            m_secondWeapon.transform.localPosition = new Vector3(0.3f, 0.3f, 0);
+            m_secondWeapon.transform.localPosition = new Vector3(0.3f + offsetPos, 0.3f, 0);
             
             m_thirdWeapon.gameObject.SetActive(true);
-            m_thirdWeapon.transform.localPosition = new Vector3(-0.3f, 0.3f, 0);
+            m_thirdWeapon.transform.localPosition = new Vector3(-0.3f - offsetPos, 0.3f, 0);
             
             
             m_curWeapon.ResetWeapon();
