@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using JustGame.Scripts.Data;
 using UnityEngine;
@@ -8,11 +7,13 @@ namespace JustGame.Scripts.Weapons
 {
     public class PlayerProjectile : Projectile
     {
+        [SerializeField] private ParalyzeCoating m_paralyzeCoating;
         [Header("PowerUp")]
         [SerializeField] private PiercingShotPowerUp m_piercingShotPowerUp;
         [SerializeField] private IncreaseRangePowerUp m_increaseRangePowerUp;
         [SerializeField] private IncreaseBulletSizePowerUp m_increaseBulletSizePowerUp;
         [SerializeField] private EnableCriticalDamagePowerUp m_criticalDamagePowerUp;
+        [SerializeField] private ParalyzeCoatingPowerUp m_paralyzeCoatingPowerUp;
         
         private int m_piercingNumber;
 
@@ -38,6 +39,11 @@ namespace JustGame.Scripts.Weapons
             if (m_criticalDamagePowerUp.IsActive)
             {
                 CheckCriticalDamage();
+            }
+
+            if (m_paralyzeCoatingPowerUp.CanParalyze() && m_paralyzeCoatingPowerUp.IsActive)
+            {
+                m_paralyzeCoating.IsActive = true;
             }
             
             transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
@@ -102,7 +108,7 @@ namespace JustGame.Scripts.Weapons
 
         protected override void OnDestroy()
         {
-            
+            m_paralyzeCoating.IsActive = false;
             m_damageHandler.SetDamageMultiplier(1);
             m_piercingNumber = 0;
             base.OnDestroy();

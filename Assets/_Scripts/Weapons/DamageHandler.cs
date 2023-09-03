@@ -15,7 +15,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected int m_maxDamageCause;
         [SerializeField] protected LayerMask m_targetMask;
         
-        public Action OnHit;
+        public Action<GameObject> OnHit;
         
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
@@ -39,7 +39,7 @@ namespace JustGame.Scripts.Weapons
             var targetHealth = target.GetComponent<Health>();
             if (targetHealth != null)
             {
-                OnHit?.Invoke();
+                OnHit?.Invoke(target.gameObject);
                 targetHealth.TakeDamage(GetDamage(), this.gameObject);
 
                 if (target.gameObject.layer == LayerManager.EnemyLayer)
@@ -55,7 +55,7 @@ namespace JustGame.Scripts.Weapons
                 && this.gameObject.layer == LayerManager.EnemyProjectileLayer)
             {
                 var projectile = target.gameObject.GetComponentInParent<Projectile>();
-                projectile.DestroyBullet();
+                projectile.DestroyBullet(null);
             }
         }
     } 

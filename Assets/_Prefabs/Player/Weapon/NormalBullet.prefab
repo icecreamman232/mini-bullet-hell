@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8106000571504492118}
   - component: {fileID: 526645709226466211}
+  - component: {fileID: 8521125407515485922}
   - component: {fileID: 607607816061499673}
   - component: {fileID: 3163968678540281205}
   - component: {fileID: 6115035109323062156}
-  - component: {fileID: 8521125407515485922}
+  - component: {fileID: 7979093084698026265}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -88,6 +89,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8521125407515485922
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811207242495551227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 245ed4dd22e6c9d4cab88479862e208a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &607607816061499673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,27 +202,21 @@ MonoBehaviour:
   m_targetMask:
     serializedVersion: 2
     m_Bits: 384
---- !u!95 &8521125407515485922
-Animator:
-  serializedVersion: 5
+--- !u!114 &7979093084698026265
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811207242495551227}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 245ed4dd22e6c9d4cab88479862e208a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2c962901b170f42b45bc32d6dcb9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_paralyzeCoatingPowerUp: {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}
+  m_damageHandler: {fileID: 6115035109323062156}
+  IsActive: 0
 --- !u!1 &826045983694793967
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +285,9 @@ MonoBehaviour:
   m_damageHandler: {fileID: 6115035109323062156}
   m_destroyAnim: {fileID: 4398213999460654538}
   m_spriteRenderer: {fileID: 526645709226466211}
+  m_paralyzeCoating: {fileID: 7979093084698026265}
   m_piercingShotPowerUp: {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}
   m_increaseRangePowerUp: {fileID: 11400000, guid: 40f85dda8c197e846a29ffbba4158015, type: 2}
   m_increaseBulletSizePowerUp: {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}
   m_criticalDamagePowerUp: {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
+  m_paralyzeCoatingPowerUp: {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}

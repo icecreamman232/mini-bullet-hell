@@ -1402,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188775962517278194, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_immuneDamage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8551608225418914206, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
       propertyPath: m_Name

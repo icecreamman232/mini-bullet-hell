@@ -63,11 +63,11 @@ namespace JustGame.Scripts.Weapons
             m_distanceTraveled = Vector2.Distance(m_originalPos, transform.position);
             if (m_distanceTraveled >= m_maxDistanceTravel)
             {
-                DestroyBullet();
+                DestroyBullet(null);
             }
         }
         
-        public void DestroyBullet()
+        public void DestroyBullet(GameObject instigator)
         {
             StartCoroutine(DestroyRoutine());
         }

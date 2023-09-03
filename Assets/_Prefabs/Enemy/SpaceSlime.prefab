@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 111512908221176413}
   - component: {fileID: 5438746209621703687}
   - component: {fileID: 1654894790314676555}
+  - component: {fileID: 2401293940490292133}
   m_Layer: 8
   m_Name: SpaceSlime
   m_TagString: Untagged
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_knockBackForce: 20
   m_knockBackDuration: 0.3
+  m_damageMultiplier: 0
   m_minDamageCause: 10
   m_maxDamageCause: 20
   m_targetMask:
@@ -283,6 +285,19 @@ MonoBehaviour:
   m_lootObject: {fileID: 4716966027115406022, guid: c6271e9c08f90274ea633316c5294e63, type: 3}
   m_minAmount: 1
   m_maxAmount: 3
+--- !u!114 &2401293940490292133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251019927706066467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6391b009533d6d34592574c5eb52d20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spriteRenderer: {fileID: 7863780843823677915}
 --- !u!1 &3150499309721954730
 GameObject:
   m_ObjectHideFlags: 0

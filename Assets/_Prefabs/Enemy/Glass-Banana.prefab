@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3803444789804986994}
   - component: {fileID: 816061487111521685}
   - component: {fileID: 1685128427141467354}
+  - component: {fileID: -2820928893520391100}
   m_Layer: 8
   m_Name: Glass-Banana
   m_TagString: Untagged
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_knockBackForce: 20
   m_knockBackDuration: 0.3
+  m_damageMultiplier: 0
   m_minDamageCause: 20
   m_maxDamageCause: 20
   m_targetMask:
@@ -223,6 +225,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_flashDuration: 0.3
   m_flashScreenEvent: {fileID: 11400000, guid: addf3bcbb2c98cd459d0dd665e882bcb, type: 2}
+--- !u!114 &-2820928893520391100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128153707947029248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6391b009533d6d34592574c5eb52d20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spriteRenderer: {fileID: 3903091948558049980}
 --- !u!1 &1915569596928715565
 GameObject:
   m_ObjectHideFlags: 0

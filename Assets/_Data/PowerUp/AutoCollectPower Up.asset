@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Auto Collect
   Description: Auto collect all resources
-  Icon: {fileID: 0}
-  IsActive: 1
+  Icon: {fileID: 21300000, guid: 3764ea03de9199f45bc76c81117dbc13, type: 3}
+  IsActive: 0
   m_delayBeforeAutoCollect: 0.3

@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 8469077174605555998}
   - component: {fileID: 8133414855859466092}
   - component: {fileID: 754738159531716716}
+  - component: {fileID: -2179409161298676105}
   m_Layer: 8
   m_Name: Angry-ox
   m_TagString: Untagged
@@ -760,6 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_knockBackForce: 20
   m_knockBackDuration: 0.3
+  m_damageMultiplier: 0
   m_minDamageCause: 20
   m_maxDamageCause: 30
   m_targetMask:
@@ -818,6 +820,19 @@ MonoBehaviour:
   m_lootObject: {fileID: 4716966027115406022, guid: c6271e9c08f90274ea633316c5294e63, type: 3}
   m_minAmount: 3
   m_maxAmount: 5
+--- !u!114 &-2179409161298676105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563486028371585677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6391b009533d6d34592574c5eb52d20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spriteRenderer: {fileID: 8705700198726757238}
 --- !u!1001 &1024966122324405434
 PrefabInstance:
   m_ObjectHideFlags: 0

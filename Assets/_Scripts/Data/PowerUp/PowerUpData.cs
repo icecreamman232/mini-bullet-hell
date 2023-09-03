@@ -20,6 +20,7 @@ namespace JustGame.Scripts.Data
 
         public virtual void ApplyPowerUp()
         {
+            Debug.Log($"Applied power up {Name}");
             OnApplyPowerUp?.Invoke();
         }
     }
