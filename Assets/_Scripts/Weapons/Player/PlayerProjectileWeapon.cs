@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
@@ -285,6 +286,11 @@ namespace JustGame.Scripts.Weapons
         private void OnApplyIncreaseAtkSpeedPowerUp()
         {
             DelayBetweenTwoShot -= m_increaseAttackSpeedPowerUp.AtkSpeedIncreasePerTime;
+        }
+
+        private void OnDestroy()
+        {
+            m_increaseAttackSpeedPowerUp.OnApplyPowerUp -= OnApplyIncreaseAtkSpeedPowerUp;
         }
     }
 }

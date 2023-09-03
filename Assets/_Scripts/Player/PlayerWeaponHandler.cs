@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.Weapons;
@@ -122,6 +123,13 @@ namespace JustGame.Scripts.Player
             m_thirdWeapon.ResetWeapon();
             
             m_tripleShotPowerUp.IsActive = true;
+        }
+
+        private void OnDestroy()
+        {
+            m_doubleShotPowerUp.OnApplyPowerUp -= TriggerDoubleShotPowerUp;
+            m_tripleShotPowerUp.OnApplyPowerUp -= TriggerTripleShotPowerUp;
+            m_increaseBulletSizePowerUp.OnApplyPowerUp -= TriggerIncreaseBulletSizePowerUp;
         }
     }
 }

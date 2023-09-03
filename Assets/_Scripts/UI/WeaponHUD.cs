@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.ScriptableEvent;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,11 @@ namespace JustGame.Scripts.UI
         private void UpdateMagazineHUD(int amount)
         {
             m_magazineSizeTxt.text = $"x {amount.ToString()}";
+        }
+
+        private void OnDestroy()
+        {
+            m_magazineSizeEvent.RemoveListener(UpdateMagazineHUD);
         }
     } 
 }

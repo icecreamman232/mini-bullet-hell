@@ -1,3 +1,4 @@
+using JustGame.Scripts.Common;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,10 +8,9 @@ namespace JustGame.Scripts.UI
 {
     public class RetryButton : Selectable
     {
-        [SerializeField] private GameCoreEvent m_gameCoreEvent;
         public override void OnPointerUp(PointerEventData eventData)
         {
-            m_gameCoreEvent.SetGameState(GameState.INTRO);
+            SceneLoader.Instance.LoadToScene("GameplayScene","MenuScene");
             base.OnPointerUp(eventData);
         }
     }

@@ -41,6 +41,11 @@ namespace JustGame.Scripts.UI
             m_canvasGroup.blocksRaycasts = false;
             m_canvasGroup.alpha = 0;
         }
+
+        private void OnDestroy()
+        {
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+        }
     }
 }
 

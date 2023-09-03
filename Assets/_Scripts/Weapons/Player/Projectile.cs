@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
@@ -88,10 +89,11 @@ namespace JustGame.Scripts.Weapons
                 m_destroyAnim.SetTrigger();
                 yield return new WaitForSeconds(m_destroyAnim.Duration);
             }
-            OnDestroy();
+
+            OnDisable();
         }
 
-        protected virtual void OnDestroy()
+        protected virtual void OnDisable()
         {
             transform.Reset(ignoreScale:true);
             this.gameObject.SetActive(false);

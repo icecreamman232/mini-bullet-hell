@@ -63,6 +63,11 @@ namespace JustGame.Scripts.Player
 
             return null;
         }
+
+        private void OnDestroy()
+        {
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+        }
     }
 }
 

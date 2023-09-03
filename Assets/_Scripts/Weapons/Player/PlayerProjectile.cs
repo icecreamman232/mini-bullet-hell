@@ -103,20 +103,16 @@ namespace JustGame.Scripts.Weapons
                 m_destroyAnim.SetTrigger();
                 yield return new WaitForSeconds(m_destroyAnim.Duration);
             }
-            OnDestroy();
+            OnDisable();
         }
-
-        protected override void OnDestroy()
+        
+        protected override void OnDisable()
         {
             m_paralyzeCoating.IsActive = false;
             m_damageHandler.SetDamageMultiplier(1);
             m_piercingNumber = 0;
-            base.OnDestroy();
-        }
-
-        private void OnDisable()
-        {
             m_spriteRenderer.color = Color.white;
+            base.OnDisable();
         }
     }
 }

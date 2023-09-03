@@ -41,6 +41,11 @@ namespace JustGame.Scripts.Common
             pos.z = -10;
             m_runtimeWorldSet.MainCamera.transform.position = pos;
         }
+
+        private void OnDestroy()
+        {
+            m_shakeEvent.RemoveListener(DoShake);
+        }
     }
 }
 

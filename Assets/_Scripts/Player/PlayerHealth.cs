@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
@@ -138,6 +139,12 @@ namespace JustGame.Scripts.Weapons
             yield return new WaitForSeconds(m_delayBeforeDeath);
             gameObject.SetActive(false);
             m_gameCoreEvent.SetGameState(GameState.GAME_OVER);
+        }
+
+        private void OnDestroy()
+        {
+            m_resourceEvent.OnCollectDerbis -= HealingUpByRecycleJunk;
+            m_healingPowerUp.OnApplyPowerUp -= HealingUp;
         }
     } 
 }

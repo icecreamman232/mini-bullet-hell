@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
@@ -33,6 +34,11 @@ namespace JustGame.Scripts.Player
             
             m_playerComponentSet.Movement.SetSpeed(movementSpeed);
             m_playerComponentSet.Health.SetMaxHealth(health);
+        }
+
+        private void OnDestroy()
+        {
+            m_gameCoreEvent.OnChangeStateCallback -= OnGameStateChange;
         }
     }
 }

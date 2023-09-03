@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
@@ -92,6 +93,11 @@ namespace JustGame.Scripts.UI
             m_selectedPowerUp.ApplyPowerUp();
             Hide();
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
+        }
+
+        private void OnDestroy()
+        {
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }
 }

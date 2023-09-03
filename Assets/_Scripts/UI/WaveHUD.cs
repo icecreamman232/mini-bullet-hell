@@ -32,6 +32,12 @@ namespace JustGame.Scripts.UI
             m_seconds = (int)(time % 60);
             m_waveTimeTxt.text = $"{m_minute:D2}:{m_seconds:D2}";
         }
+
+        private void OnDestroy()
+        {
+            m_waveTimeEvent.RemoveListener(UpdateTime);
+            m_waveCountEvent.RemoveListener(UpdateWaveTxt);
+        }
     }
 }
 

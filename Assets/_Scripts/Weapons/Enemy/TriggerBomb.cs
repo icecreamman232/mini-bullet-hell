@@ -61,7 +61,7 @@ namespace  JustGame.Scripts.Weapons
             m_explodeAnim.SetTrigger();
             
             yield return new WaitForSeconds(m_explodeAnim.Duration);
-            OnDestroy();
+            OnDisable();
             m_isExploding = false;
 
         }

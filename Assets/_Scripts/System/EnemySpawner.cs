@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
@@ -49,6 +50,11 @@ namespace JustGame.Scripts.Enemy
                     m_canSpawn = false;
                     break;
             }
+        }
+
+        private void OnDestroy()
+        {
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }
 }

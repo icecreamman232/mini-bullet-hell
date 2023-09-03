@@ -109,6 +109,12 @@ namespace JustGame.Scripts.UI
             m_card2.SetUpgrade(m_profiles[1]);
             m_card3.SetUpgrade(m_profiles[2]);
         }
+
+        private void OnDestroy()
+        {
+            m_selectCardEvent.RemoveListener(ChangeCard);
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+        }
     }
 }
 

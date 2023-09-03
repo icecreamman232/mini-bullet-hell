@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
@@ -26,24 +27,18 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private IntEvent m_waveCountEvent;
         
         private InputManager m_inputManager;
-        private bool m_initDone;
         public bool IsPaused => m_isPaused;
         
         private IEnumerator Start()
         {
-            if (m_initDone)
-            {
-                yield break;
-            }
-            
+
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
-            
             m_clock.OnEndClock += OnFinishWaveTime;
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
             yield return new WaitUntil(() => !SceneLoader.Instance.IsProcessing);
             m_gameCoreEvent.SetGameState(GameState.INTRO);
-            m_initDone = true;
+
         }
 
         private void OnChangeGameState(GameState prevState, GameState newState)
@@ -72,6 +67,7 @@ namespace JustGame.Scripts.Managers
         #region Game State
         private void CaseIntro()
         {
+            Debug.Break();
             Instantiate(m_playerPrefab, m_spawnPoint.position, Quaternion.identity);
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }
@@ -122,6 +118,12 @@ namespace JustGame.Scripts.Managers
                 m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
             }
             m_levelData.LevelUp();
+        }
+
+        private void OnDestroy()
+        {
+            m_clock.OnEndClock -= OnFinishWaveTime;
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }
 }

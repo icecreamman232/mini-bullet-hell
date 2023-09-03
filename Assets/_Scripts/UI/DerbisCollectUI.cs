@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using JustGame.Scripts.ScriptableEvent;
 using TMPro;
@@ -47,6 +48,12 @@ namespace JustGame.Scripts.UI
         private void UpdateAmount(int amount)
         {
             m_collectAmount.text = amount.ToString();
+        }
+
+        private void OnDestroy()
+        {
+            m_resourceEvent.OnChangeDerbisAmount -= UpdateAmount;
+            m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }
 }
