@@ -16,7 +16,9 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
+        [SerializeField] protected ResourceEvent m_resourceEvent;
         [SerializeField] protected HealingPowerUp m_healingPowerUp;
+        [SerializeField] protected RecycleJunkPowerUp m_recycleJunkPowerUp;
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
@@ -30,6 +32,7 @@ namespace JustGame.Scripts.Weapons
         protected override void Start()
         {
             base.Start();
+            m_resourceEvent.OnCollectDerbis += HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp += HealingUp;
         }
 
@@ -41,6 +44,21 @@ namespace JustGame.Scripts.Weapons
         private void HealingUp()
         {
             m_curHealth += MathHelpers.Percent(m_maxHealth, m_healingPowerUp.HealingUpPercent);
+            if (m_healthEvent != null)
+            {
+                m_healthEvent.Raise(m_curHealth/m_maxHealth);
+            }
+        }
+
+        private void HealingUpByRecycleJunk(int debrisAmount)
+        {
+            if (!m_recycleJunkPowerUp.IsActive) return;
+            if (m_curHealth >= m_maxHealth) return;
+            
+            float healingAmount = m_recycleJunkPowerUp.GetHealthValue(debrisAmount); 
+            Debug.Log($"Heal amount {healingAmount}");
+            m_curHealth += healingAmount;
+            m_curHealth = Mathf.Clamp(m_curHealth, 0f, m_maxHealth);
             if (m_healthEvent != null)
             {
                 m_healthEvent.Raise(m_curHealth/m_maxHealth);

@@ -16,7 +16,12 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected LayerMask m_targetMask;
         
         public Action<GameObject> OnHit;
-        
+
+        private void Start()
+        {
+            SetDamageMultiplier(1);
+        }
+
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (!LayerManager.IsInLayerMask(other.gameObject.layer, m_targetMask)) return;

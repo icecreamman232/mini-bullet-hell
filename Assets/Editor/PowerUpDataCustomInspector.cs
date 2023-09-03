@@ -92,5 +92,11 @@ namespace JustGame.Scripts.EditorExtension
     {
         
     }
+    
+    [CustomEditor(typeof(RecycleJunkPowerUp))]
+    public class RecycleJunkInspector : PowerUpDataCustomInspector
+    {
+        
+    }
 }
 

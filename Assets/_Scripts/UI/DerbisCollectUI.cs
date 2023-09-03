@@ -11,6 +11,7 @@ namespace JustGame.Scripts.UI
 
         private void Start()
         {
+            m_collectAmount.text = "0";
             m_resourceEvent.OnChangeDerbisAmount += UpdateAmount;
         }
 

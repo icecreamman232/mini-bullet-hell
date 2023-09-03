@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5ef0b895abb15468168aaab644ad31, type: 3}
+  m_Name: RecycleJunkPowerUp
+  m_EditorClassIdentifier: 
+  Name: Recyle Junk
+  Description: Recyle debris into material to repair ship hull
+  Icon: {fileID: 0}
+  IsActive: 0
+  ConvertRateFromDebrisToHealth: 0.1

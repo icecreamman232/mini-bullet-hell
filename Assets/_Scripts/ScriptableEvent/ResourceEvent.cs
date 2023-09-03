@@ -11,9 +11,17 @@ namespace JustGame.Scripts.ScriptableEvent
 
         public Action<int> OnChangeDerbisAmount;
 
+        public Action<int> OnCollectDerbis;
+
+        private void OnEnable()
+        {
+            m_derbisAmount = 0;
+        }
+
         public void AddDerbis(int value)
         {
             m_derbisAmount += value;
+            OnCollectDerbis?.Invoke(value);
             OnChangeDerbisAmount?.Invoke(m_derbisAmount);
         }
     }
