@@ -15,7 +15,6 @@ namespace JustGame.Scripts.Enemy
 
         public void TriggerParalyze(float duration, Color paralyzeColor)
         {
-            Debug.Log($"<color=yellow>Trigger paralyze</color>");
             StartCoroutine(OnTriggerParalyze(duration, paralyzeColor));
         }
 

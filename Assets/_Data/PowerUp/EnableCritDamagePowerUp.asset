@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnableCritDamagePowerUp
   m_EditorClassIdentifier: 
   Name: Critical Damage
-  Description: 
+  Description: Some bullet will deal more damage
   Icon: {fileID: 21300000, guid: b30c335528cbc5340a779c94b49731fb, type: 3}
   IsActive: 0
   m_averageCritMultiplier: 1.5
