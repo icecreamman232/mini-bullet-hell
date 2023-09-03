@@ -2148,6 +2148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canvasGroup: {fileID: 3273054879249344053}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
+  m_retryButton: {fileID: 6926835262880072339}
 --- !u!1 &8989833426906068934
 GameObject:
   m_ObjectHideFlags: 0

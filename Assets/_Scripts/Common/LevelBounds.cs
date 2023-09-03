@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,12 +7,18 @@ namespace JustGame.Scripts.Common
 {
     public class LevelBounds : MonoBehaviour
     {
+        [SerializeField] private Camera m_camera;
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField] private Vector2 m_topLeft;
         [SerializeField] private Vector2 m_topRight;
         [SerializeField] private Vector2 m_botLeft;
         [SerializeField] private Vector2 m_botRight;
-        
+
+        private void Awake()
+        {
+            m_worldSet.SetCamera(m_camera);
+        }
+
         private void Start()
         {
             m_worldSet.SetLevelBounds(this);

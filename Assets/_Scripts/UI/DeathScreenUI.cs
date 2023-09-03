@@ -9,7 +9,7 @@ namespace JustGame.Scripts.UI
     {
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
-        
+        [SerializeField] private RetryButton m_retryButton;
         private void Start()
         {
             OnHide();
@@ -31,12 +31,14 @@ namespace JustGame.Scripts.UI
         private void OnShow()
         {
             m_canvasGroup.interactable = true;
+            m_canvasGroup.blocksRaycasts = true;
             m_canvasGroup.DOFade(1, 0.3f).SetUpdate(true);
         }
 
         private void OnHide()
         {
             m_canvasGroup.interactable = false;
+            m_canvasGroup.blocksRaycasts = false;
             m_canvasGroup.alpha = 0;
         }
     }

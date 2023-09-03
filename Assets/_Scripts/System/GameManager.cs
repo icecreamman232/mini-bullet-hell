@@ -1,3 +1,4 @@
+using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
@@ -25,17 +26,24 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private IntEvent m_waveCountEvent;
         
         private InputManager m_inputManager;
-
+        private bool m_initDone;
         public bool IsPaused => m_isPaused;
         
-        private void Start()
+        private IEnumerator Start()
         {
+            if (m_initDone)
+            {
+                yield break;
+            }
+            
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
             
             m_clock.OnEndClock += OnFinishWaveTime;
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
+            yield return new WaitUntil(() => !SceneLoader.Instance.IsProcessing);
             m_gameCoreEvent.SetGameState(GameState.INTRO);
+            m_initDone = true;
         }
 
         private void OnChangeGameState(GameState prevState, GameState newState)

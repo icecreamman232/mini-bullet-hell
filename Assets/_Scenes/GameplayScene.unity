@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4984b5b555125f24e82c7baaaf3d29f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_camera: {fileID: 519420031}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_topLeft: {x: -10.5, y: 6}
   m_topRight: {x: 10.5, y: 6}
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff65cf752c874b74e867179dd38ae3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_camera: {fileID: 519420031}
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_shakeEvent: {fileID: 11400000, guid: 2f313db4303590048b04cca66b5bdbc4, type: 2}
 --- !u!1 &613428519
 GameObject:

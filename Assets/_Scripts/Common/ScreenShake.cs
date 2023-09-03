@@ -1,5 +1,6 @@
 using System.Collections;
 using JustGame.Scripts.Data;
+using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,9 +9,8 @@ namespace JustGame.Scripts.Common
 {
     public class ScreenShake : MonoBehaviour
     {
-        [SerializeField] private Camera m_camera;
+        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
-
         private void Start()
         {
             m_shakeEvent.AddListener(DoShake);
@@ -28,7 +28,7 @@ namespace JustGame.Scripts.Common
             {
                 Vector3 randomPos = Random.insideUnitCircle * profile.ShakePower;
                 randomPos.z = -10;
-                m_camera.transform.position = randomPos;
+                m_runtimeWorldSet.MainCamera.transform.position = randomPos;
                 yield return new WaitForSeconds(profile.Frequency);
                 duration -= profile.Frequency;
             }
@@ -39,7 +39,7 @@ namespace JustGame.Scripts.Common
         {
             var pos = Vector3.zero;
             pos.z = -10;
-            m_camera.transform.position = pos;
+            m_runtimeWorldSet.MainCamera.transform.position = pos;
         }
     }
 }

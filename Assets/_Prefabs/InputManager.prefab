@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b679b9520727c7b49aff32d9c21b7762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   buttonsAssigns:
   - keyAction: 0
     keyCode: 97

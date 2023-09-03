@@ -12,6 +12,10 @@ namespace JustGame.Scripts.Enemy
         
         public override void DoAction()
         {
+            if (m_playerComponentSet.Player == null)
+            {
+                return;
+            }
             m_brain.Target = m_playerComponentSet.Player.transform;
         }
     }

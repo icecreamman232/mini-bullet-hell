@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
 
 namespace JustGame.Scripts.Managers
@@ -27,6 +28,7 @@ namespace JustGame.Scripts.Managers
 
     public class InputManager : PersistentSingleton<InputManager>
     {
+        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         public ButtonAssign[] buttonsAssigns;
    
         private Dictionary<BindingAction, ButtonStates> m_buttonDictionary;
@@ -34,9 +36,7 @@ namespace JustGame.Scripts.Managers
         private bool m_isInputActive;
 
         public Action<Vector2> RightClickCallback;
-
-        private Camera m_mainCamera;
-
+        
         public bool IsInputActive
         {
             get
@@ -64,12 +64,7 @@ namespace JustGame.Scripts.Managers
 
             IsInputActive = true;
         }
-
-        private void Start()
-        {
-            m_mainCamera = Camera.main;
-        }
-
+        
         private void Update()
         {
             if (!IsInputActive) return;
@@ -131,7 +126,7 @@ namespace JustGame.Scripts.Managers
 
         public Vector3 GetWorldMousePos()
         {
-            var pos = m_mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var pos = m_runtimeWorldSet.MainCamera.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0;
             return pos;
         }
