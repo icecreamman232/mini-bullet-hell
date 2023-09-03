@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
@@ -55,8 +54,7 @@ namespace JustGame.Scripts.Weapons
             if (!m_recycleJunkPowerUp.IsActive) return;
             if (m_curHealth >= m_maxHealth) return;
             
-            float healingAmount = m_recycleJunkPowerUp.GetHealthValue(debrisAmount); 
-            Debug.Log($"Heal amount {healingAmount}");
+            float healingAmount = m_recycleJunkPowerUp.GetHealthValue(debrisAmount);
             m_curHealth += healingAmount;
             m_curHealth = Mathf.Clamp(m_curHealth, 0f, m_maxHealth);
             if (m_healthEvent != null)
