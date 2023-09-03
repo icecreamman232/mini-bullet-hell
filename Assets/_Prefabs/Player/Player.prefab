@@ -475,6 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e172c89f5ee3e5543a0184d25c1cf98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   FacingDirection: 0
 --- !u!114 &3178101143697677362
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb16bff779044940b5819114e2c1bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPermit: 1
+  IsPermit: 0
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_moveSpeed: 35
@@ -506,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f02951ee86c146b0b73d9069d6385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPermit: 1
+  IsPermit: 0
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_offsetAngle: -90
   m_transformToRotate: {fileID: 5717428420957280846}
@@ -551,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b001f99809d7d4b888b1c676ad6510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPermit: 1
+  IsPermit: 0
   m_curWeapon: {fileID: 6900057290757024028}
   m_secondWeapon: {fileID: 6916636840976528822}
   m_thirdWeapon: {fileID: 7288709741485605833}

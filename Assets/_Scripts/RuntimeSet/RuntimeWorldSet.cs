@@ -1,5 +1,4 @@
 using JustGame.Scripts.Common;
-using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using UnityEngine;
 

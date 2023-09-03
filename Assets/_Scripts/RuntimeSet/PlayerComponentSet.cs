@@ -33,6 +33,14 @@ namespace JustGame.Scripts.RuntimeSet
         {
             m_movement = movement;
         }
+
+        public void Reset()
+        {
+            Destroy(m_playerController.gameObject);
+            m_playerController = null;
+            m_health = null;
+            m_movement = null;
+        }
     }
 }
 

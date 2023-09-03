@@ -9,6 +9,7 @@ namespace JustGame.Scripts.ScriptableEvent
         PICK_SKILL,
         PICK_UPGRADE,
         GAME_OVER,
+        INTRO,
     }
     
     [CreateAssetMenu(menuName = "JustGame/Scriptable Event/Game core event")]

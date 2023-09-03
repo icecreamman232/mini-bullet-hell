@@ -36,8 +36,7 @@ namespace JustGame.Scripts.Managers
         public Action<Vector2> RightClickCallback;
 
         private Camera m_mainCamera;
-        private bool m_hasFocus;
-        
+
         public bool IsInputActive
         {
             get
@@ -64,17 +63,11 @@ namespace JustGame.Scripts.Managers
             }
 
             IsInputActive = true;
-            m_hasFocus = true;
         }
 
         private void Start()
         {
             m_mainCamera = Camera.main;
-        }
-
-        private void OnApplicationFocus(bool hasFocus)
-        {
-            IsInputActive = hasFocus;
         }
 
         private void Update()

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_shootSFX: {fileID: 3200860077266642453}
   m_increaseAttackSpeedPowerUp: {fileID: 11400000, guid: ce9565237e03eb445bfd5a607e3d3330, type: 2}
   AimController: {fileID: 0}
-  CurrentState: 1
+  CurrentState: 0
   GunType: 1
   ReloadTime: 1
   Magazine: 10
