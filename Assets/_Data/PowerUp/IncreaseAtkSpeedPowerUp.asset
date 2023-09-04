@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Attack Speed Increase
   Description: Increase attack speed
-  Icon: {fileID: 21300000, guid: 455a91ad52f90184bb3a9b95edc4d062, type: 3}
+  Icon: {fileID: 110037582, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
   IsActive: 0
   m_atkSpeedIncreasePerTime: 0.1

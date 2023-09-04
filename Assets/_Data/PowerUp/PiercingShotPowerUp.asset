@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Piercing Shot
   Description: Make bullet can go through one more enemy
-  Icon: {fileID: 21300000, guid: 0148254fda9500646a40f0e0b5186f85, type: 3}
+  Icon: {fileID: -510876556, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
   IsActive: 0

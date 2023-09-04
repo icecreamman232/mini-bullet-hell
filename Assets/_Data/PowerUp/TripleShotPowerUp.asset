@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Triple Shot
   Description: Triple current weapon
-  Icon: {fileID: 21300000, guid: e91e95ac2ac50c643b654905c0c9f38e, type: 3}
+  Icon: {fileID: 1330369017, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
   IsActive: 0
