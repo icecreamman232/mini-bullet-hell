@@ -76,7 +76,7 @@ namespace JustGame.Scripts.Weapons
         public override void TakeDamage(float damage, GameObject instigator)
         {
             if (!AuthorizeTakingDamage()) return;
-
+            
             m_curHealth -= damage;
             
             if (m_hitSFX != null)

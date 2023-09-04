@@ -32,8 +32,8 @@ namespace JustGame.Scripts.Player
             var movementSpeed =  m_shipProfile.BaseEnginePoint * 5 +  m_playerData.EnginePts * 0.5f;
             var health = m_shipProfile.BaseHullPoint * 10 + m_playerData.HullPts * 5;
             
-            m_playerComponentSet.Movement.SetSpeed(movementSpeed);
-            m_playerComponentSet.Health.SetMaxHealth(health);
+            //m_playerComponentSet.Movement.SetSpeed(movementSpeed);
+            //m_playerComponentSet.Health.SetMaxHealth(health);
         }
 
         private void OnDestroy()

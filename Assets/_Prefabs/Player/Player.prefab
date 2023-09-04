@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
+  m_runtimeWorldSet: {fileID: 0}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   FacingDirection: 0
 --- !u!114 &3178101143697677362
@@ -523,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90d0b8775cf45648a73e8dc8f57d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 50
+  m_maxHealth: 100
   m_curHealth: 0
   m_delayBeforeDeath: 0.33
   m_invulnerableDuration: 0.5

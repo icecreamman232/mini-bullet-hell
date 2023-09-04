@@ -59,7 +59,7 @@ namespace JustGame.Scripts.UI
 
         private void Hide()
         {
-            m_canvasGroup.alpha = 1;
+            m_canvasGroup.alpha = 0;
             m_canvasGroup.interactable = false;
 
             m_choosePowerUpButton.gameObject.SetActive(false);
