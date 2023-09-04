@@ -67,7 +67,6 @@ namespace JustGame.Scripts.Managers
         #region Game State
         private void CaseIntro()
         {
-            Debug.Break();
             Instantiate(m_playerPrefab, m_spawnPoint.position, Quaternion.identity);
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }

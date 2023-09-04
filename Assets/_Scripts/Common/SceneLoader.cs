@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using JustGame.Scripts.Managers;
-using UnityEditor.SearchService;
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,8 +9,11 @@ namespace JustGame.Scripts.Common
     public class SceneLoader : PersistentSingleton<SceneLoader>
     {
         [SerializeField] private string m_loadingScene;
+        [SerializeField] private float m_loadingTime;
+        [SerializeField] private FloatEvent m_loadingBarEvent;
         [SerializeField] private bool m_isProcessing;
 
+        private float m_progress;
         public bool IsProcessing => m_isProcessing;
         
         public void LoadToScene(string fromScene, string toScene)
@@ -26,7 +28,7 @@ namespace JustGame.Scripts.Common
                 yield break;
             }
             m_isProcessing = true;
-            
+            m_progress = 0;
             var asyncLoading = SceneManager.LoadSceneAsync(m_loadingScene, LoadSceneMode.Additive);
             yield return new WaitUntil(() =>asyncLoading.isDone);
 
@@ -35,6 +37,15 @@ namespace JustGame.Scripts.Common
             
             var asyncToScene = SceneManager.LoadSceneAsync(toScene, LoadSceneMode.Additive);
             yield return new WaitUntil(() => asyncToScene.isDone);
+            
+            float delayTime = 0;
+            while (delayTime < m_loadingTime)
+            {
+                delayTime += Time.deltaTime;
+                m_progress = delayTime / m_loadingTime;
+                m_loadingBarEvent.Raise(m_progress);
+                yield return null;
+            }
 
             var asyncUnloadLoading = SceneManager.UnloadSceneAsync(m_loadingScene);
             yield return new WaitUntil(() => asyncUnloadLoading.isDone);
