@@ -12,6 +12,7 @@ namespace JustGame.Scripts.UI
         [SerializeField] private Image m_outline;
         [SerializeField] private Image m_icon;
         [SerializeField] private TextMeshProUGUI m_powerUpName;
+        [SerializeField] private TextMeshProUGUI m_powerUpDesc;
         [SerializeField] private PowerUpData m_powerUp;
 
         public Action<SkillCardUI> OnSelectAction;
@@ -26,6 +27,7 @@ namespace JustGame.Scripts.UI
         {
             m_powerUp = powerUpData;
             m_powerUpName.text = m_powerUp.Name;
+            m_powerUpDesc.text = m_powerUp.Description;
             m_icon.sprite = powerUpData.Icon;
         }
         
