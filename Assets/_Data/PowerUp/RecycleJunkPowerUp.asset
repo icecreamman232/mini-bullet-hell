@@ -15,7 +15,7 @@ MonoBehaviour:
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Recyle Junk
   Description: Recyle debris into material to repair ship hull
-  Icon: {fileID: 0}
-  RemoveOnActive: 0
+  Icon: {fileID: 2145517648, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  RemoveOnActive: 1
   IsActive: 0
   ConvertRateFromDebrisToHealth: 0.1
