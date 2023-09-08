@@ -1,4 +1,5 @@
 using DG.Tweening;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,9 +13,16 @@ namespace JustGame.Scripts.UI
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private FloatEvent m_healthEvent;
+        [Header("Bars")]
         [SerializeField] private Image m_damageImg;
         [SerializeField] private Image m_currentImg;
-
+        [SerializeField] private RectTransform m_curImgRectTF;
+        [SerializeField] private RectTransform m_damageImgRectTF;
+        [SerializeField] private Image m_removeHPImg;
+        [Header("Powerups")] 
+        [SerializeField] private SacrificeHPPowerUp m_sacrificeHpPowerUp;
+        
+        
         private float m_target;
         private float m_delayCounter;
         
@@ -26,6 +34,8 @@ namespace JustGame.Scripts.UI
             m_target = 1;
             m_damageImg.fillAmount = 1;
             m_currentImg.fillAmount = 1;
+            m_removeHPImg.fillAmount = 0;
+            m_sacrificeHpPowerUp.OnApplyPowerUp += OnSacrificeHP;
         }
 
         private void OnShow()
@@ -80,9 +90,23 @@ namespace JustGame.Scripts.UI
             }
         }
         
+        private void OnSacrificeHP()
+        {
+            m_removeHPImg.fillAmount += m_sacrificeHpPowerUp.HPPercentReduce;
+            
+            var anchorMaxCurrentImg = m_curImgRectTF.anchorMax;
+            anchorMaxCurrentImg.x = 1 - m_removeHPImg.fillAmount;
+            m_curImgRectTF.anchorMax = anchorMaxCurrentImg;
+            
+            var anchorMaxDamageImg = m_damageImgRectTF.anchorMax;
+            anchorMaxDamageImg.x = 1 - m_removeHPImg.fillAmount;
+            m_damageImgRectTF.anchorMax = anchorMaxDamageImg;
+        }
+        
         private void OnDestroy()
         {
             m_healthEvent.RemoveListener(UpdateHealthBar);
+            m_sacrificeHpPowerUp.OnApplyPowerUp -= OnSacrificeHP;
             m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }

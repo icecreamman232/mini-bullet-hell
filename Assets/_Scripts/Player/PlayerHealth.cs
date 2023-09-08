@@ -17,8 +17,10 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
         [SerializeField] protected ResourceEvent m_resourceEvent;
+        [Header("Powerups")]
         [SerializeField] protected HealingPowerUp m_healingPowerUp;
         [SerializeField] protected RecycleJunkPowerUp m_recycleJunkPowerUp;
+        [SerializeField] protected SacrificeHPPowerUp m_sacrificeHpPowerUp;
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
@@ -34,13 +36,23 @@ namespace JustGame.Scripts.Weapons
             base.Start();
             m_resourceEvent.OnCollectDerbis += HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp += HealingUp;
+            m_sacrificeHpPowerUp.OnApplyPowerUp += SacrificeHP;
         }
 
         public void SetMaxHealth(float value)
         {
             m_maxHealth = value;
+            if (m_curHealth > m_maxHealth)
+            {
+                m_curHealth = m_maxHealth;
+            }
         }
 
+        private void SacrificeHP()
+        {
+            SetMaxHealth(m_maxHealth - m_maxHealth * m_sacrificeHpPowerUp.HPPercentReduce);
+        }
+        
         private void HealingUp()
         {
             m_curHealth += MathHelpers.Percent(m_maxHealth, m_healingPowerUp.HealingUpPercent);
@@ -145,6 +157,7 @@ namespace JustGame.Scripts.Weapons
         {
             m_resourceEvent.OnCollectDerbis -= HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp -= HealingUp;
+            m_sacrificeHpPowerUp.OnApplyPowerUp -= SacrificeHP;
         }
     } 
 }

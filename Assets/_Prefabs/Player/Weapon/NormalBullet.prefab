@@ -291,3 +291,4 @@ MonoBehaviour:
   m_increaseBulletSizePowerUp: {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}
   m_criticalDamagePowerUp: {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
   m_paralyzeCoatingPowerUp: {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}
+  m_sacrificeHpPowerUp: {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}

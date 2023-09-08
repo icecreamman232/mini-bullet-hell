@@ -14,6 +14,9 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected int m_minDamageCause;
         [SerializeField] protected int m_maxDamageCause;
         [SerializeField] protected LayerMask m_targetMask;
+
+        public int MinDamage => m_minDamageCause;
+        public int MaxDamage => m_maxDamageCause;
         
         public Action<GameObject> OnHit;
 
@@ -21,7 +24,13 @@ namespace JustGame.Scripts.Weapons
         {
             SetDamageMultiplier(1);
         }
-
+        
+        public virtual void SetDamage(int minDamage, int maxDamage)
+        {
+            m_minDamageCause = minDamage;
+            m_maxDamageCause = maxDamage;
+        }
+        
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (!LayerManager.IsInLayerMask(other.gameObject.layer, m_targetMask)) return;

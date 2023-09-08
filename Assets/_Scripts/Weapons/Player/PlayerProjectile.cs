@@ -14,6 +14,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private IncreaseBulletSizePowerUp m_increaseBulletSizePowerUp;
         [SerializeField] private EnableCriticalDamagePowerUp m_criticalDamagePowerUp;
         [SerializeField] private ParalyzeCoatingPowerUp m_paralyzeCoatingPowerUp;
+        [SerializeField] private SacrificeHPPowerUp m_sacrificeHpPowerUp;
         
         private int m_piercingNumber;
 
@@ -25,6 +26,7 @@ namespace JustGame.Scripts.Weapons
                 transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
                 m_moveSpeed -= m_increaseBulletSizePowerUp.TotalSpeedReduce;
             }
+            m_sacrificeHpPowerUp.OnApplyPowerUp += TriggerSacrificeHP;
         }
 
         protected override void Start()
@@ -32,6 +34,7 @@ namespace JustGame.Scripts.Weapons
             base.Start();
             m_piercingShotPowerUp.OnApplyPowerUp += TriggerPiercingShotPowerUp;
             m_increaseRangePowerUp.OnApplyPowerUp += TriggerIncreaseRangePowerUp;
+            
         }
 
         public override void SpawnProjectile(Vector2 position, Vector2 direction)
@@ -69,6 +72,14 @@ namespace JustGame.Scripts.Weapons
                 m_spriteRenderer.color = m_criticalDamagePowerUp.GreatColor;
                 m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.GreatCritMultiplier);
             }
+        }
+
+        private void TriggerSacrificeHP()
+        {
+            m_damageHandler.SetDamage(
+                Mathf.RoundToInt(m_damageHandler.MinDamage * (1 + m_sacrificeHpPowerUp.DamageIncreasePercent)),
+                Mathf.RoundToInt(m_damageHandler.MaxDamage * (1 + m_sacrificeHpPowerUp.DamageIncreasePercent))
+                    );
         }
         
         private void TriggerIncreaseRangePowerUp()

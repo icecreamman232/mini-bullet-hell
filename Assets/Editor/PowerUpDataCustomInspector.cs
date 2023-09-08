@@ -98,5 +98,17 @@ namespace JustGame.Scripts.EditorExtension
     {
         
     }
+    
+    [CustomEditor(typeof(BulletBlockingDronePowerUp))]
+    public class BulletBlockingDroneInspector : PowerUpDataCustomInspector
+    {
+        
+    }
+    
+    [CustomEditor(typeof(SacrificeHPPowerUp))]
+    public class SacrificeHPInspector : PowerUpDataCustomInspector
+    {
+        
+    }
 }
 
