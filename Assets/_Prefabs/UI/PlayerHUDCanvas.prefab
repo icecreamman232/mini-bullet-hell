@@ -1170,7 +1170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c61c6e421c3fce4a80d199b827c3a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_reduceSpeed: 0.08
+  m_reduceSpeed: 1
+  m_delayForDamageBar: 1
   m_canvasGroup: {fileID: 7611277554193517664}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}

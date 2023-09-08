@@ -8,6 +8,7 @@ namespace JustGame.Scripts.UI
     public class PlayerHealthBarUI : MonoBehaviour
     {
         [SerializeField] [Min(0)] private float m_reduceSpeed;
+        [SerializeField] [Min(0)] private float m_delayForDamageBar;
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private FloatEvent m_healthEvent;
@@ -15,7 +16,8 @@ namespace JustGame.Scripts.UI
         [SerializeField] private Image m_currentImg;
 
         private float m_target;
-
+        private float m_delayCounter;
+        
         private void Start()
         {
             m_canvasGroup.interactable = false;
@@ -38,6 +40,14 @@ namespace JustGame.Scripts.UI
         
         private void Update()
         {
+            m_delayCounter -= Time.deltaTime;
+            if (m_delayCounter > 0)
+            {
+                return;
+            }
+
+            m_delayCounter = 0;
+            
             if (m_damageImg.fillAmount <= m_target)
             {
                 return;
@@ -53,6 +63,7 @@ namespace JustGame.Scripts.UI
 
         private void UpdateHealthBar(float percent)
         {
+            m_delayCounter = m_delayForDamageBar;
             m_target = percent;
             m_currentImg.fillAmount = percent;
         }
