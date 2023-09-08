@@ -17,4 +17,4 @@ MonoBehaviour:
   Icon: {fileID: 0}
   IsActive: 0
   m_HPPercentReduce: 20
-  m_damageIncreasePercent: 10
+  m_damageIncreasePercent: 25
