@@ -9,8 +9,8 @@ namespace JustGame.Scripts.Enemy
     {
         [SerializeField] private float m_spawnRadius;
         [SerializeField] private GameObject m_lootObject;
-        [SerializeField] private float m_minAmount;
-        [SerializeField] private float m_maxAmount;
+        [SerializeField] private int m_minAmount;
+        [SerializeField] private int m_maxAmount;
         
         public void SpawnLoot()
         {

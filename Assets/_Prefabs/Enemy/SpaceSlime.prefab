@@ -284,7 +284,7 @@ MonoBehaviour:
   m_spawnRadius: 1.2
   m_lootObject: {fileID: 4716966027115406022, guid: c6271e9c08f90274ea633316c5294e63, type: 3}
   m_minAmount: 1
-  m_maxAmount: 3
+  m_maxAmount: 1
 --- !u!114 &2401293940490292133
 MonoBehaviour:
   m_ObjectHideFlags: 0
