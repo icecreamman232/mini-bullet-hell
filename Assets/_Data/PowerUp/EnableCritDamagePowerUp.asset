@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13c8900d6dd264c84bdecee7dbfa33, type: 3}
   m_Name: EnableCritDamagePowerUp
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Critical Damage
   Description: Some bullet will deal more damage
   Icon: {fileID: -1303461692, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  RemoveOnActive: 0
   IsActive: 0
   m_averageCritMultiplier: 1.5
   m_greatCritMultiplier: 3

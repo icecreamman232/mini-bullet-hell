@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c9fa1e4dc0a7e4daa4be9ff7ada4cb, type: 3}
   m_Name: IncreaseBulletSizePowerUp
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Increase Bullet Size
   Description: Make bullet bigger
   Icon: {fileID: -321146941, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  RemoveOnActive: 0
   IsActive: 0
   m_sizeIncreasePerTime: 0.2
   m_speedReducePerTime: 20

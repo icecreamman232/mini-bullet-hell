@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3ba2b95f780654f8b0a2cbcc3b5fd4, type: 3}
   m_Name: IronDronePowerUp
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Iron Drone
   Description: Break bullet on impact
   Icon: {fileID: 0}
-  IsActive: 1
+  RemoveOnActive: 0
+  IsActive: 0
   m_dronePrefab: {fileID: 2093117086447220360, guid: 741fc024d1dd43c4ab2a3b30555d3f70, type: 3}
   m_offsetSpawnPos: {x: 1.5, y: 0}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}

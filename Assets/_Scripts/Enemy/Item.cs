@@ -17,6 +17,7 @@ namespace JustGame.Scripts.Items
         protected virtual void Update()
         {
             if (!m_canMove) return;
+            if (m_playerComponentSet.Player == null) return;
             transform.position = Vector2.MoveTowards(
                 transform.position, 
                 m_playerComponentSet.Player.transform.position, 

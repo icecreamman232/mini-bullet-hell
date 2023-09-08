@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22adbcf3be858b498d78cffc5aeb960, type: 3}
   m_Name: TripleShotPowerUp
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Triple Shot
   Description: Triple current weapon
   Icon: {fileID: 1330369017, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  RemoveOnActive: 0
   IsActive: 0

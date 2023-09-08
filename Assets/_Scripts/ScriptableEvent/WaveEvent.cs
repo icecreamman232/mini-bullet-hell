@@ -24,6 +24,10 @@ namespace JustGame.Scripts.ScriptableEvent
         public void IncreaseWave()
         {
             CurrentWave++;
+            if (CurrentWave >= MaxWave)
+            {
+                CurrentWave = MaxWave;
+            }
         }
     }
 }

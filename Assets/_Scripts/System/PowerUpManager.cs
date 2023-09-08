@@ -16,17 +16,36 @@ namespace JustGame.Scripts.Managers
             m_runtimeWorldSet.SetPowerUpManager(this);
         }
 
-        public List<PowerUpData> GetPowerUps()
+        public List<PowerUpData> GetPowerUpList()
         {
-            var powerUpIndex1 = Random.Range(0, m_powerUpList.Length);
-            var powerUpIndex2 = Random.Range(0, m_powerUpList.Length);
-            var powerUpIndex3 = Random.Range(0, m_powerUpList.Length);
-
             var newList = new List<PowerUpData>();
-            newList.Add(m_powerUpList[powerUpIndex1]);
-            newList.Add(m_powerUpList[powerUpIndex2]);
-            newList.Add(m_powerUpList[powerUpIndex3]);
+            newList.Add(GetPowerUp());
+            newList.Add(GetPowerUp());
+            newList.Add(GetPowerUp());
             return newList;
+        }
+
+        public void RemovePowerUp(PowerUpData powerUp)
+        {
+            for (int i = 0; i < m_powerUpList.Length; i++)
+            {
+                if(m_powerUpList[i] == null) continue;
+                if (m_powerUpList[i].Name == powerUp.Name)
+                {
+                    m_powerUpList[i] = null;
+                }
+            }
+        }
+        
+        public PowerUpData GetPowerUp()
+        {
+            PowerUpData powerup;
+            do
+            {
+                powerup = m_powerUpList[Random.Range(0, m_powerUpList.Length)];
+            } while (powerup == null);
+
+            return powerup;
         }
     }
 }

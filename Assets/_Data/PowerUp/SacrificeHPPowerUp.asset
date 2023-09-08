@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f1a808b89f5ec4dbf6569b44f358b0, type: 3}
   m_Name: SacrificeHPPowerUp
   m_EditorClassIdentifier: 
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   Name: Sacrifice
   Description: Reduce ship HP but gain more damage
   Icon: {fileID: 0}
+  RemoveOnActive: 0
   IsActive: 0
   m_HPPercentReduce: 20
   m_damageIncreasePercent: 25

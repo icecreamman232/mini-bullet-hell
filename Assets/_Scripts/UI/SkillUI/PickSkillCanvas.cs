@@ -72,7 +72,7 @@ namespace JustGame.Scripts.UI
 
         private void AssignPowerUpToCard()
         {
-            var assignList = m_runtimeWorldSet.PowerUpManager.GetPowerUps();
+            var assignList = m_runtimeWorldSet.PowerUpManager.GetPowerUpList();
             for (int i = 0; i < m_skillCards.Length; i++)
             {
                 m_skillCards[i].AssignPowerUp(assignList[i]);
