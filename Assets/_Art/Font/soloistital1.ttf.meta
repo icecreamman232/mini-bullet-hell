@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67ea415ae507c2c418487412f0940755
+guid: ffe71e6a42d42444a9e71b67ac407d8d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Retro Gaming
+  - Soloist Italic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
