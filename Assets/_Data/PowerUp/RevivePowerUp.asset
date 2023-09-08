@@ -17,6 +17,6 @@ MonoBehaviour:
   Description: Bring you back from death
   Icon: {fileID: -1748518633, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
   RemoveOnActive: 1
-  IsActive: 1
-  m_hasRevived: 1
+  IsActive: 0
+  m_hasRevived: 0
   m_ankhVFXPrefab: {fileID: 6553338384919664849, guid: e2d6ef33d1e86544c8e17d0d4cb30a03, type: 3}
