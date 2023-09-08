@@ -391,7 +391,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,6 +399,27 @@ TextureImporter:
       bones: []
       spriteID: 322a980eccbeaad4b9d7f1a592461eee
       internalID: -973010387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: revive-icon
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4e476c31287484e8f1516e00c20be8
+      internalID: -1748518633
       vertices: []
       indices: 
       edges: []
@@ -426,6 +447,7 @@ TextureImporter:
       paralyze-icon: -1518249385
       piercing-icon: -510876556
       recycle-junk-icon: 2145517648
+      revive-icon: -1748518633
       sacrifice-hp-icon: -973010387
       triple-shot-icon: 1330369017
   mipmapLimitGroupName: 

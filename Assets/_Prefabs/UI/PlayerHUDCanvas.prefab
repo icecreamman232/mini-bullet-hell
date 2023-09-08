@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_curImgRectTF: {fileID: 9146766442703203245}
   m_damageImgRectTF: {fileID: 6016597544616095431}
   m_removeHPImg: {fileID: 995672075757231994}
+  m_revivePowerUp: {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
   m_sacrificeHpPowerUp: {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
 --- !u!1 &3723015747942311251
 GameObject:

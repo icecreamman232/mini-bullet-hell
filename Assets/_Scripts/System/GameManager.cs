@@ -104,7 +104,7 @@ namespace JustGame.Scripts.Managers
         
         #endregion
         
-        private void PauseGame(bool value)
+        public void PauseGame(bool value)
         {
             m_isPaused = value;
             Time.timeScale = m_isPaused ? 0 : 1;

@@ -20,6 +20,7 @@ namespace JustGame.Scripts.UI
         [SerializeField] private RectTransform m_damageImgRectTF;
         [SerializeField] private Image m_removeHPImg;
         [Header("Powerups")] 
+        [SerializeField] private RevivePowerUp m_revivePowerUp;
         [SerializeField] private SacrificeHPPowerUp m_sacrificeHpPowerUp;
         
         
@@ -36,6 +37,7 @@ namespace JustGame.Scripts.UI
             m_currentImg.fillAmount = 1;
             m_removeHPImg.fillAmount = 0;
             m_sacrificeHpPowerUp.OnApplyPowerUp += OnSacrificeHP;
+            m_revivePowerUp.OnPlayVFX += OnPlayReviveVFX;
         }
 
         private void OnShow()
@@ -102,12 +104,20 @@ namespace JustGame.Scripts.UI
             anchorMaxDamageImg.x = 1 - m_removeHPImg.fillAmount;
             m_damageImgRectTF.anchorMax = anchorMaxDamageImg;
         }
+        [ContextMenu("test vfx")]
+        private void OnPlayReviveVFX()
+        {
+            var vfx = Instantiate(m_revivePowerUp.AnkhVFXPrefab, this.transform.parent);
+            var rectTransform = vfx.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = Vector2.zero;
+        }
         
         private void OnDestroy()
         {
             m_healthEvent.RemoveListener(UpdateHealthBar);
             m_sacrificeHpPowerUp.OnApplyPowerUp -= OnSacrificeHP;
             m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+            m_revivePowerUp.OnPlayVFX -= OnPlayReviveVFX;
         }
     }
 }

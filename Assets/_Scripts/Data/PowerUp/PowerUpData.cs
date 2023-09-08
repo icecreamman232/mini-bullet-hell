@@ -7,7 +7,7 @@ namespace JustGame.Scripts.Data
     public class PowerUpData : ScriptableObject
     {
         [Header("Base")] 
-        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
+        [SerializeField] protected RuntimeWorldSet m_runtimeWorldSet;
         public string Name;
         public string Description;
         public Sprite Icon;

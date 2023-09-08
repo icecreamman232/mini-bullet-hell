@@ -11,7 +11,7 @@ namespace JustGame.Scripts.Data
 
         public float HPPercentReduce => MathHelpers.PercentOf(m_HPPercentReduce);
         public float DamageIncreasePercent => MathHelpers.PercentOf(m_damageIncreasePercent);
-        
+
         [ContextMenu("Trigger")]
         private void Test()
         {

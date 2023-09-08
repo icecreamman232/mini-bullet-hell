@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Data
@@ -14,9 +15,10 @@ namespace JustGame.Scripts.Data
         [SerializeField] private WeightObject[] m_weights;
         [SerializeField] private GameObject[] m_spawnArray;
 
+        [FormerlySerializedAs("m_specialWeight")]
         [Header("Special enemy")] 
-        [SerializeField] private WeightObject[] m_specialWeight;
-        [SerializeField] private GameObject[] m_specialEnemies;
+        [SerializeField] private WeightObject[] m_eliteWeight;
+        [FormerlySerializedAs("m_specialEnemies")] [SerializeField] private GameObject[] m_eliteEnemies;
 
         private int m_spawnedEnemyBeforeSpecial;
         
@@ -31,7 +33,7 @@ namespace JustGame.Scripts.Data
             if (m_spawnedEnemyBeforeSpecial >= AmountEnemyBeforeSpawnSpecial)
             {
                 m_spawnedEnemyBeforeSpecial = 0;
-                return GetSpecialSpawn();
+                return GetEliteSpawn();
             }
             else
             {
@@ -39,11 +41,11 @@ namespace JustGame.Scripts.Data
             }
         }
 
-        private GameObject GetSpecialSpawn()
+        private GameObject GetEliteSpawn()
         {
             var random = Random.Range(0f, 100f);
-            var index = WeightObject.GetWeightIndex(m_specialWeight, random);
-            return m_specialEnemies[index];
+            var index = WeightObject.GetWeightIndex(m_eliteWeight, random);
+            return m_eliteEnemies[index];
         }
         private GameObject GetNormalSpawn()
         {

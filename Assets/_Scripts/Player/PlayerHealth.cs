@@ -21,11 +21,14 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected HealingPowerUp m_healingPowerUp;
         [SerializeField] protected RecycleJunkPowerUp m_recycleJunkPowerUp;
         [SerializeField] protected SacrificeHPPowerUp m_sacrificeHpPowerUp;
+        [SerializeField] protected RevivePowerUp m_revivePowerUp;
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
         [Header("SFX")] 
         [SerializeField] private PlaySoundFX m_hitSFX;
+
+        private bool m_isReviving;
         private void Awake()
         {
             m_componentSet.SetHealth(this);
@@ -113,6 +116,32 @@ namespace JustGame.Scripts.Weapons
 
             ProcessKill();
             base.TakeDamage(damage, instigator);
+        }
+
+        protected override void ProcessKill()
+        {
+            if (m_revivePowerUp.IsActive && !m_revivePowerUp.HasRevived)
+            {
+                StartCoroutine(OnRevive());
+                return;
+            }
+            base.ProcessKill();
+        }
+
+        private IEnumerator OnRevive()
+        {
+            if (m_isReviving)
+            {
+                yield break;
+            }
+
+            m_isReviving = true;
+            m_revivePowerUp.TriggerRevive();
+            yield return new WaitUntil(() => m_revivePowerUp.IsVFXDone);
+            m_curHealth = m_maxHealth;
+            m_revivePowerUp.SetReviveDone();
+            UpdateUI();
+            m_isReviving = false;
         }
 
         protected override void UpdateUI()
