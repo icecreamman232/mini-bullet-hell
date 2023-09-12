@@ -22,6 +22,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected RecycleJunkPowerUp m_recycleJunkPowerUp;
         [SerializeField] protected SacrificeHPPowerUp m_sacrificeHpPowerUp;
         [SerializeField] protected RevivePowerUp m_revivePowerUp;
+        [SerializeField] protected MadnessPowerUp m_madnessPowerUp;
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
@@ -40,6 +41,7 @@ namespace JustGame.Scripts.Weapons
             m_resourceEvent.OnCollectDerbis += HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp += HealingUp;
             m_sacrificeHpPowerUp.OnApplyPowerUp += SacrificeHP;
+            m_madnessPowerUp.OnApplyPowerUp += OnTriggerMadness;
         }
 
         public void SetMaxHealth(float value)
@@ -78,6 +80,11 @@ namespace JustGame.Scripts.Weapons
                 m_healthEvent.Raise(m_curHealth/m_maxHealth);
             }
         }
+
+        private void OnTriggerMadness()
+        {
+            m_madnessPowerUp.CheckHPLost((m_maxHealth - m_curHealth) / m_maxHealth * 100);
+        }
         
         #if UNITY_EDITOR
         [ContextMenu("Test Damage")]
@@ -100,6 +107,11 @@ namespace JustGame.Scripts.Weapons
             }
             
             OnHit?.Invoke();
+
+            if (m_madnessPowerUp.IsActive)
+            {
+                m_madnessPowerUp.CheckHPLost((m_maxHealth - m_curHealth) / m_maxHealth * 100);
+            }
             
             m_shakeEvent.DoShake(m_shakeProfile);
             
@@ -187,6 +199,7 @@ namespace JustGame.Scripts.Weapons
             m_resourceEvent.OnCollectDerbis -= HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp -= HealingUp;
             m_sacrificeHpPowerUp.OnApplyPowerUp -= SacrificeHP;
+            m_madnessPowerUp.OnApplyPowerUp -= OnTriggerMadness;
         }
     } 
 }

@@ -12,6 +12,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private AnimationParameter m_explodeAnim;
         [SerializeField] private PlaySoundFX m_hitSFX;
+        [SerializeField] ObjectPooler m_dmgNumberPooler;
         [SerializeField] private bool m_immuneDamage;
         private Loot m_loot;
 
@@ -39,6 +40,33 @@ namespace JustGame.Scripts.Weapons
         public void DisableDamageImmune()
         {
             m_immuneDamage = false;
+        }
+
+        public override void TakeDamage(float damage, GameObject instigator)
+        {
+            if (!AuthorizeTakingDamage()) return;
+
+            m_curHealth -= damage;
+            
+            if (m_dmgNumberPooler == null)
+            {
+                Debug.LogError($"Damage number pooler not found on {this.gameObject.name}");
+            }
+            
+            var dmgNumber = m_dmgNumberPooler.GetPooledGameObject().GetComponent<DamageNumber>();
+            dmgNumber.Show(Mathf.RoundToInt(damage));
+            
+            OnHit?.Invoke();
+
+            UpdateUI();
+
+            if (m_curHealth >= 0)
+            {
+                StartCoroutine(OnInvulnerable());
+                return;
+            }
+
+            ProcessKill();
         }
 
         protected override bool AuthorizeTakingDamage()

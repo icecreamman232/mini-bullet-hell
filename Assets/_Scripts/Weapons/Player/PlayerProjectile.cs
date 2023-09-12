@@ -15,6 +15,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private EnableCriticalDamagePowerUp m_criticalDamagePowerUp;
         [SerializeField] private ParalyzeCoatingPowerUp m_paralyzeCoatingPowerUp;
         [SerializeField] private SacrificeHPPowerUp m_sacrificeHpPowerUp;
+        [SerializeField] private MadnessPowerUp m_madnessPowerUp;
         
         private int m_piercingNumber;
 
@@ -34,7 +35,6 @@ namespace JustGame.Scripts.Weapons
             base.Start();
             m_piercingShotPowerUp.OnApplyPowerUp += TriggerPiercingShotPowerUp;
             m_increaseRangePowerUp.OnApplyPowerUp += TriggerIncreaseRangePowerUp;
-            
         }
 
         public override void SpawnProjectile(Vector2 position, Vector2 direction)
@@ -48,7 +48,12 @@ namespace JustGame.Scripts.Weapons
             {
                 m_paralyzeCoating.IsActive = true;
             }
-            
+
+            if (m_madnessPowerUp.IsActive)
+            {
+                OnIncreaseDamageFromMadness();
+            }
+
             transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
             m_moveSpeed = m_initialSpeed - m_increaseBulletSizePowerUp.TotalSpeedReduce;
             base.SpawnProjectile(position, direction);
@@ -92,6 +97,11 @@ namespace JustGame.Scripts.Weapons
             m_piercingShotPowerUp.IsActive = true;
         }
 
+        private void OnIncreaseDamageFromMadness()
+        {
+            m_damageHandler.AddDamageMultiplier(m_madnessPowerUp.DamageIncreasePercent);
+        }
+        
         protected override IEnumerator DestroyRoutine()
         {
             if (m_isDestroying)

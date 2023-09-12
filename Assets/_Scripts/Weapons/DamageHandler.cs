@@ -47,6 +47,11 @@ namespace JustGame.Scripts.Weapons
         {
             m_damageMultiplier = newValue;
         }
+
+        public virtual void AddDamageMultiplier(float addValue)
+        {
+            m_damageMultiplier += addValue;
+        }
         
         protected virtual void CauseDamage(Collider2D target)
         {

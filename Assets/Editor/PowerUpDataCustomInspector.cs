@@ -110,5 +110,11 @@ namespace JustGame.Scripts.EditorExtension
     {
         
     }
+    
+    [CustomEditor(typeof(MadnessPowerUp))]
+    public class MadnessInspector : PowerUpDataCustomInspector
+    {
+        
+    }
 }
 

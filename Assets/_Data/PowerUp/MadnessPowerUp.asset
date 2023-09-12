@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9457dc56c0f417b4aa7176d97704293f, type: 3}
-  m_Name: RevivePowerUp
+  m_Script: {fileID: 11500000, guid: 226c42b0f12aa794ebd8cd72414846d4, type: 3}
+  m_Name: MadnessPowerUp
   m_EditorClassIdentifier: 
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
-  Name: Ankh
-  Description: Bring you back from death
-  Icon: {fileID: -1748518633, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  Name: Madness
+  Description: The more health lost, the more damage gains
+  Icon: {fileID: 0}
   RemoveOnActive: 1
-  IsActive: 1
-  m_hasRevived: 1
-  m_ankhVFXPrefab: {fileID: 6553338384919664849, guid: e2d6ef33d1e86544c8e17d0d4cb30a03, type: 3}
+  IsActive: 0
+  m_percentDamageIncrease: 10
+  m_percentHPLost: 15

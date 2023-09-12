@@ -292,3 +292,4 @@ MonoBehaviour:
   m_criticalDamagePowerUp: {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
   m_paralyzeCoatingPowerUp: {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}
   m_sacrificeHpPowerUp: {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
+  m_madnessPowerUp: {fileID: 11400000, guid: 54fef78df8f4938478b2742ecacd0fd7, type: 2}

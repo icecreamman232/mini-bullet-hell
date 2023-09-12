@@ -6,6 +6,7 @@ namespace JustGame.Scripts.Managers
     public class ObjectPooler : MonoBehaviour
     {
         public Transform Parent;
+        public Vector2 Offset;
         public bool IsSharePool;
         public GameObject ObjectToPool;
         public int PoolSize;
