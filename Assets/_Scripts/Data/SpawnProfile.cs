@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -24,9 +25,27 @@ namespace JustGame.Scripts.Data
         
         private void OnEnable()
         {
+            m_spawnedEnemyBeforeSpecial = 0;
             WeightObject.ComputeSpawnArray(m_weights);
         }
 
+        public List<GameObject> GetListSpawn()
+        {
+            m_spawnedEnemyBeforeSpecial++;
+            var amount = Random.Range(1, 3);
+            var list = new List<GameObject>();
+            if (m_spawnedEnemyBeforeSpecial >= AmountEnemyBeforeSpawnSpecial)
+            {
+                list.Add(GetEliteSpawn());
+                m_spawnedEnemyBeforeSpecial = 0;
+            }
+            for (int i = 0; i < amount; i++)
+            {
+                list.Add(GetNormalSpawn());
+            }
+            return list;    
+        }
+        
         public GameObject GetNextSpawn()
         {
             m_spawnedEnemyBeforeSpecial++;

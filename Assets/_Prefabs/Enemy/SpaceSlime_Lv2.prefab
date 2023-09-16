@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1654894790314676555}
   - component: {fileID: 2401293940490292133}
   m_Layer: 8
-  m_Name: SpaceSlime
+  m_Name: SpaceSlime_Lv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e40896416c879e4f869d2b2e30eb3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 5
+  m_maxHealth: 10
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.2
@@ -245,12 +245,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_movementState: 0
-  m_moveSpeed: 20
+  m_moveSpeed: 30
   m_movingDirection: {x: 0, y: 0}
   m_canMove: 1
   m_forbiddenMoving: 0
   m_immuneKnockBack: 0
-  m_deceleration: 10
+  m_deceleration: 20
 --- !u!114 &5438746209621703687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,8 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: Delay before move
-  m_minTime: 0.5
-  m_maxTime: 2
+  m_minTime: 1
+  m_maxTime: 3
 --- !u!114 &4319772659945510839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ SpriteRenderer:
   m_SortingLayerID: 1767091455
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f33987a5f82fb345bf0e2404714abce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89e502aa52de3d344bc8985f03d686e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

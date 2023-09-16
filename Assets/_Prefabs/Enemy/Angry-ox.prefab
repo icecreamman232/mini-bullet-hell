@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: Delay after moving
-  m_minTime: 2
-  m_maxTime: 4
+  m_minTime: 1
+  m_maxTime: 3
 --- !u!114 &2346667675261565153
 MonoBehaviour:
   m_ObjectHideFlags: 0
