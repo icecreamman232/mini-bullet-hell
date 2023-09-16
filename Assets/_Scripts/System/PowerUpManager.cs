@@ -19,9 +19,13 @@ namespace JustGame.Scripts.Managers
         public List<PowerUpData> GetPowerUpList()
         {
             var newList = new List<PowerUpData>();
-            newList.Add(GetPowerUp());
-            newList.Add(GetPowerUp());
-            newList.Add(GetPowerUp());
+            var firstPowerUp = GetPowerUp(); 
+            newList.Add(firstPowerUp);
+            
+            var secondPowerUp = GetPowerUp(firstPowerUp); 
+            newList.Add(secondPowerUp);
+            
+            newList.Add(GetPowerUp(secondPowerUp));
             return newList;
         }
 
@@ -37,12 +41,19 @@ namespace JustGame.Scripts.Managers
             }
         }
         
-        public PowerUpData GetPowerUp()
+        public PowerUpData GetPowerUp(PowerUpData prevPowerUp = null)
         {
             PowerUpData powerup;
             do
             {
                 powerup = m_powerUpList[Random.Range(0, m_powerUpList.Length)];
+                if (prevPowerUp != null)
+                {
+                    if (powerup.Name == prevPowerUp.Name)
+                    {
+                        powerup = null;
+                    }
+                }
             } while (powerup == null);
 
             return powerup;
