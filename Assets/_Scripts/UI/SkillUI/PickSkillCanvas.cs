@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
@@ -44,9 +45,13 @@ namespace JustGame.Scripts.UI
         
         private void Show()
         {
-            m_canvasGroup.alpha = 1;
-            m_canvasGroup.interactable = true;
+            m_canvasGroup.DOFade(1, 0.5f).OnComplete(OnFinishShow).SetUpdate(true);
+        }
 
+        private void OnFinishShow()
+        {
+            m_canvasGroup.interactable = true;
+            
             m_choosePowerUpButton.gameObject.SetActive(true);
             
             for (int i = 0; i < m_skillCards.Length; i++)

@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e40896416c879e4f869d2b2e30eb3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 20
+  m_maxHealth: 12
   m_curHealth: 0
   m_delayBeforeDeath: 0
   m_invulnerableDuration: 0.2
@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  Offset: {x: 0, y: 0}
   IsSharePool: 1
   ObjectToPool: {fileID: 826045983694793967, guid: 602b6f11ad91d4c43a08e0f40bb7c9d6, type: 3}
   PoolSize: 20
