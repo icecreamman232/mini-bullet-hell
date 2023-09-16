@@ -59,7 +59,7 @@ namespace JustGame.Scripts.Weapons
             if (targetHealth != null)
             {
                 OnHit?.Invoke(target.gameObject);
-                targetHealth.TakeDamage(GetDamage(), this.gameObject);
+                targetHealth.TakeDamage(GetDamage(), this.gameObject, m_damageMultiplier > 1.0f);
 
                 if (target.gameObject.layer == LayerManager.EnemyLayer)
                 {

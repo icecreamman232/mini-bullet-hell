@@ -39,7 +39,7 @@ namespace JustGame.Scripts.Weapons
             m_initColor = m_spriteRenderer.color;
         }
 
-        public virtual void TakeDamage(float damage, GameObject instigator)
+        public virtual void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
         {
             if (!AuthorizeTakingDamage()) return;
 

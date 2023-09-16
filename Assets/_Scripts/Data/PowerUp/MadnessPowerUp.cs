@@ -14,7 +14,7 @@ namespace JustGame.Scripts.Data
         [SerializeField] private float m_percentHPLost;
         private float m_damageIncrease;
 
-        public float DamageIncreasePercent => m_damageIncrease;
+        public float DamageIncreasePercent => m_damageIncrease / 100;
 
         [ContextMenu("Trigger")]
         private void Test()

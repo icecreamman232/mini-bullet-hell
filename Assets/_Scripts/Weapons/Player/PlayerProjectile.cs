@@ -68,13 +68,13 @@ namespace JustGame.Scripts.Weapons
             if (greatCritChance < m_criticalDamagePowerUp.GreatCritChance)
             {
                 //Setup average crit damage
-                m_spriteRenderer.color = m_criticalDamagePowerUp.AverageColor;
+                //m_spriteRenderer.color = m_criticalDamagePowerUp.AverageColor;
                 m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.AverageCritMultiplier);
             }
             else
             {
                 //Setup great crit damage
-                m_spriteRenderer.color = m_criticalDamagePowerUp.GreatColor;
+                //m_spriteRenderer.color = m_criticalDamagePowerUp.GreatColor;
                 m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.GreatCritMultiplier);
             }
         }

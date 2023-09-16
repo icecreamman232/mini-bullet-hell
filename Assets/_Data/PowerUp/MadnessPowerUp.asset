@@ -17,6 +17,6 @@ MonoBehaviour:
   Description: The more health lost, the more damage gains
   Icon: {fileID: 0}
   RemoveOnActive: 1
-  IsActive: 0
-  m_percentDamageIncrease: 10
-  m_percentHPLost: 15
+  IsActive: 1
+  m_percentDamageIncrease: 20
+  m_percentHPLost: 10

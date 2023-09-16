@@ -42,7 +42,7 @@ namespace JustGame.Scripts.Weapons
             m_immuneDamage = false;
         }
 
-        public override void TakeDamage(float damage, GameObject instigator)
+        public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
         {
             if (!AuthorizeTakingDamage()) return;
 
@@ -54,7 +54,7 @@ namespace JustGame.Scripts.Weapons
             }
             
             var dmgNumber = m_dmgNumberPooler.GetPooledGameObject().GetComponent<DamageNumber>();
-            dmgNumber.Show(Mathf.RoundToInt(damage));
+            dmgNumber.Show(Mathf.RoundToInt(damage), isCriticalHit);
             
             OnHit?.Invoke();
 
