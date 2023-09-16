@@ -7,10 +7,12 @@ namespace JustGame.Scripts.Managers
 {
     public enum BindingAction
     {
-        MOVE_LEFT,
+        MOVE_LEFT = 0,
         MOVE_RIGHT,
         MOVE_UP,
         MOVE_DOWN,
+        
+        OPEN_SHIP_UPGRADE = 30,
     }
     [Serializable]
     public struct ButtonAssign

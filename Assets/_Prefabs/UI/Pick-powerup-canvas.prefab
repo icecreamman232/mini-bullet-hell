@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1260030834016426346}
   - component: {fileID: 84196192422984037}
   m_Layer: 5
-  m_Name: Pick-skill-canvas
+  m_Name: Pick-powerup-canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
