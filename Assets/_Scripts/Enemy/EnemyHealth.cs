@@ -29,7 +29,7 @@ namespace JustGame.Scripts.Weapons
         private void OnEnable()
         {
             if (m_waveEvent.CurrentWave <= 1) return;
-            m_maxHealth += (m_waveEvent.CurrentWave * MathHelpers.PercentOf(m_maxHealth) * 2); // Increase 2% HP per wave
+            m_maxHealth += (m_waveEvent.CurrentWave * MathHelpers.PercentOf(m_maxHealth) * 35); // Increase 50% HP per wave
         }
 
         public void EnableDamageImmune()

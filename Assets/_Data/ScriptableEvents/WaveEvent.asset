@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveEvent
   m_EditorClassIdentifier: 
   MaxWave: 5
-  CurrentWave: 1
+  CurrentWave: 3
   m_waveDurations:
   - 0
   - 10
@@ -21,3 +21,8 @@ MonoBehaviour:
   - 15
   - 20
   - 30
+  - 30
+  - 45
+  - 45
+  - 60
+  - 60
