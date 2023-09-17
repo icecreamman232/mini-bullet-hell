@@ -34,7 +34,6 @@ namespace JustGame.Scripts.ScriptableEvent
             {
                 m_derbisAmount = 0;
             }
-            OnCollectDerbis?.Invoke(value);
             OnChangeDerbisAmount?.Invoke(m_derbisAmount);
         }
     }

@@ -73,6 +73,7 @@ namespace JustGame.Scripts.Weapons
             if (m_curHealth >= m_maxHealth) return;
             
             float healingAmount = m_recycleJunkPowerUp.GetHealthValue(debrisAmount);
+            m_resourceEvent.SpendDerbis(debrisAmount);
             m_curHealth += healingAmount;
             m_curHealth = Mathf.Clamp(m_curHealth, 0f, m_maxHealth);
             if (m_healthEvent != null)
