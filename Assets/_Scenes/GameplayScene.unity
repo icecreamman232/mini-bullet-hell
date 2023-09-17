@@ -11066,6 +11066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship-upgrade-canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6199251584173741131, guid: 32a4a4766920a4c4f8d896a0f0b841f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

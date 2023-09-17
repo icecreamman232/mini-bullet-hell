@@ -17,10 +17,10 @@ namespace JustGame.Scripts.UI
         [Header("Branches")] 
         [SerializeField] private GameObject[] m_branches;
         
-        private readonly float m_delayBetweenTwoSpending = 0.2f;
+        private readonly float m_delayBetweenTwoSpending = 0.1f;
         private float m_timer;
         private bool m_isPressingDown;
-        
+        private float m_progress;
         public void Initialize()
         {
             m_progressBar.fillAmount = 0;
@@ -46,29 +46,42 @@ namespace JustGame.Scripts.UI
         
         private void Update()
         {
-            if (m_upgradeProfile == null) return;
-            if (m_upgradeProfile.IsUnlocked) return;
+            //if (m_upgradeProfile == null) return;
+            //if (m_upgradeProfile.IsUnlocked) return;
             if(!m_isPressingDown) return;
 
             m_timer += Time.unscaledDeltaTime;
             if (m_timer >= m_delayBetweenTwoSpending)
             {
                 m_timer = 0;
-                if (!m_resourceEvent.CanSpend) return;
-                m_resourceEvent.SpendDerbis(1);
-                m_upgradeProfile.SpentXP(1);
-                m_progressBar.fillAmount = ((float)(m_upgradeProfile.CurrentXP)) / m_upgradeProfile.XPToUnlock;
-                if (m_upgradeProfile.IsUnlocked)
+                //if (!m_resourceEvent.CanSpend) return;
+                //UpdateUpgradeProfile();
+                m_progress += 0.2f;
+                m_progressBar.fillAmount = m_progress;
+
+                if (m_progress >= 1)
                 {
                     OnUnlockOtherNodes();
                 }
+                
+                // if (m_upgradeProfile.IsUnlocked)
+                // {
+                //     OnUnlockOtherNodes();
+                // }
             }
         }
 
+        private void UpdateUpgradeProfile()
+        {
+            m_resourceEvent.SpendDerbis(1);
+            m_upgradeProfile.SpentXP(1);
+            m_progress = ((float)(m_upgradeProfile.CurrentXP)) / m_upgradeProfile.XPToUnlock;
+        }
 
         public override void OnPointerDown(PointerEventData eventData)
         {
-            if (m_upgradeProfile.IsUnlocked) return;
+            //if (m_upgradeProfile == null) return;
+            //if (m_upgradeProfile.IsUnlocked) return;
             if (m_isPressingDown) return;
             m_isPressingDown = true;
             base.OnPointerDown(eventData);
@@ -76,7 +89,8 @@ namespace JustGame.Scripts.UI
 
         public override void OnPointerUp(PointerEventData eventData)
         {
-            if (m_upgradeProfile.IsUnlocked) return;
+            //if (m_upgradeProfile == null) return;
+            //if (m_upgradeProfile.IsUnlocked) return;
             if (!m_isPressingDown) return;
             m_isPressingDown = false;
             base.OnPointerUp(eventData);
