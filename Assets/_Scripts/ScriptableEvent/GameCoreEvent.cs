@@ -5,6 +5,7 @@ namespace JustGame.Scripts.ScriptableEvent
 {
     public enum GameState
     {
+        NONE = -1,
         FIGHTING,
         PICK_SKILL,
         PICK_UPGRADE,
@@ -24,7 +25,7 @@ namespace JustGame.Scripts.ScriptableEvent
 
         private void OnEnable()
         {
-            m_curState = GameState.FIGHTING;
+            m_curState = GameState.NONE;
         }
 
         public void SetGameState(GameState newState)

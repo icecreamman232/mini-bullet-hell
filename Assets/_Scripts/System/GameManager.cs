@@ -28,17 +28,34 @@ namespace JustGame.Scripts.Managers
         
         private InputManager m_inputManager;
         public bool IsPaused => m_isPaused;
-        
+
+        private void Awake()
+        {
+            m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
+        }
+
         private IEnumerator Start()
         {
-
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
             m_clock.OnEndClock += OnFinishWaveTime;
-            m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
             yield return new WaitUntil(() => !SceneLoader.Instance.IsProcessing);
-            m_gameCoreEvent.SetGameState(GameState.INTRO);
+            CaseIntro();
+        }
 
+        private void Update()
+        {
+            if (m_inputManager.GetKeyClicked(BindingAction.OPEN_SHIP_UPGRADE))
+            {
+                if (m_gameCoreEvent.CurrentState == GameState.FIGHTING)
+                {
+                    m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
+                }
+                else if(m_gameCoreEvent.CurrentState == GameState.PICK_UPGRADE)
+                {
+                    m_gameCoreEvent.SetGameState(GameState.FIGHTING);
+                }
+            }
         }
 
         private void OnChangeGameState(GameState prevState, GameState newState)

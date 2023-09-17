@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297c5bf231f30574691289c9f1885541, type: 3}
   m_Name: GameCoreEvent
   m_EditorClassIdentifier: 
-  m_curState: 0
+  m_curState: -1
