@@ -47,6 +47,7 @@ MonoBehaviour:
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_powerUpList:
   - {fileID: 11400000, guid: 2f64c679b8934984cafce209859f5f34, type: 2}
+  - {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
   - {fileID: 11400000, guid: de131638d189dde489d54b529fb1e6b4, type: 2}
   - {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
   - {fileID: 11400000, guid: 8194580f5b10a3f4e8d49eaaf8128cf8, type: 2}
@@ -55,9 +56,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}
   - {fileID: 11400000, guid: 40f85dda8c197e846a29ffbba4158015, type: 2}
   - {fileID: 11400000, guid: 33eef70957c77f24983d25f0ee3f915e, type: 2}
+  - {fileID: 11400000, guid: 54fef78df8f4938478b2742ecacd0fd7, type: 2}
   - {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}
   - {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}
   - {fileID: 11400000, guid: 955cbc87b82fbc44fb72f735f550b141, type: 2}
+  - {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
   - {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
   - {fileID: 11400000, guid: f97e8ff262678b343bc43ae0ca85df6a, type: 2}
-  - {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
