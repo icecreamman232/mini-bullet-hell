@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3161648d681f14b96d10661d1a4da6, type: 3}
-  m_Name: RareEngineUpgradeProfile
+  m_Script: {fileID: 11500000, guid: 408fc4af90e177241a8cc70cdc019a9a, type: 3}
+  m_Name: MoveSpeedUpgrade
   m_EditorClassIdentifier: 
-  ComponentType: 1
-  Grade: 2
-  Icon: {fileID: -1044809886, guid: 13cf074dc998c18428dbf7a90cbf6c33, type: 3}
-  Title: Engine III
-  Description: engine
-  BonusValue: 5
+  Icon: {fileID: 0}
+  Title: Moving Speed
+  Description: 
+  XPToUnlock: 10
+  CurrentXP: 0
+  IsUnlocked: 0
+  m_moveSpeedIncrease: 5

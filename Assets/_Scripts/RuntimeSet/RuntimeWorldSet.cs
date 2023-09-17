@@ -4,14 +4,6 @@ using UnityEngine;
 
 namespace JustGame.Scripts.RuntimeSet
 {
-    public enum Grade
-    {
-        Common,
-        Uncommon,
-        Rare,
-        Legend,
-    }
-    
     [CreateAssetMenu(menuName = "JustGame/Runtime Set/World Set")]
     public class RuntimeWorldSet : ScriptableObject
     {

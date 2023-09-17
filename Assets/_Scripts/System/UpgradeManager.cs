@@ -6,7 +6,7 @@ namespace JustGame.Scripts.Managers
 {
     public class UpgradeManager : Singleton<UpgradeManager>
     {
-        [SerializeField] private ComponentProfile[] m_componentProfiles;
+        [SerializeField] private UpgradeProfile[] m_componentProfiles;
         [SerializeField] private WeightObject[] m_weightObjects;
 
         private void Start()
@@ -14,7 +14,7 @@ namespace JustGame.Scripts.Managers
             WeightObject.ComputeSpawnArray(m_weightObjects);
         }
 
-        public ComponentProfile GetRandomProfile()
+        public UpgradeProfile GetRandomProfile()
         {
             var random = Random.Range(0, 100f);
             var index = WeightObject.GetWeightIndex(m_weightObjects, random);

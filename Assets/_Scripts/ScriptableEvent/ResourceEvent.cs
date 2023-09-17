@@ -13,6 +13,8 @@ namespace JustGame.Scripts.ScriptableEvent
 
         public Action<int> OnCollectDerbis;
 
+        public bool CanSpend => m_derbisAmount > 0;
+        
         private void OnEnable()
         {
             m_derbisAmount = 0;
@@ -21,6 +23,17 @@ namespace JustGame.Scripts.ScriptableEvent
         public void AddDerbis(int value)
         {
             m_derbisAmount += value;
+            OnCollectDerbis?.Invoke(value);
+            OnChangeDerbisAmount?.Invoke(m_derbisAmount);
+        }
+
+        public void SpendDerbis(int value)
+        {
+            m_derbisAmount -= value;
+            if (m_derbisAmount < 0)
+            {
+                m_derbisAmount = 0;
+            }
             OnCollectDerbis?.Invoke(value);
             OnChangeDerbisAmount?.Invoke(m_derbisAmount);
         }
