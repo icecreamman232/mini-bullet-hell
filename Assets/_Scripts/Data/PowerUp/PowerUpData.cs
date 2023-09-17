@@ -4,9 +4,15 @@ using UnityEngine;
 
 namespace JustGame.Scripts.Data
 {
+    public enum PowerUpType
+    {
+        PASSIVE,
+        ACTIVE,
+    }
     public class PowerUpData : ScriptableObject
     {
         [Header("Base")] 
+        [SerializeField] protected PowerUpType m_type;
         [SerializeField] protected RuntimeWorldSet m_runtimeWorldSet;
         public string Name;
         public string Description;
@@ -14,8 +20,10 @@ namespace JustGame.Scripts.Data
 
         public bool RemoveOnActive = true;
         public bool IsActive;
+        public PowerUpType Type => m_type;
+        
         public Action OnApplyPowerUp;
-
+        
         protected virtual void OnEnable()
         {
             IsActive = false;

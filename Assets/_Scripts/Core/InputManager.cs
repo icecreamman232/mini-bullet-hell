@@ -12,7 +12,7 @@ namespace JustGame.Scripts.Managers
         MOVE_UP,
         MOVE_DOWN,
         
-        OPEN_SHIP_UPGRADE = 30,
+        USE_ACTIVE_ABILITY = 10,
     }
     [Serializable]
     public struct ButtonAssign

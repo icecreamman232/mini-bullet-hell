@@ -54,5 +54,5 @@ MonoBehaviour:
     keyCode: 119
   - keyAction: 3
     keyCode: 115
-  - keyAction: 30
-    keyCode: 114
+  - keyAction: 10
+    keyCode: 32

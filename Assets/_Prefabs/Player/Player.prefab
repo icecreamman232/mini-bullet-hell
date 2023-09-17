@@ -206,6 +206,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febd93b316993e54b97366b3109c3393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3814976411623533917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7927896065672116182}
+  - component: {fileID: 3794485421888105435}
+  m_Layer: 6
+  m_Name: ExtraAbility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7927896065672116182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814976411623533917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 104089811888605498}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3794485421888105435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814976411623533917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93996e9b995c0f846899d371d3c3addb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPermit: 1
+  m_lerpSpeed: 0.01
+  m_dashPowerUp: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
+  m_playerAim: {fileID: 1958232211951765236}
 --- !u!1 &6057750855874258755
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +5262,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5717428420957280846}
+  - {fileID: 7927896065672116182}
   - {fileID: 6697359545382462138}
   - {fileID: 3984205372057670205}
   m_Father: {fileID: 0}
@@ -5304,8 +5353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
-  m_runtimeWorldSet: {fileID: 0}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
+  m_abilityNode:
+  - {fileID: 3814976411623533917}
   FacingDirection: 0
 --- !u!114 &3178101143697677362
 MonoBehaviour:

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using JustGame.Scripts.RuntimeSet;
@@ -17,9 +16,8 @@ namespace JustGame.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
-        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private PlayerComponentSet m_componentSet;
-        
+        [SerializeField] private GameObject[] m_abilityNode;
         public FacingDirection FacingDirection;
         private List<PlayerAbility> m_cachedAbilities;
 
@@ -34,6 +32,12 @@ namespace JustGame.Scripts.Player
         {
             m_cachedAbilities ??= new List<PlayerAbility>();
             m_cachedAbilities = GetComponents<PlayerAbility>().ToList();
+
+            for (int i = 0; i < m_abilityNode.Length; i++)
+            {
+                m_cachedAbilities.AddRange(m_abilityNode[i].GetComponents<PlayerAbility>());
+            }
+            
             foreach (var ability in m_cachedAbilities)
             {
                 ability.Initialize();

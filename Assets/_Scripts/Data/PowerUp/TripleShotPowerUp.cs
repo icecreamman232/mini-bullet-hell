@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using JustGame.Scripts.Data;
 using UnityEngine;
 
 namespace JustGame.Scripts.Data
