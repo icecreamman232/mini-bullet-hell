@@ -11,6 +11,9 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private PowerUpData[] m_powerUpList;
         [SerializeField] private PowerUpData m_curentActivePowerUp;
+
+        public PowerUpData CurrentActivePowerUp => m_curentActivePowerUp;
+        
         private void Start()
         {
             m_runtimeWorldSet.SetPowerUpManager(this);

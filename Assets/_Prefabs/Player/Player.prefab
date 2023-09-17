@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPermit: 1
-  m_lerpSpeed: 0.01
+  m_cooldownEvent: {fileID: 11400000, guid: 4fa48587772386949b7cf3f97449a052, type: 2}
   m_dashPowerUp: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
   m_playerAim: {fileID: 1958232211951765236}
 --- !u!1 &6057750855874258755

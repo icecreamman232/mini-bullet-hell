@@ -7,6 +7,7 @@ namespace JustGame.Scripts.Player
 {
     public class PlayerDash : PlayerAbility
     {
+        [SerializeField] private CooldownActivePowerUpEvent m_cooldownEvent;
         [SerializeField] private DashPowerUp m_dashPowerUp;
         [SerializeField] private PlayerAim m_playerAim;
         private bool m_isDashing;
@@ -26,10 +27,12 @@ namespace JustGame.Scripts.Player
             if (m_isCooldown)
             {
                 m_timer -= Time.deltaTime;
+                m_cooldownEvent.Raise(m_timer);
                 if (m_timer <= 0)
                 {
                     m_isCooldown = false;
                     m_timer = 0;
+                    m_cooldownEvent.Raise(m_timer);
                 }
             }
             base.ProcessAbility();
@@ -66,6 +69,7 @@ namespace JustGame.Scripts.Player
             //Start cooldown
             m_isCooldown = true;
             m_timer = m_dashPowerUp.CoolDown;
+            m_cooldownEvent.SetCoolDown(m_dashPowerUp.CoolDown);
             m_isDashing = false;
         }
     }
