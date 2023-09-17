@@ -24,6 +24,7 @@ namespace JustGame.Scripts.Data
         {
             base.ApplyPowerUp();
             IsActive = true;
+            m_runtimeWorldSet.PowerUpManager.SetActivePowerUp(this);
         }
     }
 }
