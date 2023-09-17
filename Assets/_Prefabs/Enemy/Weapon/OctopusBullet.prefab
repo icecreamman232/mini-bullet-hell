@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_knockBackForce: 30
   m_knockBackDuration: 0.3
+  m_damageMultiplier: 0
   m_minDamageCause: 10
   m_maxDamageCause: 15
   m_targetMask:
@@ -233,9 +234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d199d6ac11eb90d499eb7412467a2b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 150
+  m_moveSpeed: 80
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 20
   m_bulletBody: {fileID: 8106000571504492118}
   m_damageHandler: {fileID: 6115035109323062156}
   m_destroyAnim: {fileID: 7819127027992680976}
+  m_spriteRenderer: {fileID: 0}
