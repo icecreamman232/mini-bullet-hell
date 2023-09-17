@@ -42,21 +42,7 @@ namespace JustGame.Scripts.Managers
             yield return new WaitUntil(() => !SceneLoader.Instance.IsProcessing);
             CaseIntro();
         }
-
-        private void Update()
-        {
-            // if (m_inputManager.GetKeyClicked(BindingAction.OPEN_SHIP_UPGRADE))
-            // {
-            //     if (m_gameCoreEvent.CurrentState == GameState.FIGHTING)
-            //     {
-            //         m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
-            //     }
-            //     else if(m_gameCoreEvent.CurrentState == GameState.PICK_UPGRADE)
-            //     {
-            //         m_gameCoreEvent.SetGameState(GameState.FIGHTING);
-            //     }
-            // }
-        }
+        
 
         private void OnChangeGameState(GameState prevState, GameState newState)
         {
@@ -69,9 +55,6 @@ namespace JustGame.Scripts.Managers
                     break;
                 case GameState.FIGHTING:
                     CaseFighting();
-                    break;
-                case GameState.PICK_UPGRADE:
-                    CasePickUpgrade();
                     break;
                 case GameState.PICK_SKILL:
                     CasePickSkill();
@@ -96,12 +79,6 @@ namespace JustGame.Scripts.Managers
             m_waveEvent.IncreaseWave();
             m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
             m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
-        }
-
-        private void CasePickUpgrade()
-        {
-            m_pauseGameEvent.Raise(true);
-            PauseGame(true);
         }
         
         private void CasePickSkill()
