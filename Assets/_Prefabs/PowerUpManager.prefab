@@ -63,3 +63,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
   - {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
   - {fileID: 11400000, guid: f97e8ff262678b343bc43ae0ca85df6a, type: 2}
+  - {fileID: 11400000, guid: f34eafe1b9b99134d9b639d7bfcafd79, type: 2}
+  m_curentActivePowerUp: {fileID: 0}

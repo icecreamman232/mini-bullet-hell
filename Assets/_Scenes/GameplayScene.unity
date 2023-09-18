@@ -10500,7 +10500,7 @@ MonoBehaviour:
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_spawnProfile: {fileID: 11400000, guid: 28e69a9b81708ff4dba1580b067aee37, type: 2}
   m_canSpawn: 1
-  m_noEnemy: 1
+  m_noEnemy: 0
 --- !u!4 &1986079078
 Transform:
   m_ObjectHideFlags: 0

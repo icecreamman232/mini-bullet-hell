@@ -23,7 +23,7 @@ namespace JustGame.Scripts.Managers
         {
             if (m_curentActivePowerUp != null)
             {
-                m_curentActivePowerUp.IsActive = false;
+                m_curentActivePowerUp.DiscardPowerUp();
             }
             m_curentActivePowerUp = newActivePowerUp;
         }

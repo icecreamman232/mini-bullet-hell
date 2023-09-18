@@ -23,7 +23,8 @@ namespace JustGame.Scripts.Data
         public PowerUpType Type => m_type;
         
         public Action OnApplyPowerUp;
-        
+        public Action OnDiscardPowerUp;
+
         protected virtual void OnEnable()
         {
             IsActive = false;
@@ -32,12 +33,19 @@ namespace JustGame.Scripts.Data
 
         public virtual void ApplyPowerUp()
         {
-            Debug.Log($"Applied power up {Name}");
+            Debug.Log($"<color=green>Applied power up {Name}</color>");
             OnApplyPowerUp?.Invoke();
             if (RemoveOnActive)
             {
                 m_runtimeWorldSet.PowerUpManager.RemovePowerUp(this);
             }
+        }
+
+        public virtual void DiscardPowerUp()
+        {
+            Debug.Log($"<color=orange>Discarded power up {Name}</color>");
+            OnDiscardPowerUp?.Invoke();
+            IsActive = false;
         }
     }
 }

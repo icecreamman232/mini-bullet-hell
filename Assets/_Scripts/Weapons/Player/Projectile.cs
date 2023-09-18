@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
