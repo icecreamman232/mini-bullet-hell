@@ -139,6 +139,8 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 384
+  m_screenShakeEvent: {fileID: 11400000, guid: 2f313db4303590048b04cca66b5bdbc4, type: 2}
+  m_shakeProfile: {fileID: 11400000, guid: 24758f34594ae9d4582e9cd1306ba222, type: 2}
 --- !u!1 &2426304099507826291
 GameObject:
   m_ObjectHideFlags: 0
