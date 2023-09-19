@@ -18,11 +18,20 @@ namespace JustGame.Scripts.Data
         public float Duration => m_duration;
         public int BurnDamage => Random.Range(m_minDamage, m_maxDamage);
 
-        public bool CanBurn =>  Random.Range(0f, 100) <= m_chanceToApply;
+        public bool CanBurn =>  Random.Range(0f, 100f) <= m_chanceToApply;
+
+        public bool CanSpread => Random.Range(0f, 100f) <= m_chanceToSpreadOut;
+        
         [ContextMenu("Trigger")]
         private void Test()
         {
             ApplyPowerUp();
+            IsActive = true;
+        }
+
+        public override void ApplyPowerUp()
+        {
+            base.ApplyPowerUp();
             IsActive = true;
         }
     }

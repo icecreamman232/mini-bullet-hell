@@ -1,5 +1,6 @@
 using System;
 using JustGame.Scripts.Data;
+using JustGame.Scripts.Managers;
 using JustGame.Scripts.Weapons;
 using UnityEngine;
 
@@ -18,7 +19,18 @@ namespace JustGame.Scripts.Enemy
         {
             m_burningVFX.Stop();
         }
-        
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.layer != LayerManager.EnemyLayer) return;
+            if (m_durationTimer <= 0) return;
+            if (!m_burningCoatingPowerUp.CanSpread) return;
+            
+            var burnOnOtherEnemy = other.gameObject.GetComponentInParent<CanBurn>();
+            burnOnOtherEnemy.ApplyBurn();
+        }
+
+
         public void ApplyBurn()
         {
             //if enemy got burning and got apply burn again! We reset the duration and continue burning them!

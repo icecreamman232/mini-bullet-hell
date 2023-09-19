@@ -128,5 +128,11 @@ namespace JustGame.Scripts.EditorExtension
     {
         
     }
+    
+    [CustomEditor(typeof(BurningCoatingPowerUp))]
+    public class BurningCoatingInspector : PowerUpDataCustomInspector
+    {
+        
+    }
 }
 

@@ -23,5 +23,5 @@ MonoBehaviour:
   m_maxDamage: 8
   m_duration: 3
   m_damageFrequency: 1
-  m_chanceToApply: 100
-  m_chanceToSpreadOut: 30
+  m_chanceToApply: 35
+  m_chanceToSpreadOut: 35

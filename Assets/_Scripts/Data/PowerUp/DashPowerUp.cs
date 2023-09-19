@@ -18,6 +18,7 @@ namespace JustGame.Scripts.Data
         private void Test()
         {
             ApplyPowerUp();
+            IsActive = true;
         }
 
         public override void ApplyPowerUp()
