@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f82ced08a731b4d992839969763d66, type: 3}
   m_Name: BeginnerStarship
   m_EditorClassIdentifier: 
-  m_shipName: Beginner
-  m_baseReactorPoint: 10
-  m_baseEnginePoint: 6
-  m_baseHullPoint: 10
+  m_baseMinAtkDamage: 10
+  m_baseMaxAtkDamage: 15
+  m_baseAtkSpd: 80
+  m_baseCritChance: 25
+  m_baseCritDamageMultiplier: 1.5
+  m_baseKnockBack: 30
+  m_baseMoveSpeed: 35
+  m_baseArmor: 15
+  m_baseHealth: 100
+  m_baseCooldownReduce: 0

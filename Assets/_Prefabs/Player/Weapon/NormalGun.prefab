@@ -202,7 +202,7 @@ MonoBehaviour:
   GunType: 1
   ReloadTime: 1
   Magazine: 10
-  DelayBetweenTwoShot: 0.3
+  DelayBetweenTwoShot: 0.8
   ObjectPooler: {fileID: 4392109976417253279}
 --- !u!114 &4392109976417253279
 MonoBehaviour:
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  Offset: {x: 0, y: 0}
   IsSharePool: 0
   ObjectToPool: {fileID: 826045983694793967, guid: 5735617bfe7fbcd4db268024f211d2f1, type: 3}
   PoolSize: 15
