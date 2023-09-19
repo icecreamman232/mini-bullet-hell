@@ -1,5 +1,6 @@
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
+using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace JustGame.Scripts.UI
 {
     public class CooldownBar : MonoBehaviour
     {
+        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private CooldownActivePowerUpEvent m_cooldownEvent;
         [SerializeField] private BoolEvent m_cooldownDoneEvent;
         [SerializeField] private TextMeshProUGUI m_abilityName;
@@ -21,6 +23,11 @@ namespace JustGame.Scripts.UI
         {
             m_cooldownEvent.TriggerCoolDownAction += SetCoolDown;
             m_cooldownEvent.AddListener(SetTimer);
+        }
+
+        private void Start()
+        {
+            m_runtimeWorldSet.PowerUpManager.OnApplyNewActivePowerUp += OnResetCooldownBar;
         }
 
         private void Update()
@@ -37,6 +44,15 @@ namespace JustGame.Scripts.UI
                 m_cooldownDoneEvent.Raise(true);
                 m_isCooldown = false;
             }
+        }
+
+        private void OnResetCooldownBar()
+        {
+            m_scalarVector = Vector2.zero;
+            m_abilityName.gameObject.SetActive(false);
+            m_timer = 0;
+            m_barTransform.localScale = Vector3.zero;
+            m_isCooldown = false;
         }
         
         [ContextMenu("Test")]
@@ -59,6 +75,7 @@ namespace JustGame.Scripts.UI
         {
             m_cooldownEvent.TriggerCoolDownAction -= SetCoolDown;
             m_cooldownEvent.RemoveListener(SetTimer);
+            m_runtimeWorldSet.PowerUpManager.OnApplyNewActivePowerUp -= OnResetCooldownBar;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
@@ -13,12 +14,14 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private PowerUpData m_curentActivePowerUp;
 
         public PowerUpData CurrentActivePowerUp => m_curentActivePowerUp;
-        
-        private void Start()
+
+        public Action OnApplyNewActivePowerUp;
+
+        private void Awake()
         {
             m_runtimeWorldSet.SetPowerUpManager(this);
         }
-
+        
         public void SetActivePowerUp(PowerUpData newActivePowerUp)
         {
             if (m_curentActivePowerUp != null)
@@ -26,6 +29,7 @@ namespace JustGame.Scripts.Managers
                 m_curentActivePowerUp.DiscardPowerUp();
             }
             m_curentActivePowerUp = newActivePowerUp;
+            OnApplyNewActivePowerUp?.Invoke();
         }
         
         public List<PowerUpData> GetPowerUpList()

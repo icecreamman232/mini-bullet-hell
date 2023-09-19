@@ -20,5 +20,5 @@ MonoBehaviour:
   RemoveOnActive: 1
   IsActive: 0
   m_dashLerpSpeed: 0.02
-  m_dashCooldown: 2
+  m_dashCooldown: 30
   m_dashDistance: 5

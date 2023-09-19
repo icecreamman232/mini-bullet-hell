@@ -116,5 +116,17 @@ namespace JustGame.Scripts.EditorExtension
     {
         
     }
+    
+    [CustomEditor(typeof(DashPowerUp))]
+    public class DashInspector : PowerUpDataCustomInspector
+    {
+        
+    }
+    
+    [CustomEditor(typeof(ShieldPowerUp))]
+    public class ShieldInspector : PowerUpDataCustomInspector
+    {
+        
+    }
 }
 
