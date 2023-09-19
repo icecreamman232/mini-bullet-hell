@@ -202,7 +202,7 @@ MonoBehaviour:
   GunType: 1
   ReloadTime: 1
   Magazine: 10
-  DelayBetweenTwoShot: 0.8
+  DelayBetweenTwoShot: 0.6
   ObjectPooler: {fileID: 4392109976417253279}
 --- !u!114 &4392109976417253279
 MonoBehaviour:

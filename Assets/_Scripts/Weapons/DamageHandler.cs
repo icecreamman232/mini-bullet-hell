@@ -18,6 +18,9 @@ namespace JustGame.Scripts.Weapons
         public int MinDamage => m_minDamageCause;
         public int MaxDamage => m_maxDamageCause;
         
+        /// <summary>
+        /// Callback when hitting target
+        /// </summary>
         public Action<GameObject> OnHit;
 
         private void Start()
