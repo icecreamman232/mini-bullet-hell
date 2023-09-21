@@ -75,7 +75,6 @@ namespace JustGame.Scripts.Enemy
                 newSpeed = 0;
             }
             m_curSpeed = newSpeed;
-            Debug.Log($"Set speed {m_curSpeed}");
         }
 
         public virtual void ResetSpeed()

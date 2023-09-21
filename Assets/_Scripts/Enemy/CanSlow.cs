@@ -18,7 +18,6 @@ namespace JustGame.Scripts.Enemy
         private void RemoveSlow()
         {
             m_enemyMovement.ResetSpeed();
-            Debug.Log("Reset speed");
         }
 
         private void Update()
