@@ -1,5 +1,6 @@
 using System;
 using JustGame.Scripts.Data;
+using JustGame.Scripts.UI;
 using UnityEditor;
 using UnityEngine;
 
@@ -131,6 +132,12 @@ namespace JustGame.Scripts.EditorExtension
     
     [CustomEditor(typeof(BurningCoatingPowerUp))]
     public class BurningCoatingInspector : PowerUpDataCustomInspector
+    {
+        
+    }
+    
+    [CustomEditor(typeof(SlowCoatingPowerUp))]
+    public class SlowCoatingInspector : PowerUpDataCustomInspector
     {
         
     }

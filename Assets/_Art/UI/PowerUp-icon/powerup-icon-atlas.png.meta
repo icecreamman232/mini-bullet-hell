@@ -475,7 +475,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,6 +483,27 @@ TextureImporter:
       bones: []
       spriteID: 17782e59ea9fd054487d25462cc6c955
       internalID: -1557014635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burning-coating-icon
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 161
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712d8ed88d612c949a22b164e4a1a652
+      internalID: -723125592
       vertices: []
       indices: 
       edges: []
@@ -500,6 +521,7 @@ TextureImporter:
     nameFileIdTable:
       atk-speed-icon: 110037582
       auto-collect-icon: 1216682150
+      burning-coating-icon: -723125592
       critical-icon: -1303461692
       dash-icon: -1557014635
       double-shot-icon: -1738424168

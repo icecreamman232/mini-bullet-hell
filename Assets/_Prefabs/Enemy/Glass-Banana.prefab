@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1685128427141467354}
   - component: {fileID: -2820928893520391100}
   - component: {fileID: 720255752969441934}
+  - component: {fileID: -7074426004255393349}
   m_Layer: 8
   m_Name: Glass-Banana
   m_TagString: Untagged
@@ -256,8 +257,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_burningCoatingPowerUp: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   m_health: {fileID: 1648942524893189030}
-  m_damageHandler: {fileID: 3803444789804986994}
   m_burningVFX: {fileID: 95561312760119598}
+--- !u!114 &-7074426004255393349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128153707947029248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c440e0cb43f1f148b4360a16477825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyMovement: {fileID: 7070895007557852846}
+  m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
 --- !u!1 &1915569596928715565
 GameObject:
   m_ObjectHideFlags: 0

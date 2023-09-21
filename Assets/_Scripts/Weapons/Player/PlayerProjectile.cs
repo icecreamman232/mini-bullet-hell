@@ -1,5 +1,6 @@
 using System.Collections;
 using JustGame.Scripts.Data;
+using JustGame.Scripts.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,8 +17,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] private ParalyzeCoatingPowerUp m_paralyzeCoatingPowerUp;
         [SerializeField] private SacrificeHPPowerUp m_sacrificeHpPowerUp;
         [SerializeField] private MadnessPowerUp m_madnessPowerUp;
-        [SerializeField] private BurningCoatingPowerUp m_burningCoatingPowerUp;
-        
+
         private int m_piercingNumber;
 
         protected override void Awake()

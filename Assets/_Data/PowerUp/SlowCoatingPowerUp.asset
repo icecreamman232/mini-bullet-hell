@@ -9,19 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27443712b79bd941b0a41659979145f, type: 3}
-  m_Name: BurningCoatingPowerUp
+  m_Script: {fileID: 11500000, guid: 4af8bf0542147b644a4b98d67d998dc8, type: 3}
+  m_Name: SlowCoatingPowerUp
   m_EditorClassIdentifier: 
   m_type: 0
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
-  Name: Burning Coating
-  Description: Have chance to apply burn on target
-  Icon: {fileID: -723125592, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
+  Name: Slow Coating
+  Description: Slow target on hit
+  Icon: {fileID: 0}
   RemoveOnActive: 1
-  IsActive: 0
-  m_minDamage: 5
-  m_maxDamage: 8
-  m_duration: 3
-  m_damageFrequency: 1
-  m_chanceToApply: 35
-  m_chanceToSpreadOut: 35
+  IsActive: 1
+  m_slowReduce: 30
+  m_duration: 0.5
+  m_chanceToApply: 50

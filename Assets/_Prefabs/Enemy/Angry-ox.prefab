@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 754738159531716716}
   - component: {fileID: -2179409161298676105}
   - component: {fileID: 3508163777972755357}
+  - component: {fileID: 233495913179480439}
   m_Layer: 8
   m_Name: Angry-ox
   m_TagString: Untagged
@@ -851,8 +852,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_burningCoatingPowerUp: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   m_health: {fileID: 6053236843462605561}
-  m_damageHandler: {fileID: 392192502447399200}
   m_burningVFX: {fileID: 5514109146700135022}
+--- !u!114 &233495913179480439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563486028371585677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c440e0cb43f1f148b4360a16477825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyMovement: {fileID: 8469077174605555998}
+  m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
 --- !u!1001 &1024966122324405434
 PrefabInstance:
   m_ObjectHideFlags: 0

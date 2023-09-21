@@ -27,6 +27,8 @@ namespace JustGame.Scripts.Enemy
         protected float m_curSpeed;
         protected Health m_health;
         protected Vector2 m_movingTarget;
+
+        public float CurrentSpeed => m_curSpeed;
         
         private void Start()
         {
@@ -68,7 +70,12 @@ namespace JustGame.Scripts.Enemy
         }
         public virtual void SetOverrideSpeed(float newSpeed)
         {
+            if (newSpeed < 0)
+            {
+                newSpeed = 0;
+            }
             m_curSpeed = newSpeed;
+            Debug.Log($"Set speed {m_curSpeed}");
         }
 
         public virtual void ResetSpeed()
@@ -137,6 +144,7 @@ namespace JustGame.Scripts.Enemy
                 yield break;
             }
 
+            var initSpeed = m_curSpeed;
             m_movementState = MovementState.KNOCK_BACK;
             var prevDir = m_movingDirection;
             m_movingDirection = knockBackDir;
@@ -151,7 +159,7 @@ namespace JustGame.Scripts.Enemy
 
             m_movingDirection = prevDir;
             m_movementState = MovementState.MOVING;
-            m_curSpeed = m_moveSpeed;
+            m_curSpeed = initSpeed;
         }
     }
 }

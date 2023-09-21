@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 395577811574219649}
   - component: {fileID: 7760091740885897234}
   - component: {fileID: 5729041155737579304}
+  - component: {fileID: -8266268007084477177}
   m_Layer: 8
   m_Name: SpaceOctopus
   m_TagString: Untagged
@@ -575,8 +576,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_burningCoatingPowerUp: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   m_health: {fileID: 7479394047214657503}
-  m_damageHandler: {fileID: 3134863628032331133}
   m_burningVFX: {fileID: 4689777240970654868}
+--- !u!114 &-8266268007084477177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669416357976832700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c440e0cb43f1f148b4360a16477825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyMovement: {fileID: 4286163753507955578}
+  m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
 --- !u!1 &7689933659731950181
 GameObject:
   m_ObjectHideFlags: 0

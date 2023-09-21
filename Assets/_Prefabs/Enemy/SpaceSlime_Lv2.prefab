@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1654894790314676555}
   - component: {fileID: 2401293940490292133}
   - component: {fileID: 7908657667665257322}
+  - component: {fileID: -979029405504145516}
   m_Layer: 8
   m_Name: SpaceSlime_Lv2
   m_TagString: Untagged
@@ -317,6 +318,20 @@ MonoBehaviour:
   m_burningCoatingPowerUp: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   m_health: {fileID: 2567324182437856936}
   m_burningVFX: {fileID: 5137509011316973447}
+--- !u!114 &-979029405504145516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251019927706066467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c440e0cb43f1f148b4360a16477825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemyMovement: {fileID: 111512908221176413}
+  m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
 --- !u!1 &3150499309721954730
 GameObject:
   m_ObjectHideFlags: 0
