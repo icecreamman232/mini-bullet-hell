@@ -492,11 +492,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 161
+        y: 160
         width: 32
-        height: 31
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,6 +504,27 @@ TextureImporter:
       bones: []
       spriteID: 712d8ed88d612c949a22b164e4a1a652
       internalID: -723125592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slow-coating-icon
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625755711f762c640a4389fbd08ff8fb
+      internalID: 11113882
       vertices: []
       indices: 
       edges: []
@@ -537,6 +558,7 @@ TextureImporter:
       revive-icon: -1748518633
       sacrifice-hp-icon: -973010387
       shield-icon: 1155109738
+      slow-coating-icon: 11113882
       triple-shot-icon: 1330369017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

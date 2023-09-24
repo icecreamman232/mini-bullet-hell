@@ -5424,7 +5424,7 @@ MonoBehaviour:
   m_clock: {fileID: 713943503}
   m_pauseGameEvent: {fileID: 11400000, guid: 4e5c8b0bbeb358849a6bbea757c75b19, type: 2}
   m_isPaused: 0
-  m_endless: 1
+  m_endless: 0
   m_waveEvent: {fileID: 11400000, guid: 2de0fff9a737bba488eaede4dde02d95, type: 2}
   m_waveCountEvent: {fileID: 11400000, guid: c816fb68cc5cfc7438878d7088dffa86, type: 2}
 --- !u!114 &713943503
@@ -5485,71 +5485,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1401194143
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 128153707947029248, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_Name
-      value: Glass-Banana
-      objectReference: {fileID: 0}
-    - target: {fileID: 1648942524893189030, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_maxHealth
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003661238839886834, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
 --- !u!1 &1543920559
 GameObject:
   m_ObjectHideFlags: 0
@@ -10565,7 +10500,7 @@ MonoBehaviour:
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_spawnProfile: {fileID: 11400000, guid: 28e69a9b81708ff4dba1580b067aee37, type: 2}
   m_canSpawn: 1
-  m_noEnemy: 1
+  m_noEnemy: 0
 --- !u!4 &1986079078
 Transform:
   m_ObjectHideFlags: 0
