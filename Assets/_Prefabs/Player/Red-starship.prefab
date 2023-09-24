@@ -220,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 1932505157
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90eb1777dbeae494c8969c84453d414c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa025d5e96827f74c9e9a2f06b52c6e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5487,7 +5487,7 @@ GameObject:
   - component: {fileID: 2188775962517278194}
   - component: {fileID: 475158028898315706}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Red-starship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
