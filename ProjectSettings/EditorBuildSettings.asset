@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LoadingScene.unity
     guid: 1e54ac24ddf22cb409e36ed1baa346c1
+  - enabled: 1
+    path: Assets/_Scenes/ShipSelectionScene.unity
+    guid: 5a918e0fb5a85d746a9a97c2d8937cdf
   m_configObjects: {}
