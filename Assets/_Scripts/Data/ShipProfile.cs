@@ -1,28 +1,31 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace JustGame.Scripts.Data
 {
     [CreateAssetMenu(menuName = "JustGame/Data/Ship profile")]
     public class ShipProfile : ScriptableObject
     {
+        [Header("Identiciation")] 
+        public string ShipName;
         [Header("Attack")]
-        [SerializeField] private int m_baseMinAtkDamage;
-        [SerializeField] private int m_baseMaxAtkDamage;
-        [SerializeField] private int m_baseAtkSpd; //100 pts = 1s (delay time between 2 shot)
-        [SerializeField] private float m_baseCritChance;
-        [SerializeField] private float m_baseCritDamageMultiplier;
+        public int BaseMinAtkDamage;
+        public int BaseMaxAtkDamage;
+        public int BaseAtkSpd; //100 pts = 1s (delay time between 2 shot)
+        public float BaseCritChance;
+        public float BaseCritDamageMultiplier;
         
-        [SerializeField] private int m_baseKnockBack;
+        public int BaseKnockBack;
         
         [Header("Movement")]
-        [SerializeField] private int m_baseMoveSpeed;
+        public int BaseMoveSpeed;
 
         [Header("Health")] 
-        [SerializeField] private int m_baseArmor;
-        [SerializeField] private int m_baseHealth;
+        public int BaseArmor;
+        public int BaseHealth;
 
         [Header("Extra")] 
-        [SerializeField] private int m_baseCooldownReduce;
+        public int BaseCooldownReduce;
     }  
 }
 
