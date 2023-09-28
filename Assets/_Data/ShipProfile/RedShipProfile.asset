@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShipName: Flame
   ShipPrefab: {fileID: 8551608225418914206, guid: a7b5dc0e74a78ef459b7a8ffb5016af3, type: 3}
+  SpecialAbility: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   BaseMinAtkDamage: 10
   BaseMaxAtkDamage: 15
   BaseAtkSpd: 80

@@ -74,6 +74,9 @@ namespace JustGame.Scripts.Managers
 
         private void CaseFighting()
         {
+            //Activate special ability
+            m_settings.ShipProfile.SpecialAbility.ApplyPowerUp();
+            
             m_inputManager.IsInputActive = true;
             m_pauseGameEvent.Raise(false);
             PauseGame(false);

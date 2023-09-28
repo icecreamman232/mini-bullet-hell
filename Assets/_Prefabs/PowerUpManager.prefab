@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1392666535529178151
 MonoBehaviour:
@@ -47,7 +47,6 @@ MonoBehaviour:
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_powerUpList:
   - {fileID: 11400000, guid: 2f64c679b8934984cafce209859f5f34, type: 2}
-  - {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
   - {fileID: 11400000, guid: de131638d189dde489d54b529fb1e6b4, type: 2}
   - {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
   - {fileID: 11400000, guid: 8194580f5b10a3f4e8d49eaaf8128cf8, type: 2}
@@ -63,7 +62,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
   - {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
   - {fileID: 11400000, guid: f97e8ff262678b343bc43ae0ca85df6a, type: 2}
-  - {fileID: 11400000, guid: f34eafe1b9b99134d9b639d7bfcafd79, type: 2}
-  - {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
   - {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
   m_curentActivePowerUp: {fileID: 0}

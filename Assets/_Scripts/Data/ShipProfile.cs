@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace JustGame.Scripts.Data
 {
@@ -9,7 +8,8 @@ namespace JustGame.Scripts.Data
         [Header("Identiciation")] 
         public string ShipName;
         public GameObject ShipPrefab;
-        
+        [Header("Special Ability")] 
+        public PowerUpData SpecialAbility;
         [Header("Attack")]
         public int BaseMinAtkDamage;
         public int BaseMaxAtkDamage;

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShipName: Emerald
   ShipPrefab: {fileID: 8551608225418914206, guid: fd5ba3931835ffc4f88153abec24119f, type: 3}
+  SpecialAbility: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
   BaseMinAtkDamage: 10
   BaseMaxAtkDamage: 15
   BaseAtkSpd: 80
