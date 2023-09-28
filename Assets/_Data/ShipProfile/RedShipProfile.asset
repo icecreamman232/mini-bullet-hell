@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RedShipProfile
   m_EditorClassIdentifier: 
   ShipName: Flame
+  ShipPrefab: {fileID: 8551608225418914206, guid: a7b5dc0e74a78ef459b7a8ffb5016af3, type: 3}
   BaseMinAtkDamage: 10
   BaseMaxAtkDamage: 15
   BaseAtkSpd: 80
@@ -21,5 +22,6 @@ MonoBehaviour:
   BaseKnockBack: 30
   BaseMoveSpeed: 35
   BaseArmor: 3
+  BaseHPRegeneration: 0
   BaseHealth: 100
-  m_baseCooldownReduce: 0
+  BaseCooldownReduce: 0

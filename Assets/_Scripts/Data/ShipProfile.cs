@@ -8,6 +8,8 @@ namespace JustGame.Scripts.Data
     {
         [Header("Identiciation")] 
         public string ShipName;
+        public GameObject ShipPrefab;
+        
         [Header("Attack")]
         public int BaseMinAtkDamage;
         public int BaseMaxAtkDamage;
@@ -22,6 +24,7 @@ namespace JustGame.Scripts.Data
 
         [Header("Health")] 
         public int BaseArmor;
+        public int BaseHPRegeneration;
         public int BaseHealth;
 
         [Header("Extra")] 

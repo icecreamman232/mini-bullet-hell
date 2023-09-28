@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shipPreviewImage: {fileID: 51422203}
+  m_settings: {fileID: 11400000, guid: 3e39dd68522cff84dac90d605eae3708, type: 2}
 --- !u!1001 &1128349765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +416,10 @@ PrefabInstance:
       propertyPath: m_infoPanel
       value: 
       objectReference: {fileID: 1007944937}
+    - target: {fileID: 5045430273588936421, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
+      propertyPath: m_shipProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}
     - target: {fileID: 5356454035032601738, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -909,6 +914,10 @@ PrefabInstance:
       propertyPath: m_infoPanel
       value: 
       objectReference: {fileID: 1007944937}
+    - target: {fileID: 5045430273588936421, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
+      propertyPath: m_shipProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 87eff4e781b2d234490045aa432eddae, type: 2}
     - target: {fileID: 5356454035032601738, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1019,6 +1028,10 @@ PrefabInstance:
       propertyPath: m_infoPanel
       value: 
       objectReference: {fileID: 1007944937}
+    - target: {fileID: 5045430273588936421, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
+      propertyPath: m_shipProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
     - target: {fileID: 5356454035032601738, guid: 2f619e0326bfabb46b13bebcba431a43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
