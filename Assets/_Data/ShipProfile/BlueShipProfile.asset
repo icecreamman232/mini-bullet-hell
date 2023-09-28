@@ -21,7 +21,7 @@ MonoBehaviour:
   BaseCritChance: 25
   BaseCritDamageMultiplier: 1.5
   BaseKnockBack: 30
-  BaseMoveSpeed: 35
+  BaseMoveSpeed: 40
   BaseArmor: 3
   BaseHPRegeneration: 0
   BaseHealth: 100

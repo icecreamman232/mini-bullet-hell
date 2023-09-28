@@ -1,4 +1,5 @@
-using System;
+using JustGame.Scripts.Attribute;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
 using UnityEngine;
@@ -10,9 +11,10 @@ namespace JustGame.Scripts.Player
     /// </summary>
     public class PlayerMovement : PlayerAbility
     {
+        [SerializeField] private ShipProfile m_profile;
         [SerializeField] private PlayerComponentSet m_playerComponentSet;
         [SerializeField] private RuntimeWorldSet m_worldSet;
-        [SerializeField] private float m_moveSpeed;
+        [SerializeField][ReadOnly] private float m_moveSpeed;
         [SerializeField] private Vector2 m_movingDirection;
 
         private InputManager m_inputManager;
@@ -25,6 +27,7 @@ namespace JustGame.Scripts.Player
         public override void Initialize()
         {
             m_inputManager = InputManager.Instance;
+            m_moveSpeed = m_profile.BaseMoveSpeed;
             base.Initialize();
         }
 
