@@ -5415,7 +5415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf99028c08d90294c9fd308459e4c4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerPrefab: {fileID: 8551608225418914206, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
+  m_settings: {fileID: 11400000, guid: 3e39dd68522cff84dac90d605eae3708, type: 2}
   m_spawnPoint: {fileID: 497768527}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}

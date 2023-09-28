@@ -11,7 +11,8 @@ namespace JustGame.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         [Header("Player")] 
-        [SerializeField] private GameObject m_playerPrefab;
+        [SerializeField] private PlayerSettings m_settings;
+        //[SerializeField] private GameObject m_playerPrefab;
         [SerializeField] private Transform m_spawnPoint;
         [Header("References")]
         [SerializeField] private PlayerComponentSet m_playerComponentSet;
@@ -67,7 +68,7 @@ namespace JustGame.Scripts.Managers
         #region Game State
         private void CaseIntro()
         {
-            Instantiate(m_playerPrefab, m_spawnPoint.position, Quaternion.identity);
+            Instantiate(m_settings.ShipProfile.ShipPrefab, m_spawnPoint.position, Quaternion.identity);
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }
 
