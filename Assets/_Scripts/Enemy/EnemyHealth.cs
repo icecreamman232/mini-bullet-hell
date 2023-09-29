@@ -60,7 +60,7 @@ namespace JustGame.Scripts.Weapons
             
             OnHit?.Invoke();
             m_onHitEvent?.Invoke();
-            Debug.Log("Take hit");
+            
             UpdateUI();
 
             if (m_curHealth > 0)
