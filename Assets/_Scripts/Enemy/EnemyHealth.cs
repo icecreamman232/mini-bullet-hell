@@ -41,10 +41,10 @@ namespace JustGame.Scripts.Weapons
 
         public void InstantDead()
         {
-            TakeDamage(m_curHealth, null);
+            TakeDamage(m_curHealth, null, false,true);
         }
         
-        public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
+        public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false,bool isInstantDead = false)
         {
             if (!AuthorizeTakingDamage()) return;
 
@@ -69,7 +69,7 @@ namespace JustGame.Scripts.Weapons
                 return;
             }
 
-            ProcessKill();
+            ProcessKill(isInstantDead);
         }
 
         protected override bool AuthorizeTakingDamage()
@@ -81,13 +81,13 @@ namespace JustGame.Scripts.Weapons
             return true;
         }
 
-        protected override IEnumerator KillRoutine()
+        protected override IEnumerator KillRoutine(bool isInstantDead = false)
         {
             m_spriteRenderer.enabled = false;
             m_collider.enabled = false;
             m_explodeAnim.SetTrigger();
             yield return new WaitForSeconds(m_explodeAnim.Duration);
-            if (m_loot != null)
+            if (m_loot != null && !isInstantDead)
             {
                 m_loot.SpawnLoot();
             }

@@ -39,7 +39,7 @@ namespace JustGame.Scripts.Weapons
             m_initColor = m_spriteRenderer.color;
         }
 
-        public virtual void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
+        public virtual void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false, bool isInstantDead = false)
         {
             if (!AuthorizeTakingDamage()) return;
 
@@ -55,7 +55,7 @@ namespace JustGame.Scripts.Weapons
                 return;
             }
 
-            ProcessKill();
+            ProcessKill(isInstantDead);
         }
 
         protected virtual bool AuthorizeTakingDamage()
@@ -89,14 +89,14 @@ namespace JustGame.Scripts.Weapons
             
         }
         
-        protected virtual void ProcessKill()
+        protected virtual void ProcessKill(bool isInstantDead = false)
         {
             //place holder script
             OnDeath?.Invoke();
-            StartCoroutine(KillRoutine());
+            StartCoroutine(KillRoutine(isInstantDead));
         }
 
-        protected virtual IEnumerator KillRoutine()
+        protected virtual IEnumerator KillRoutine(bool isInstantDead = false)
         {
             m_spriteRenderer.enabled = false;
             m_collider.enabled = false;

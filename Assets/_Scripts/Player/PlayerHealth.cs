@@ -96,7 +96,7 @@ namespace JustGame.Scripts.Weapons
         
         #endif
         
-        public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
+        public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false, bool isInstantDead = false)
         {
             if (!AuthorizeTakingDamage()) return;
             
@@ -127,18 +127,18 @@ namespace JustGame.Scripts.Weapons
                 return;
             }
 
-            ProcessKill();
+            ProcessKill(isInstantDead);
             base.TakeDamage(damage, instigator);
         }
 
-        protected override void ProcessKill()
+        protected override void ProcessKill(bool isInstantDead = false)
         {
             if (m_revivePowerUp.IsActive && !m_revivePowerUp.HasRevived)
             {
                 StartCoroutine(OnRevive());
                 return;
             }
-            base.ProcessKill();
+            base.ProcessKill(isInstantDead);
         }
 
         private IEnumerator OnRevive()
@@ -185,7 +185,7 @@ namespace JustGame.Scripts.Weapons
             return true;
         }
 
-        protected override IEnumerator KillRoutine()
+        protected override IEnumerator KillRoutine(bool isInstantDead = false)
         {
             m_isDead = true;
             m_collider.enabled = false;
