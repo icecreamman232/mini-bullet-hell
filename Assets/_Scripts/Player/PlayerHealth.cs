@@ -12,6 +12,7 @@ namespace JustGame.Scripts.Weapons
     public class PlayerHealth : Health
     {
         [SerializeField] private bool m_immuneDamage;
+        [SerializeField] private ShipProfile m_profile;
         [SerializeField] private AnimationParameter m_deadAnim;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private PlayerComponentSet m_componentSet;
@@ -42,6 +43,12 @@ namespace JustGame.Scripts.Weapons
             m_healingPowerUp.OnApplyPowerUp += HealingUp;
             m_sacrificeHpPowerUp.OnApplyPowerUp += SacrificeHP;
             m_madnessPowerUp.OnApplyPowerUp += OnTriggerMadness;
+        }
+
+        protected override void Initialize()
+        {
+            m_maxHealth = m_profile.BaseHealth;
+            base.Initialize();
         }
 
         public void SetMaxHealth(float value)
@@ -95,12 +102,22 @@ namespace JustGame.Scripts.Weapons
         }
         
         #endif
-        
+
+        private const float m_armorFactor = 0.05f;
+        protected override float ComputeFinalDamage(float rawDamage)
+        {
+            var reducePercent = 1 - (m_profile.BaseArmor * m_armorFactor) / (1 + m_profile.BaseArmor * m_armorFactor);
+            var finalDamage = rawDamage * ( 1 - reducePercent);
+            finalDamage = Mathf.Round(finalDamage);
+            Debug.Log($"Raw {rawDamage}//Final {finalDamage}");
+            return finalDamage;
+        }
+
         public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false, bool isInstantDead = false)
         {
             if (!AuthorizeTakingDamage()) return;
             
-            m_curHealth -= damage;
+            m_curHealth -= ComputeFinalDamage(damage);
             
             if (m_hitSFX != null)
             {
@@ -128,7 +145,6 @@ namespace JustGame.Scripts.Weapons
             }
 
             ProcessKill(isInstantDead);
-            base.TakeDamage(damage, instigator);
         }
 
         protected override void ProcessKill(bool isInstantDead = false)

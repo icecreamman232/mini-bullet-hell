@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
+using JustGame.Scripts.Attribute;
 using UnityEngine;
 
 namespace JustGame.Scripts.Weapons
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] protected float m_maxHealth;
+        [SerializeField][ReadOnly] protected float m_maxHealth;
         [SerializeField] protected float m_curHealth;
         [SerializeField] protected float m_delayBeforeDeath;
         [Header("Flicking color")]
@@ -38,12 +39,23 @@ namespace JustGame.Scripts.Weapons
             m_collider = GetComponent<Collider2D>();
             m_initColor = m_spriteRenderer.color;
         }
-
+        
+        /// <summary>
+        /// Compute final damage received after armor
+        /// </summary>
+        /// <returns></returns>
+        protected virtual float ComputeFinalDamage(float rawDamage)
+        {
+            return rawDamage;
+        }
+        
         public virtual void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false, bool isInstantDead = false)
         {
             if (!AuthorizeTakingDamage()) return;
 
-            m_curHealth -= damage;
+            
+            
+            m_curHealth -= ComputeFinalDamage(damage);
             
             OnHit?.Invoke();
 
