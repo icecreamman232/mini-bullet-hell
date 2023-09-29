@@ -57,6 +57,9 @@ namespace JustGame.Scripts.Managers
                 case GameState.FIGHTING:
                     CaseFighting();
                     break;
+                case GameState.END_WAVE:
+                    CaseEndWave();
+                    break;
                 case GameState.PICK_SKILL:
                     CasePickSkill();
                     break;
@@ -84,7 +87,17 @@ namespace JustGame.Scripts.Managers
             m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
             m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
         }
-        
+
+        private void CaseEndWave()
+        {
+            m_inputManager.IsInputActive = false;
+            Invoke(nameof(SetToPickSkill),0.5f);    
+        }
+
+        private void SetToPickSkill()
+        {
+            m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
+        }
         private void CasePickSkill()
         {
             m_pauseGameEvent.Raise(true);
@@ -112,7 +125,7 @@ namespace JustGame.Scripts.Managers
         {
             if (!m_endless)
             {
-                m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
+                m_gameCoreEvent.SetGameState(GameState.END_WAVE);
             }
             m_levelData.LevelUp();
         }

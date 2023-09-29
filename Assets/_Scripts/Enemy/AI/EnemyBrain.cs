@@ -5,6 +5,7 @@ namespace JustGame.Scripts.Enemy
 {
     public class EnemyBrain : MonoBehaviour
     {
+        public EnemyController Owner;
         public List<BrainState> States;
         public Transform Target;
         public bool BrainActive;

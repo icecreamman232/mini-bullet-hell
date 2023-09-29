@@ -39,7 +39,11 @@ namespace JustGame.Scripts.Player
         
         protected override void HandleInput()
         {
-            if (!m_inputManager.IsInputActive) return;
+            if (!m_inputManager.IsInputActive)
+            {
+                m_movingDirection = Vector2.zero;
+                return;
+            }
 
             if (m_inputManager.GetKeyDown(BindingAction.MOVE_LEFT))
             {

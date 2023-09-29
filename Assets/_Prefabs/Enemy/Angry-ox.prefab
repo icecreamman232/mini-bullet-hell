@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b72abdecccd22a4c8fec488f7c42f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 0}
   States:
   - StateName: Dash to target
     Actions:
@@ -383,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b72abdecccd22a4c8fec488f7c42f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 0}
   States:
   - StateName: Set player as target
     Actions:
@@ -638,6 +640,7 @@ Transform:
   - {fileID: 8972355431261898121}
   - {fileID: 5156066521157552071}
   - {fileID: 2848685693336562079}
+  - {fileID: 662357048025899839}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -726,6 +729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_brain: {fileID: 7506691345148676090}
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
+  m_health: {fileID: 6053236843462605561}
   m_spawnVFX: {fileID: 2030368240771832605}
   m_sprite: {fileID: 8705700198726757238}
   m_collider2D: {fileID: 6423784927015952275}
@@ -752,6 +757,33 @@ MonoBehaviour:
   m_hitSFX: {fileID: 732345299853320366}
   m_dmgNumberPooler: {fileID: 9162036698045625422}
   m_immuneDamage: 0
+  m_onHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1791281769344413066}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 732345299853320366}
+        m_TargetAssemblyTypeName: JustGame.Scripts.Common.PlaySoundFX, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &392192502447399200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,4 +1285,75 @@ Transform:
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3788342771927855094, guid: de89e5e75de638c4595f8e7aedefdae7, type: 3}
   m_PrefabInstance: {fileID: 8652796558882280856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8660511568622291692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4634809416026656770}
+    m_Modifications:
+    - target: {fileID: 5701530007645381780, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_Name
+      value: ImpactFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+--- !u!4 &662357048025899839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8142925232956238291, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+  m_PrefabInstance: {fileID: 8660511568622291692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1791281769344413066 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6983878119284057958, guid: a15e97cf6813bd24394d3a8dc213c093, type: 3}
+  m_PrefabInstance: {fileID: 8660511568622291692}
   m_PrefabAsset: {fileID: 0}

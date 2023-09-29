@@ -17,8 +17,8 @@ namespace JustGame.Scripts.Enemy
         [SerializeField] private bool m_canSpawn;
         [SerializeField] private bool m_noEnemy;
         private float m_timer;
-
         private bool m_isSpawning;
+        
         private void Awake()
         {
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
@@ -77,6 +77,9 @@ namespace JustGame.Scripts.Enemy
             {
                 case GameState.FIGHTING:
                     m_canSpawn = true;
+                    break;
+                case GameState.END_WAVE:
+                    m_canSpawn = false;
                     break;
                 case GameState.PICK_UPGRADE:
                     break;

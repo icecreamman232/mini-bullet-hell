@@ -7,6 +7,7 @@ namespace JustGame.Scripts.ScriptableEvent
     {
         NONE = -1,
         FIGHTING,
+        END_WAVE,
         PICK_SKILL,
         PICK_UPGRADE,
         GAME_OVER,

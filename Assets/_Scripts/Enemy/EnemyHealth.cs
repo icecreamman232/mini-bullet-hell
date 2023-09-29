@@ -4,6 +4,7 @@ using JustGame.Scripts.Enemy;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace JustGame.Scripts.Weapons
 {
@@ -11,19 +12,15 @@ namespace JustGame.Scripts.Weapons
     {
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private AnimationParameter m_explodeAnim;
-        [SerializeField] private PlaySoundFX m_hitSFX;
         [SerializeField] ObjectPooler m_dmgNumberPooler;
         [SerializeField] private bool m_immuneDamage;
+        [SerializeField] private UnityEvent m_onHitEvent;
         private Loot m_loot;
-
+        
         protected override void Initialize()
         {
             base.Initialize();
             m_loot = GetComponent<Loot>();
-            if (m_hitSFX != null)
-            {
-                OnHit += m_hitSFX.PlaySFX;
-            }
         }
 
         private void OnEnable()
@@ -42,6 +39,11 @@ namespace JustGame.Scripts.Weapons
             m_immuneDamage = false;
         }
 
+        public void InstantDead()
+        {
+            TakeDamage(m_curHealth, null);
+        }
+        
         public override void TakeDamage(float damage, GameObject instigator, bool isCriticalHit = false)
         {
             if (!AuthorizeTakingDamage()) return;
@@ -57,10 +59,11 @@ namespace JustGame.Scripts.Weapons
             dmgNumber.Show(Mathf.RoundToInt(damage), isCriticalHit);
             
             OnHit?.Invoke();
-
+            m_onHitEvent?.Invoke();
+            Debug.Log("Take hit");
             UpdateUI();
 
-            if (m_curHealth >= 0)
+            if (m_curHealth > 0)
             {
                 StartCoroutine(OnInvulnerable());
                 return;

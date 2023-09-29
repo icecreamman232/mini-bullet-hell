@@ -17,7 +17,9 @@ namespace JustGame.Scripts.Enemy
             {
                 m_brainToSwap.Target = m_brain.Target;
             }
-           
+
+            m_brainToSwap.Owner = m_brain.Owner;
+            m_brainToSwap.Owner.SetActiveBrain(m_brainToSwap);
             m_brainToSwap.gameObject.SetActive(true);
             m_brainToSwap.BrainActive = true;
         }

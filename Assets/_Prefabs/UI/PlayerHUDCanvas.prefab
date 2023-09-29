@@ -2192,6 +2192,7 @@ MonoBehaviour:
   m_fadeInTime: 0.3
   m_fadeOutTime: 2
   m_flashScreenEvent: {fileID: 11400000, guid: addf3bcbb2c98cd459d0dd665e882bcb, type: 2}
+  m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_flashImage: {fileID: 8835215163886033610}
   m_flashProtectorPowerUp: {fileID: 11400000, guid: 8194580f5b10a3f4e8d49eaaf8128cf8, type: 2}
 --- !u!1 &6798836179311670933
