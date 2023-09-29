@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
@@ -57,7 +58,7 @@ namespace JustGame.Scripts.Weapons
             CheckTravelDistance();
         }
 
-        private void CheckTravelDistance()
+        protected virtual void CheckTravelDistance()
         {
             m_distanceTraveled = Vector2.Distance(m_originalPos, transform.position);
             if (m_distanceTraveled >= m_maxDistanceTravel)
@@ -95,6 +96,11 @@ namespace JustGame.Scripts.Weapons
         {
             transform.Reset(ignoreScale:true);
             this.gameObject.SetActive(false);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            m_damageHandler.OnHit -= DestroyBullet;
         }
     }
 }
