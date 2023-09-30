@@ -17,10 +17,13 @@ namespace JustGame.Scripts.Weapons
         
         protected override void CheckTravelDistance()
         {
+            if (m_moveDirection == Vector2.zero) return;
+            
             m_distanceTraveled = Vector2.Distance(m_originalPos, transform.position);
             if (m_distanceTraveled >= m_maxDistanceTravel)
             {
                 m_moveDirection = Vector2.zero;
+                ((ExplosiveDamageHandler)m_damageHandler).StartTimer();
             }
         }
 
