@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.ScriptableEvent;
@@ -75,7 +76,11 @@ namespace JustGame.Scripts.UI
 
         private void UpdateHealthBar(float percent)
         {
-            m_delayCounter = m_delayForDamageBar;
+            if (m_delayCounter <= 0 && Math.Abs(m_damageImg.fillAmount - m_currentImg.fillAmount) < 0.1f)
+            {
+                m_delayCounter = m_delayForDamageBar;
+            }
+            
             m_target = percent;
             m_currentImg.fillAmount = percent;
         }

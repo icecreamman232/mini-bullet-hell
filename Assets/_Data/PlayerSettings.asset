@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d80d5a7c237b44d8d26ccb4abe555d, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  ShipProfile: {fileID: 11400000, guid: 87eff4e781b2d234490045aa432eddae, type: 2}
+  ShipProfile: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}

@@ -24,5 +24,5 @@ MonoBehaviour:
   BaseMoveSpeed: 40
   BaseArmor: 3
   BaseHPRegeneration: 0
-  BaseHealth: 15
+  BaseHealth: 50
   BaseCooldownReduce: 0

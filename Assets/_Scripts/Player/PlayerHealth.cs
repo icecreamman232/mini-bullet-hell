@@ -30,6 +30,7 @@ namespace JustGame.Scripts.Weapons
         [Header("SFX")] 
         [SerializeField] private PlaySoundFX m_hitSFX;
 
+        private float m_regenTimer;
         private bool m_isReviving;
         private void Awake()
         {
@@ -50,6 +51,28 @@ namespace JustGame.Scripts.Weapons
             m_maxHealth = m_profile.BaseHealth;
             base.Initialize();
         }
+
+        protected override void Update()
+        {
+            if (m_profile.BaseHPRegeneration > 0)
+            {
+                m_regenTimer += Time.deltaTime;
+                if (m_regenTimer >= 1)
+                {
+                    ComputeHealthRegeneration();
+                    m_regenTimer = 0;
+                }
+            }
+            base.Update();
+        }
+
+        private void ComputeHealthRegeneration()
+        {
+            m_curHealth += m_profile.BaseHPRegeneration;
+            m_curHealth = Mathf.Clamp(m_curHealth, 0, m_maxHealth);
+            UpdateUI();
+        }
+        
 
         public void SetMaxHealth(float value)
         {
@@ -107,7 +130,8 @@ namespace JustGame.Scripts.Weapons
         protected override float ComputeFinalDamage(float rawDamage)
         {
             var reducePercent = 1 - (m_profile.BaseArmor * m_armorFactor) / (1 + m_profile.BaseArmor * m_armorFactor);
-            var finalDamage = rawDamage * ( 1 - reducePercent);
+            Debug.Log($"Reduce {reducePercent}");
+            var finalDamage = rawDamage * reducePercent;
             finalDamage = Mathf.Round(finalDamage);
             Debug.Log($"Raw {rawDamage}//Final {finalDamage}");
             return finalDamage;

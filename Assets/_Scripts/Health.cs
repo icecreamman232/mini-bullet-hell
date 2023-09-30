@@ -39,7 +39,12 @@ namespace JustGame.Scripts.Weapons
             m_collider = GetComponent<Collider2D>();
             m_initColor = m_spriteRenderer.color;
         }
-        
+
+        protected virtual void Update()
+        {
+            
+        }
+
         /// <summary>
         /// Compute final damage received after armor
         /// </summary>
