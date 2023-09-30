@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f82ced08a731b4d992839969763d66, type: 3}
   m_Name: RedShipProfile
   m_EditorClassIdentifier: 
+  ShipID: 2
   ShipName: Flame
   ShipPrefab: {fileID: 8551608225418914206, guid: a7b5dc0e74a78ef459b7a8ffb5016af3, type: 3}
   SpecialAbility: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}

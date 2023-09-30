@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f82ced08a731b4d992839969763d66, type: 3}
   m_Name: GreenShipProfile
   m_EditorClassIdentifier: 
+  ShipID: 1
   ShipName: Emerald
   ShipPrefab: {fileID: 8551608225418914206, guid: fd5ba3931835ffc4f88153abec24119f, type: 3}
   SpecialAbility: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}

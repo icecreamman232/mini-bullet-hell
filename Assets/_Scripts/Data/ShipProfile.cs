@@ -2,10 +2,17 @@ using UnityEngine;
 
 namespace JustGame.Scripts.Data
 {
+    public enum SHIP_ID
+    {
+        BLUE_SHIP,
+        GREEN_SHIP,
+        RED_SHIP,
+    }
     [CreateAssetMenu(menuName = "JustGame/Data/Ship profile")]
     public class ShipProfile : ScriptableObject
     {
         [Header("Identiciation")] 
+        public SHIP_ID ShipID;
         public string ShipName;
         public GameObject ShipPrefab;
         [Header("Special Ability")] 
