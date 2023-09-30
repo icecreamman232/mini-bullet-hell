@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using JustGame.Scripts.Common;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Weapons
 {
@@ -12,10 +14,14 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected float m_delayBeforeDestruction;
         [SerializeField] protected float m_maxDistanceTravel;
+        [SerializeField] protected ShipProfile m_shipProfile;
         [SerializeField] protected Transform m_bulletBody;
         [SerializeField] protected DamageHandler m_damageHandler;
         [SerializeField] protected AnimationParameter m_destroyAnim;
         [SerializeField] protected SpriteRenderer m_spriteRenderer;
+        [Header("PowerUp")] 
+        [SerializeField] protected EnableCriticalDamagePowerUp m_criticalDamagePowerUp;
+        
         protected float m_initialSpeed;
         protected Vector2 m_moveDirection;
         protected float m_distanceTraveled;
@@ -36,6 +42,12 @@ namespace JustGame.Scripts.Weapons
 
         public virtual void SpawnProjectile(Vector2 position, Vector2 direction)
         {
+            //if this is player projectile
+            if (m_shipProfile != null)
+            {
+                CheckCriticalDamage();
+            }
+            
             m_isDestroying = false;
             m_moveDirection = direction;
             m_originalPos = position;
@@ -66,6 +78,35 @@ namespace JustGame.Scripts.Weapons
                 DestroyBullet(null);
             }
         }
+        
+        protected void CheckCriticalDamage()
+        {
+            //Default critical damage
+            var critChance = Random.Range(0f, 100f);
+            if (critChance <= m_shipProfile.BaseCritChance)
+            {
+                m_damageHandler.SetDamageMultiplier(m_shipProfile.BaseCritDamageMultiplier);
+            }
+
+            //Critical damage by powerup
+            if (m_criticalDamagePowerUp.IsActive)
+            {
+                var critChanceByPowerUp = Random.Range(0f, 100f);
+                if (critChanceByPowerUp <= m_criticalDamagePowerUp.CritChance)
+                {
+                    var greatCritChance = Random.Range(0f, 100f);
+                    if (greatCritChance < m_criticalDamagePowerUp.GreatCritChance)
+                    {
+                        m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.AverageCritMultiplier);
+                    }
+                    else
+                    {
+                        m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.GreatCritMultiplier);
+                    }
+                }
+            }
+        }
+        
         
         public void DestroyBullet(GameObject instigator)
         {

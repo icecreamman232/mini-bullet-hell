@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f82ced08a731b4d992839969763d66, type: 3}
   m_Name: BlueShipProfile
   m_EditorClassIdentifier: 
+  ShipID: 0
   ShipName: Blue Sky
   ShipPrefab: {fileID: 8551608225418914206, guid: f0d0e3a96ad548245b0e01dd4f614341, type: 3}
   SpecialAbility: {fileID: 11400000, guid: f34eafe1b9b99134d9b639d7bfcafd79, type: 2}
-  BaseMinAtkDamage: 10
-  BaseMaxAtkDamage: 15
+  BaseMinAtkDamage: 8
+  BaseMaxAtkDamage: 12
   BaseAtkSpd: 80
-  BaseCritChance: 25
-  BaseCritDamageMultiplier: 1.5
+  BaseCritChance: 50
+  BaseCritDamageMultiplier: 2
   BaseKnockBack: 30
   BaseMoveSpeed: 40
   BaseArmor: 3

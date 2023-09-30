@@ -9,7 +9,6 @@ namespace JustGame.Scripts.Weapons
     public class PlayerProjectile : Projectile
     {
         [SerializeField] private ParalyzeCoating m_paralyzeCoating;
-        [Header("PowerUp")]
         [SerializeField] private PiercingShotPowerUp m_piercingShotPowerUp;
         [SerializeField] private IncreaseRangePowerUp m_increaseRangePowerUp;
         [SerializeField] private IncreaseBulletSizePowerUp m_increaseBulletSizePowerUp;
@@ -40,11 +39,7 @@ namespace JustGame.Scripts.Weapons
 
         public override void SpawnProjectile(Vector2 position, Vector2 direction)
         {
-            if (m_criticalDamagePowerUp.IsActive)
-            {
-                CheckCriticalDamage();
-            }
-
+            
             if (m_paralyzeCoatingPowerUp.CanParalyze() && m_paralyzeCoatingPowerUp.IsActive)
             {
                 m_paralyzeCoating.IsActive = true;
@@ -58,26 +53,6 @@ namespace JustGame.Scripts.Weapons
             transform.localScale = Vector3.one * m_increaseBulletSizePowerUp.CurrentScale;
             m_moveSpeed = m_initialSpeed - m_increaseBulletSizePowerUp.TotalSpeedReduce;
             base.SpawnProjectile(position, direction);
-        }
-
-        private void CheckCriticalDamage()
-        {
-            var critChance = Random.Range(0f, 100f);
-            if (critChance > m_criticalDamagePowerUp.CritChance) return;
-            
-            var greatCritChance = Random.Range(0f, 100f);
-            if (greatCritChance < m_criticalDamagePowerUp.GreatCritChance)
-            {
-                //Setup average crit damage
-                //m_spriteRenderer.color = m_criticalDamagePowerUp.AverageColor;
-                m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.AverageCritMultiplier);
-            }
-            else
-            {
-                //Setup great crit damage
-                //m_spriteRenderer.color = m_criticalDamagePowerUp.GreatColor;
-                m_damageHandler.SetDamageMultiplier(m_criticalDamagePowerUp.GreatCritMultiplier);
-            }
         }
 
         private void TriggerSacrificeHP()

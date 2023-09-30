@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95ecb51d7a42b140aa3476829fe27c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}
   m_knockBackForce: 0
   m_knockBackDuration: 0
   m_damageMultiplier: 0
@@ -317,10 +318,12 @@ MonoBehaviour:
   m_moveSpeed: 150
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 7
+  m_shipProfile: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}
   m_bulletBody: {fileID: 8106000571504492118}
   m_damageHandler: {fileID: 1216284348312272960}
   m_destroyAnim: {fileID: 0}
   m_spriteRenderer: {fileID: 526645709226466211}
+  m_criticalDamagePowerUp: {fileID: 0}
 --- !u!1 &4057093841326949250
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}
   m_knockBackForce: 30
   m_knockBackDuration: 0.3
   m_damageMultiplier: 1

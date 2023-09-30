@@ -26,6 +26,11 @@ namespace JustGame.Scripts.Weapons
             m_canCountDown = false;
         }
 
+        protected override void Start()
+        {
+            SetDamageMultiplier(1);
+        }
+
         public void StartTimer()
         {
             m_canCountDown = true;

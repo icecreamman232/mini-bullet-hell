@@ -17,7 +17,7 @@ namespace  JustGame.Scripts.Weapons
         private float m_timer;
         private bool IsThereTargetInRange()
         {
-            var target =Physics2D.OverlapCircle(transform.position, m_detectRadius,m_targetPlayer);
+            var target = Physics2D.OverlapCircle(transform.position, m_detectRadius,m_targetPlayer);
             if (target != null)
             {
                 return true;

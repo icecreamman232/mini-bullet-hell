@@ -1,4 +1,5 @@
 using System;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.Enemy;
 using JustGame.Scripts.Managers;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace JustGame.Scripts.Weapons
 {
     public class DamageHandler : MonoBehaviour
     {
+        [SerializeField] private ShipProfile m_shipProfile;
         [SerializeField] protected float m_knockBackForce;
         [SerializeField] protected float m_knockBackDuration;
         [SerializeField] protected float m_damageMultiplier;
@@ -23,8 +25,14 @@ namespace JustGame.Scripts.Weapons
         /// </summary>
         public Action<GameObject> OnHit;
 
-        private void Start()
+        protected virtual void Start()
         {
+            if (m_shipProfile != null)
+            {
+                m_minDamageCause = m_shipProfile.BaseMinAtkDamage;
+                m_maxDamageCause = m_shipProfile.BaseMaxAtkDamage;
+            }
+            
             SetDamageMultiplier(1);
         }
         

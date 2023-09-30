@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_knockBackForce: 30
   m_knockBackDuration: 0.3
   m_damageMultiplier: 0
@@ -311,10 +312,12 @@ MonoBehaviour:
   m_moveSpeed: 250
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 5
+  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_bulletBody: {fileID: 8106000571504492118}
   m_damageHandler: {fileID: 6115035109323062156}
   m_destroyAnim: {fileID: 4398213999460654538}
   m_spriteRenderer: {fileID: 526645709226466211}
+  m_criticalDamagePowerUp: {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}
   m_paralyzeCoating: {fileID: 7979093084698026265}
   m_piercingShotPowerUp: {fileID: 11400000, guid: 1c1900100bd8edf4cab4a9887402b15a, type: 2}
   m_increaseRangePowerUp: {fileID: 11400000, guid: 40f85dda8c197e846a29ffbba4158015, type: 2}
