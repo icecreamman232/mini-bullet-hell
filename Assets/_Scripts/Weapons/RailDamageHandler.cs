@@ -41,7 +41,6 @@ namespace JustGame.Scripts.Weapons
                 OnHit?.Invoke(target.gameObject);
                 if (m_piercingCounter >= m_piercingTargetAmount)
                 {
-                    Debug.Log("Final Hit");
                     OnFinalHit?.Invoke(target.gameObject);
                     m_piercingCounter = 0;
                 }
