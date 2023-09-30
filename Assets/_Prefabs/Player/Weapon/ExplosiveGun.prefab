@@ -211,6 +211,7 @@ MonoBehaviour:
   m_initialzeOnStart: 0
   m_owner: {fileID: 0}
   m_weaponOffsetPosition: {x: 0, y: 0, z: 0}
+  m_shipProfile: {fileID: 11400000, guid: 902115c0007010142881bf767915c4f3, type: 2}
   m_magazineSizeEvent: {fileID: 11400000, guid: 192b11c9007d999468a0937517f3e683, type: 2}
   m_shootSFX: {fileID: 3200860077266642453}
   m_increaseAttackSpeedPowerUp: {fileID: 11400000, guid: ce9565237e03eb445bfd5a607e3d3330, type: 2}

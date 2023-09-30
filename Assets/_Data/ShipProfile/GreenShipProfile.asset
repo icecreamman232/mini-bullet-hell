@@ -18,7 +18,7 @@ MonoBehaviour:
   SpecialAbility: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
   BaseMinAtkDamage: 15
   BaseMaxAtkDamage: 25
-  BaseAtkSpd: 80
+  BaseAtkSpd: 30
   BaseCritChance: 25
   BaseCritDamageMultiplier: 1.5
   BaseKnockBack: 30

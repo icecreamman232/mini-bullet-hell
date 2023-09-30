@@ -25,6 +25,7 @@ namespace JustGame.Scripts.Weapons
     }
     public class PlayerProjectileWeapon : Weapon
     {
+        [SerializeField] private ShipProfile m_shipProfile;
         [SerializeField] private IntEvent m_magazineSizeEvent;
         [SerializeField] private PlaySoundFX m_shootSFX;
         [SerializeField] private IncreaseAttackSpeedPowerUp m_increaseAttackSpeedPowerUp;
@@ -44,6 +45,8 @@ namespace JustGame.Scripts.Weapons
         protected PlayerHealth m_health;
         protected bool m_inputStop;
 
+        protected const int ATK_SPD_FACTOR = 30;
+        
         public override void Initialize()
         {
             m_health = GetComponentInParent<PlayerHealth>();
@@ -54,7 +57,14 @@ namespace JustGame.Scripts.Weapons
             ActivateWeapon(true);
             base.Initialize();
 
+            ComputeAtkSpd();
+            
             m_increaseAttackSpeedPowerUp.OnApplyPowerUp += OnApplyIncreaseAtkSpeedPowerUp;
+        }
+
+        protected virtual void ComputeAtkSpd()
+        {
+            DelayBetweenTwoShot = (DelayBetweenTwoShot * ATK_SPD_FACTOR) / m_shipProfile.BaseAtkSpd;
         }
         
         public override void ActivateWeapon(bool value)
