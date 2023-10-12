@@ -103,6 +103,7 @@ namespace JustGame.Scripts.Managers
 
         public bool GetLeftClick()
         {
+            Debug.Log("Here");
             return IsInputActive && Input.GetMouseButton(0);
         }
         
