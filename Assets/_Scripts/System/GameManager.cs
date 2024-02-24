@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
@@ -19,10 +18,10 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private LevelDataSO m_levelData;
-        [SerializeField] private Clock m_clock;
         [SerializeField] private BoolEvent m_pauseGameEvent;
         [SerializeField] private bool m_isPaused;
         [Header("Wave")] 
+        [SerializeField] private float m_waveDuration;
         [SerializeField] private bool m_endless;
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private IntEvent m_waveCountEvent;
@@ -39,7 +38,7 @@ namespace JustGame.Scripts.Managers
         {
             m_inputManager = InputManager.Instance;
             m_runtimeWorldSet.SetGameManager(this);
-            m_clock.OnEndClock += OnFinishWaveTime;
+            TimeManager.Instance.OnEndTime += OnFinishWaveTime;
             yield return new WaitUntil(() => !SceneLoader.Instance.IsProcessing);
             CaseIntro();
         }
@@ -85,7 +84,7 @@ namespace JustGame.Scripts.Managers
             PauseGame(false);
             m_waveEvent.IncreaseWave();
             m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
-            m_clock.SetTime( m_waveEvent.GetWaveDuration(m_waveEvent.CurrentWave));
+            TimeManager.Instance.SetTime(m_waveDuration);
         }
 
         private void CaseEndWave()
@@ -107,7 +106,7 @@ namespace JustGame.Scripts.Managers
         private void CaseGameOver()
         {
             m_inputManager.IsInputActive = false;
-            m_clock.Stop();
+            TimeManager.Instance.StopTime();
             m_playerComponentSet.Reset();
             // m_pauseGameEvent.Raise(true);
             // PauseGame(true);
@@ -132,7 +131,10 @@ namespace JustGame.Scripts.Managers
 
         private void OnDestroy()
         {
-            m_clock.OnEndClock -= OnFinishWaveTime;
+            if (TimeManager.Instance != null)
+            {
+                TimeManager.Instance.OnEndTime -= OnFinishWaveTime;
+            }
             m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
         }
     }
