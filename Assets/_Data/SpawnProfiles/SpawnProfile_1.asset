@@ -12,29 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b94d11657a2db042a8e90b5aa852435, type: 3}
   m_Name: SpawnProfile_1
   m_EditorClassIdentifier: 
-  DelayTimeBetweenTwoSpawn: 1.5
-  AmountEnemyBeforeSpawnSpecial: 5
-  m_weights:
-  - Weight: 15
-    RangeFrom: 0
-    RangeTo: 34.88372
-  - Weight: 12
-    RangeFrom: 34.88372
-    RangeTo: 62.7907
-  - Weight: 7
-    RangeFrom: 62.7907
-    RangeTo: 81.39535
-  - Weight: 7
-    RangeFrom: 81.39535
-    RangeTo: 100
-  m_spawnArray:
-  - {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
-  - {fileID: 2251019927706066467, guid: 9c28b90a042cd614191c5a0462d658c4, type: 3}
-  - {fileID: 7669416357976832700, guid: 35535f014ec5afd4ba3cc0ee9b5369f5, type: 3}
-  - {fileID: 7563486028371585677, guid: 22090dbde1208b342bbca674bf528cf3, type: 3}
-  m_eliteWeight:
-  - Weight: 5
-    RangeFrom: 0
-    RangeTo: 0
-  m_eliteEnemies:
-  - {fileID: 128153707947029248, guid: 6a7236ccda821504894f5591bc55b111, type: 3}
+  m_waveInfo:
+  - EnemyPrefab: {fileID: 2251019927706066467, guid: 65b5988d1f8e2604ebc7063c1cbe0044, type: 3}
+    DelayTime: 1
+    MinQuantity: 1
+    MaxQuantity: 3
+  - EnemyPrefab: {fileID: 2251019927706066467, guid: 9c28b90a042cd614191c5a0462d658c4, type: 3}
+    DelayTime: 0.7
+    MinQuantity: 2
+    MaxQuantity: 5
+  - EnemyPrefab: {fileID: 2251019927706066467, guid: 9c28b90a042cd614191c5a0462d658c4, type: 3}
+    DelayTime: 0.3
+    MinQuantity: 3
+    MaxQuantity: 8

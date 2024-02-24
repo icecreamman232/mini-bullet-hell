@@ -1,6 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using JustGame.Scripts.Attribute;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
@@ -13,11 +12,16 @@ namespace JustGame.Scripts.Enemy
     {
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private RuntimeWorldSet m_worldSet;
+
+        [Header("Spawn Settings")] 
+        [SerializeField] [ReadOnly] private int m_currentWave;
         [SerializeField] private SpawnProfile m_spawnProfile;
         [SerializeField] private bool m_canSpawn;
         [SerializeField] private bool m_noEnemy;
         private float m_timer;
         private bool m_isSpawning;
+
+        public int CurrentWave => m_currentWave;
         
         private void Awake()
         {
@@ -35,13 +39,13 @@ namespace JustGame.Scripts.Enemy
             if (m_isSpawning) return;
             
             m_timer += Time.deltaTime;
-            if (m_timer > m_spawnProfile.DelayTimeBetweenTwoSpawn)
+            if (m_timer > m_spawnProfile.GetDelayTime(m_currentWave))
             {
-                StartCoroutine(SpawnRoutine());
+                StartCoroutine(SpawnRoutine(m_currentWave));
             }
         }
-
-        private IEnumerator SpawnRoutine()
+        
+        private IEnumerator SpawnRoutine(int waveIndex)
         {
             if (m_isSpawning)
             {
@@ -49,13 +53,14 @@ namespace JustGame.Scripts.Enemy
             }
 
             m_isSpawning = true;
-            
-            var listToSpawn = m_spawnProfile.GetListSpawn();
+
+            var quantity = m_spawnProfile.GetQuantity(waveIndex);
+            var prefab = m_spawnProfile.GetNextEnemyPrefab(waveIndex);
             var centerToSpawn = m_worldSet.LevelBounds.GetRandomPoint();
                 
-            for (int i = 0; i < listToSpawn.Count; i++)
+            for (int i = 0; i < quantity; i++)
             {
-                Instantiate(listToSpawn[i], GetRandomPointAroundCenter(centerToSpawn, 1.5f),
+                Instantiate(prefab, GetRandomPointAroundCenter(centerToSpawn, 1.5f),
                     Quaternion.identity);
                 yield return new WaitForSeconds(Random.Range(0.1f, 0.3f));
             }

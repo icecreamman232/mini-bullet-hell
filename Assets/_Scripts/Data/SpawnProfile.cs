@@ -1,76 +1,36 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Data
 {
+    [Serializable]
+    public class SpawnWaveInfo
+    {
+        public GameObject EnemyPrefab;
+        public float DelayTime;
+        public int MinQuantity;
+        public int MaxQuantity;
+    }
+    
     [CreateAssetMenu(menuName = "JustGame/Data/Spawn profile")]
     public class SpawnProfile : ScriptableObject
     {
-        public float DelayTimeBetweenTwoSpawn;
+        [SerializeField] private SpawnWaveInfo[] m_waveInfo;
 
-        public int AmountEnemyBeforeSpawnSpecial;
-        
-        [Header("Normal")]
-        [SerializeField] private WeightObject[] m_weights;
-        [SerializeField] private GameObject[] m_spawnArray;
-
-        [FormerlySerializedAs("m_specialWeight")]
-        [Header("Special enemy")] 
-        [SerializeField] private WeightObject[] m_eliteWeight;
-        [FormerlySerializedAs("m_specialEnemies")] [SerializeField] private GameObject[] m_eliteEnemies;
-
-        private int m_spawnedEnemyBeforeSpecial;
-        
-        private void OnEnable()
+        public float GetDelayTime(int waveIndex)
         {
-            m_spawnedEnemyBeforeSpecial = 0;
-            WeightObject.ComputeSpawnArray(m_weights);
+            return m_waveInfo[waveIndex].DelayTime;
         }
 
-        public List<GameObject> GetListSpawn()
+        public int GetQuantity(int waveIndex)
         {
-            m_spawnedEnemyBeforeSpecial++;
-            var amount = Random.Range(1, 3);
-            var list = new List<GameObject>();
-            if (m_spawnedEnemyBeforeSpecial >= AmountEnemyBeforeSpawnSpecial)
-            {
-                list.Add(GetEliteSpawn());
-                m_spawnedEnemyBeforeSpecial = 0;
-            }
-            for (int i = 0; i < amount; i++)
-            {
-                list.Add(GetNormalSpawn());
-            }
-            return list;    
+            return Random.Range(m_waveInfo[waveIndex].MinQuantity, m_waveInfo[waveIndex].MaxQuantity + 1);
         }
         
-        public GameObject GetNextSpawn()
+        public GameObject GetNextEnemyPrefab(int waveIndex)
         {
-            m_spawnedEnemyBeforeSpecial++;
-            if (m_spawnedEnemyBeforeSpecial >= AmountEnemyBeforeSpawnSpecial)
-            {
-                m_spawnedEnemyBeforeSpecial = 0;
-                return GetEliteSpawn();
-            }
-            else
-            {
-                return GetNormalSpawn();
-            }
-        }
-
-        private GameObject GetEliteSpawn()
-        {
-            var random = Random.Range(0f, 100f);
-            var index = WeightObject.GetWeightIndex(m_eliteWeight, random);
-            return m_eliteEnemies[index];
-        }
-        private GameObject GetNormalSpawn()
-        {
-            var random = Random.Range(0f, 100f);
-            var index = WeightObject.GetWeightIndex(m_weights, random);
-            return m_spawnArray[index];
+            return m_waveInfo[waveIndex].EnemyPrefab;
         }
     } 
 }
