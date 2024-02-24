@@ -18,7 +18,7 @@ MonoBehaviour:
   Description: Quickly move toward aim direction
   Icon: {fileID: -1557014635, guid: 108934efeb2060a42bf543aa51c190b5, type: 3}
   RemoveOnActive: 1
-  IsActive: 0
+  IsActive: 1
   m_dashLerpSpeed: 0.02
-  m_dashCooldown: 30
+  m_dashCooldown: 0.5
   m_dashDistance: 5

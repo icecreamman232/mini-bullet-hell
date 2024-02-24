@@ -1,12 +1,15 @@
 using System.Collections;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
+using JustGame.Scripts.VFX;
 using UnityEngine;
 
 namespace JustGame.Scripts.Player
 {
     public class PlayerDash : PlayerAbility
     {
+        [SerializeField] private Transform m_shipTransform;
+        [SerializeField] private GhostVFX m_ghostVFX;
         [SerializeField] private CooldownActivePowerUpEvent m_cooldownEvent;
         [SerializeField] private DashPowerUp m_dashPowerUp;
         [SerializeField] private PlayerAim m_playerAim;
@@ -55,6 +58,8 @@ namespace JustGame.Scripts.Player
         private IEnumerator DashRoutine()
         {
             m_isDashing = true;
+            m_ghostVFX.PlayVFX(m_shipTransform);
+            
             var initPos = (Vector2)transform.parent.position;
             m_dashTarget = initPos + m_playerAim.AimDirection * m_dashPowerUp.DashDistance;
             float tValue = 0;
@@ -70,6 +75,7 @@ namespace JustGame.Scripts.Player
             m_isCooldown = true;
             m_timer = m_dashPowerUp.CoolDown;
             m_cooldownEvent.SetCoolDown(m_dashPowerUp.CoolDown);
+            m_ghostVFX.StopVFX();
             m_isDashing = false;
         }
     }
