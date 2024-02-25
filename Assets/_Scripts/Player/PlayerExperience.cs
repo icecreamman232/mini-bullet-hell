@@ -1,4 +1,5 @@
 using JustGame.Scripts.Data;
+using JustGame.Scripts.Managers;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] private LevelDataSO m_lvlData;
         [SerializeField] private IntEvent m_gainXPEvent;
         [SerializeField] private IntEvent m_levelUpEvent;
+        [SerializeField] private FloatEvent m_updateUIEvent;
 
         private bool IsMaxLvl => m_curXP >= m_lvlData.Levels[m_curLevel].ExpRequire;
         
@@ -24,6 +26,8 @@ namespace JustGame.Scripts.Player
             if (IsMaxLvl) return;
             
             m_curXP += xp;
+            
+            m_updateUIEvent.Raise(MathHelpers.Remap(m_curXP,0,m_lvlData.Levels[m_curLevel].ExpRequire,0,1));
             
             //Level up
             if (m_curXP >= m_lvlData.Levels[m_curLevel].ExpRequire)

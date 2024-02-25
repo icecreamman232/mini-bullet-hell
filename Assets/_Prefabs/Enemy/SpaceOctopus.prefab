@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069680701468006233}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4697685867970068470}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1898250291467679991
 MonoBehaviour:
@@ -101,6 +101,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4150628320779798763}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -109,7 +110,6 @@ Transform:
   - {fileID: 7498207663167557825}
   - {fileID: 7931027546501917996}
   m_Father: {fileID: 6935615672616526246}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6442778119479496064
 MonoBehaviour:
@@ -184,13 +184,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6046957606970409973}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6935615672616526246}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5194758514684492618
 SpriteRenderer:
@@ -271,13 +271,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6414641432673836123}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4697685867970068470}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2161851443860907535
 MonoBehaviour:
@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 7760091740885897234}
   - component: {fileID: 5729041155737579304}
   - component: {fileID: -8266268007084477177}
+  - component: {fileID: -2535118472641434070}
   m_Layer: 8
   m_Name: SpaceOctopus
   m_TagString: Untagged
@@ -367,6 +368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669416357976832700}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.72, y: 2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -382,7 +384,6 @@ Transform:
   - {fileID: 3034284906682214245}
   - {fileID: 4796815406390418047}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8138164150242833539
 BoxCollider2D:
@@ -501,7 +502,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6015530696819528906}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -513,7 +514,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2338821475946869547}
         m_TargetAssemblyTypeName: JustGame.Scripts.Common.PlaySoundFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -555,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 0}
   m_knockBackForce: 20
   m_knockBackDuration: 0.3
   m_damageMultiplier: 0
@@ -621,6 +623,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enemyMovement: {fileID: 4286163753507955578}
   m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
+--- !u!114 &-2535118472641434070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669416357976832700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed7a81eefc30cb49972a1d1f9002f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_xpDrop: 3
+  m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
+  m_health: {fileID: 7479394047214657503}
 --- !u!1 &7689933659731950181
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,13 +665,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7689933659731950181}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6935615672616526246}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5357713517188059011
 MonoBehaviour:

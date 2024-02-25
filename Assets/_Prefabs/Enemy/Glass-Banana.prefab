@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -2820928893520391100}
   - component: {fileID: 720255752969441934}
   - component: {fileID: -7074426004255393349}
+  - component: {fileID: 9056164207746312886}
   m_Layer: 8
   m_Name: Glass-Banana
   m_TagString: Untagged
@@ -34,6 +35,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128153707947029248}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.28, y: -4.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -48,7 +50,6 @@ Transform:
   - {fileID: 7664314059785589471}
   - {fileID: 1067000007898386234}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7918376984075331633
 BoxCollider2D:
@@ -187,7 +188,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2244056658176639375}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,7 +200,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 684101305534598774}
         m_TargetAssemblyTypeName: JustGame.Scripts.Common.PlaySoundFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shipProfile: {fileID: 0}
   m_knockBackForce: 20
   m_knockBackDuration: 0.3
   m_damageMultiplier: 0
@@ -301,6 +303,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enemyMovement: {fileID: 7070895007557852846}
   m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
+--- !u!114 &9056164207746312886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128153707947029248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed7a81eefc30cb49972a1d1f9002f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_xpDrop: 3
+  m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
+  m_health: {fileID: 1648942524893189030}
 --- !u!1 &1915569596928715565
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +342,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915569596928715565}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -333,7 +351,6 @@ Transform:
   - {fileID: 5249277450771035008}
   - {fileID: 6125924826315868851}
   m_Father: {fileID: 4003661238839886834}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3737512857638692209
 MonoBehaviour:
@@ -396,13 +413,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227652018295906631}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947143286580923981}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &451795593842802596
 MonoBehaviour:
@@ -472,13 +489,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4703012727852306539}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3947143286580923981}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8512710428388109295
 MonoBehaviour:
@@ -546,13 +563,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5133218378875149768}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4003661238839886834}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3903091948558049980
 SpriteRenderer:
