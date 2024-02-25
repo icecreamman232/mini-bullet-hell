@@ -39,6 +39,7 @@ namespace JustGame.Scripts.Player
         private void LevelUp()
         {
             m_curLevel++;
+            m_curXP = 0;
             m_levelUpEvent.Raise(m_curLevel);
         }
 

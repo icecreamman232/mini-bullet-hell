@@ -1312,6 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_canvasGroup: {fileID: 7640754831244300167}
   m_xpImage: {fileID: 8607328747019975684}
+  m_levelNumber: {fileID: 6321595721213692520}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_xpUpdateEvent: {fileID: 11400000, guid: 8473ba0380a8ea64cb2a1ddec9a6e98d, type: 2}
   m_lvlUpEvent: {fileID: 11400000, guid: 939e16f3e0380cf4ab5e773477e16a7c, type: 2}
@@ -2531,7 +2532,7 @@ GameObject:
   - component: {fileID: 8219595542256092673}
   - component: {fileID: 6321595721213692520}
   m_Layer: 0
-  m_Name: XP-title
+  m_Name: XP-level-number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2584,7 +2585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XP
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a243c0f1c4ab164980075127ad594e4, type: 2}
   m_sharedMaterial: {fileID: -6581759568071029340, guid: 2a243c0f1c4ab164980075127ad594e4, type: 2}
@@ -2611,8 +2612,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

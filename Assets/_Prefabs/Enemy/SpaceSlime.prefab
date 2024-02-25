@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed7a81eefc30cb49972a1d1f9002f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xpDrop: 3
+  m_xpDrop: 1
   m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
   m_health: {fileID: 2567324182437856936}
 --- !u!1 &3150499309721954730
