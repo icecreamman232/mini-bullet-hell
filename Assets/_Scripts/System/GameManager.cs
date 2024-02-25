@@ -17,7 +17,6 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private PlayerComponentSet m_playerComponentSet;
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
-        [SerializeField] private LevelDataSO m_levelData;
         [SerializeField] private BoolEvent m_pauseGameEvent;
         [SerializeField] private bool m_isPaused;
         [Header("Wave")] 
@@ -129,7 +128,6 @@ namespace JustGame.Scripts.Managers
             {
                 m_gameCoreEvent.SetGameState(GameState.END_WAVE);
             }
-            m_levelData.LevelUp();
         }
 
         private void OnDestroy()

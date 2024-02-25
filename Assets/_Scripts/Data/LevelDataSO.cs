@@ -7,35 +7,42 @@ namespace JustGame.Scripts.Data
     public class LevelData
     {
         public int Level;
-        public int KillRequires;
+        public int ExpRequire;
     }
     
     [CreateAssetMenu(menuName = "JustGame/Data/Level data")]
     public class LevelDataSO : ScriptableObject
     {
-        [SerializeField] private int m_curLevel;
-        [SerializeField] private int m_maxLevel;
-        [SerializeField] private LevelData[] m_levels;
-
-        public int CurrentLvl => m_curLevel;
-        public LevelData CurrentLvlData => m_levels[m_curLevel-1];
-
+#if UNITY_EDITOR
+        [Header("Auto Fill Value (Only for Editor)")]
+        public int XPIncreaseRate;
+        public int MaxLevel;
+        public int StartXP;
         
-        private void OnEnable()
+        [ContextMenu("Fill XP")]
+        private void FillXP()
         {
-            //TODO:Store level to save game. Here is just reset level every time we press Play Button
-            m_curLevel = 1;
-            if (m_maxLevel != m_levels.Length)
+            Levels = new LevelData[MaxLevel];
+            
+            for (int i = 0; i < MaxLevel; i++)
             {
-                Debug.LogError("Level array not match MaxLevel");
+                Levels[i] = new LevelData();
+                Levels[i].Level = i;
+                if (i == 0)
+                {
+                    Levels[i].ExpRequire = StartXP;
+                }
+                else
+                {
+                    Levels[i].ExpRequire = Mathf.RoundToInt(Levels[i - 1].ExpRequire * (1 + XPIncreaseRate/100f));
+                }
             }
+            UnityEditor.EditorUtility.SetDirty(this);
         }
-
-        public void LevelUp()
-        {
-            m_curLevel++;
-        }
+#endif
         
+        
+        public LevelData[] Levels;
     } 
 }
 

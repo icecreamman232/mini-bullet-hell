@@ -12,26 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8346c8c1d8f4ed840b455f43bae534d7, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  m_curLevel: 0
-  m_maxLevel: 10
-  m_levels:
+  XPIncreaseRate: 60
+  MaxLevel: 20
+  StartXP: 30
+  Levels:
   - Level: 0
-    KillRequires: 2
+    ExpRequire: 30
   - Level: 1
-    KillRequires: 3
+    ExpRequire: 48
   - Level: 2
-    KillRequires: 5
+    ExpRequire: 77
   - Level: 3
-    KillRequires: 8
+    ExpRequire: 123
   - Level: 4
-    KillRequires: 10
+    ExpRequire: 197
   - Level: 5
-    KillRequires: 12
+    ExpRequire: 315
   - Level: 6
-    KillRequires: 20
+    ExpRequire: 504
   - Level: 7
-    KillRequires: 30
+    ExpRequire: 806
   - Level: 8
-    KillRequires: 40
+    ExpRequire: 1290
   - Level: 9
-    KillRequires: 60
+    ExpRequire: 2064
+  - Level: 10
+    ExpRequire: 3302
+  - Level: 11
+    ExpRequire: 5283
+  - Level: 12
+    ExpRequire: 8453
+  - Level: 13
+    ExpRequire: 13525
+  - Level: 14
+    ExpRequire: 21640
+  - Level: 15
+    ExpRequire: 34624
+  - Level: 16
+    ExpRequire: 55398
+  - Level: 17
+    ExpRequire: 88637
+  - Level: 18
+    ExpRequire: 141819
+  - Level: 19
+    ExpRequire: 226910

@@ -5536,6 +5536,7 @@ GameObject:
   - component: {fileID: 1958232211951765236}
   - component: {fileID: 2188775962517278194}
   - component: {fileID: 475158028898315706}
+  - component: {fileID: 2162267894132854393}
   m_Layer: 6
   m_Name: Blue-starship
   m_TagString: Untagged
@@ -5739,6 +5740,18 @@ MonoBehaviour:
   m_doubleShotPowerUp: {fileID: 11400000, guid: de131638d189dde489d54b529fb1e6b4, type: 2}
   m_tripleShotPowerUp: {fileID: 11400000, guid: f97e8ff262678b343bc43ae0ca85df6a, type: 2}
   m_increaseBulletSizePowerUp: {fileID: 11400000, guid: 50c6e00995d82bf408046976d095938d, type: 2}
+--- !u!114 &2162267894132854393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8551608225418914206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d80fe0ece88c9a40a1e246801d8c0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4648929994918397430
 PrefabInstance:
   m_ObjectHideFlags: 0
