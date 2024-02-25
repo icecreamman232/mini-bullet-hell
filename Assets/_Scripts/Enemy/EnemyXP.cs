@@ -3,7 +3,6 @@ using JustGame.Scripts.Attribute;
 using JustGame.Scripts.ScriptableEvent;
 using JustGame.Scripts.Weapons;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace JustGame.Scripts.Enemy
 {

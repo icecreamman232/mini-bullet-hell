@@ -12,7 +12,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] private int m_curXP;
         [SerializeField] private int m_curLevel;
         [SerializeField] private LevelDataSO m_lvlData;
-        [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
+        [SerializeField] private PlayerComponentSet m_playerComponentSet;
         [SerializeField] private IntEvent m_gainXPEvent;
         [SerializeField] private IntEvent m_levelUpEvent;
         [SerializeField] private FloatEvent m_updateUIEvent;
@@ -26,7 +26,7 @@ namespace JustGame.Scripts.Player
 
         private void Start()
         {
-            m_runtimeWorldSet.SetPlayerLevel(m_curLevel);
+            m_playerComponentSet.SetPlayerLevel(m_curLevel);
         }
 
         private void OnGainXP(int xp)
@@ -48,7 +48,7 @@ namespace JustGame.Scripts.Player
         {
             m_curLevel++;
             m_curXP = 0;
-            m_runtimeWorldSet.SetPlayerLevel(m_curLevel);
+            m_playerComponentSet.SetPlayerLevel(m_curLevel);
             m_levelUpEvent.Raise(m_curLevel);
         }
 
