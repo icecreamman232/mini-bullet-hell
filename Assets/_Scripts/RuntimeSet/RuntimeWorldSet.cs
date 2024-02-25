@@ -1,3 +1,4 @@
+using System;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Managers;
 using UnityEngine;
@@ -7,10 +8,14 @@ namespace JustGame.Scripts.RuntimeSet
     [CreateAssetMenu(menuName = "JustGame/Runtime Set/World Set")]
     public class RuntimeWorldSet : ScriptableObject
     {
+        [Header("References")]
         [SerializeField] private Camera m_mainCamera;
         [SerializeField] private GameManager m_gameManager;
         [SerializeField] private PowerUpManager m_powerUpManager;
         [SerializeField] private LevelBounds m_levelBounds;
+
+        [Header("Runtime Data")] 
+        [SerializeField] private int m_playerLevel;
         
         [Header("Code Color")] 
         [SerializeField] private Color m_commonColor;
@@ -22,13 +27,24 @@ namespace JustGame.Scripts.RuntimeSet
         public GameManager GameManager => m_gameManager;
         public PowerUpManager PowerUpManager => m_powerUpManager;
         public LevelBounds LevelBounds => m_levelBounds;
-       
+
+        public int PlayerLevel => m_playerLevel;
         
         public Color CommonColor => m_commonColor;
         public Color UncommonColor => m_uncommonColor;
         public Color RareColor => m_rareColor;
         public Color LegendColor => m_legendColor;
 
+        private void OnDisable()
+        {
+            m_playerLevel = 0;
+        }
+
+        public void SetPlayerLevel(int level)
+        {
+            m_playerLevel = level;
+        }
+        
         public void SetCamera(Camera cam)
         {
             m_mainCamera = cam;

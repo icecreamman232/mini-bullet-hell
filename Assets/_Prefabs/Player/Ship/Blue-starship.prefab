@@ -5755,6 +5755,7 @@ MonoBehaviour:
   m_curXP: 0
   m_curLevel: 0
   m_lvlData: {fileID: 11400000, guid: 20242a1a15d62c64597fe8f1faba5514, type: 2}
+  m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
   m_levelUpEvent: {fileID: 11400000, guid: 939e16f3e0380cf4ab5e773477e16a7c, type: 2}
   m_updateUIEvent: {fileID: 11400000, guid: 8473ba0380a8ea64cb2a1ddec9a6e98d, type: 2}
