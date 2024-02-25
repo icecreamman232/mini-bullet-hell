@@ -624,7 +624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed7a81eefc30cb49972a1d1f9002f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xpDrop: 1
+  m_baseXP: 1
+  m_curXPDrop: 0
   m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
   m_health: {fileID: 4957291818224064516}
 --- !u!1001 &6846246284165593526
