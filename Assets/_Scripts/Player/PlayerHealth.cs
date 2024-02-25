@@ -130,10 +130,8 @@ namespace JustGame.Scripts.Weapons
         protected override float ComputeFinalDamage(float rawDamage)
         {
             var reducePercent = 1 - (m_profile.BaseArmor * m_armorFactor) / (1 + m_profile.BaseArmor * m_armorFactor);
-            Debug.Log($"Reduce {reducePercent}");
             var finalDamage = rawDamage * reducePercent;
             finalDamage = Mathf.Round(finalDamage);
-            Debug.Log($"Raw {rawDamage}//Final {finalDamage}");
             return finalDamage;
         }
 

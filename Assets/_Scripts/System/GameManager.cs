@@ -58,6 +58,9 @@ namespace JustGame.Scripts.Managers
                 case GameState.END_WAVE:
                     CaseEndWave();
                     break;
+                case GameState.PICK_UPGRADE:
+                    CasePickUpgrade();
+                    break;
                 case GameState.PICK_SKILL:
                     CasePickSkill();
                     break;
@@ -76,7 +79,8 @@ namespace JustGame.Scripts.Managers
         private void CaseFighting()
         {
             //Activate special ability
-            if (m_settings.ShipProfile.SpecialAbility != null)
+            if (m_settings.ShipProfile.SpecialAbility != null
+                && !m_settings.ShipProfile.SpecialAbility.IsActive)
             {
                 m_settings.ShipProfile.SpecialAbility.ApplyPowerUp();
             }
@@ -99,10 +103,17 @@ namespace JustGame.Scripts.Managers
         {
             m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
         }
+        
         private void CasePickSkill()
         {
             m_pauseGameEvent.Raise(true);
             PauseGame(true);
+        }
+
+
+        private void CasePickUpgrade()
+        {
+            
         }
         
         private void CaseGameOver()

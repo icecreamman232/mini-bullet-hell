@@ -1,4 +1,3 @@
-using JustGame.Scripts.Enemy;
 using UnityEngine;
 
 namespace JustGame.Scripts.Data

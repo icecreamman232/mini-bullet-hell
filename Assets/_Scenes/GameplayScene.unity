@@ -5470,7 +5470,7 @@ MonoBehaviour:
   m_pauseGameEvent: {fileID: 11400000, guid: 4e5c8b0bbeb358849a6bbea757c75b19, type: 2}
   m_isPaused: 0
   m_waveDuration: 60
-  m_endless: 1
+  m_endless: 0
   m_waveEvent: {fileID: 11400000, guid: 2de0fff9a737bba488eaede4dde02d95, type: 2}
   m_waveCountEvent: {fileID: 11400000, guid: c816fb68cc5cfc7438878d7088dffa86, type: 2}
 --- !u!114 &713943504
