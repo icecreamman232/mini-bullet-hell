@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8f82ced08a731b4d992839969763d66, type: 3}
-  m_Name: RedShipProfile
+  m_Name: GreenShipAttribute
   m_EditorClassIdentifier: 
-  ShipID: 2
-  ShipName: Flame
-  ShipPrefab: {fileID: 8551608225418914206, guid: a7b5dc0e74a78ef459b7a8ffb5016af3, type: 3}
-  SpecialAbility: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
-  BaseMinAtkDamage: 10
-  BaseMaxAtkDamage: 15
+  ShipID: 1
+  ShipName: Emerald
+  ShipPrefab: {fileID: 8551608225418914206, guid: fd5ba3931835ffc4f88153abec24119f, type: 3}
+  SpecialAbility: {fileID: 11400000, guid: 5f0d3e1f6297e8c45b675bcb5575562c, type: 2}
+  BaseMinAtkDamage: 15
+  BaseMaxAtkDamage: 25
   BaseAtkSpd: 30
   BaseCritChance: 25
   BaseCritDamageMultiplier: 1.5
   BaseKnockBack: 30
   BaseMoveSpeed: 40
-  BaseArmor: 5
-  BaseHPRegeneration: 1
+  BaseArmor: 3
+  BaseHPRegeneration: 0
   BaseHealth: 50
   BaseCooldownReduce: 0

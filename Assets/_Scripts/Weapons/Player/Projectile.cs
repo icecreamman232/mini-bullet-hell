@@ -4,6 +4,7 @@ using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Weapons
@@ -14,7 +15,7 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected float m_moveSpeed;
         [SerializeField] protected float m_delayBeforeDestruction;
         [SerializeField] protected float m_maxDistanceTravel;
-        [SerializeField] protected ShipProfile m_shipProfile;
+        [SerializeField] protected ShipAttribute shipAttribute;
         [SerializeField] protected Transform m_bulletBody;
         [SerializeField] protected DamageHandler m_damageHandler;
         [SerializeField] protected AnimationParameter m_destroyAnim;
@@ -43,7 +44,7 @@ namespace JustGame.Scripts.Weapons
         public virtual void SpawnProjectile(Vector2 position, Vector2 direction)
         {
             //if this is player projectile
-            if (m_shipProfile != null)
+            if (shipAttribute != null)
             {
                 CheckCriticalDamage();
             }
@@ -83,9 +84,9 @@ namespace JustGame.Scripts.Weapons
         {
             //Default critical damage
             var critChance = Random.Range(0f, 100f);
-            if (critChance <= m_shipProfile.BaseCritChance)
+            if (critChance <= shipAttribute.BaseCritChance)
             {
-                m_damageHandler.SetDamageMultiplier(m_shipProfile.BaseCritDamageMultiplier);
+                m_damageHandler.SetDamageMultiplier(shipAttribute.BaseCritDamageMultiplier);
             }
 
             //Critical damage by powerup

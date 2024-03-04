@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace JustGame.Scripts.Data
 {
     [CreateAssetMenu(menuName = "JustGame/Player Settings")]
     public class PlayerSettings : ScriptableObject
     {
-        public ShipProfile ShipProfile;
+        [FormerlySerializedAs("ShipProfile")] public ShipAttribute shipAttribute;
     }
 }
 

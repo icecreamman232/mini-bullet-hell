@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4713657333830074699}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6474685904893959034}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3200860077266642453
 MonoBehaviour:
@@ -169,6 +169,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6802391038153471742}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -176,7 +177,6 @@ Transform:
   m_Children:
   - {fileID: 2653878622261561504}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2267709457532989504
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_initialzeOnStart: 0
   m_owner: {fileID: 0}
   m_weaponOffsetPosition: {x: 0, y: 0, z: 0}
-  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  shipAttribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_magazineSizeEvent: {fileID: 11400000, guid: 192b11c9007d999468a0937517f3e683, type: 2}
   m_shootSFX: {fileID: 3200860077266642453}
   m_increaseAttackSpeedPowerUp: {fileID: 11400000, guid: ce9565237e03eb445bfd5a607e3d3330, type: 2}

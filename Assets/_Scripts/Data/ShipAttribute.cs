@@ -8,8 +8,8 @@ namespace JustGame.Scripts.Data
         GREEN_SHIP,
         RED_SHIP,
     }
-    [CreateAssetMenu(menuName = "JustGame/Data/Ship profile")]
-    public class ShipProfile : ScriptableObject
+    [CreateAssetMenu(menuName = "JustGame/Data/Ship attribute")]
+    public class ShipAttribute : ScriptableObject
     {
         [Header("Identiciation")] 
         public SHIP_ID ShipID;

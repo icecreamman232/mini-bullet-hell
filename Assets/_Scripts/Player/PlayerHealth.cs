@@ -12,7 +12,7 @@ namespace JustGame.Scripts.Weapons
     public class PlayerHealth : Health
     {
         [SerializeField] private bool m_immuneDamage;
-        [SerializeField] private ShipProfile m_profile;
+        [SerializeField] private ShipAttribute attribute;
         [SerializeField] private AnimationParameter m_deadAnim;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private PlayerComponentSet m_componentSet;
@@ -48,13 +48,13 @@ namespace JustGame.Scripts.Weapons
 
         protected override void Initialize()
         {
-            m_maxHealth = m_profile.BaseHealth;
+            m_maxHealth = attribute.BaseHealth;
             base.Initialize();
         }
 
         protected override void Update()
         {
-            if (m_profile.BaseHPRegeneration > 0)
+            if (attribute.BaseHPRegeneration > 0)
             {
                 m_regenTimer += Time.deltaTime;
                 if (m_regenTimer >= 1)
@@ -68,7 +68,7 @@ namespace JustGame.Scripts.Weapons
 
         private void ComputeHealthRegeneration()
         {
-            m_curHealth += m_profile.BaseHPRegeneration;
+            m_curHealth += attribute.BaseHPRegeneration;
             m_curHealth = Mathf.Clamp(m_curHealth, 0, m_maxHealth);
             UpdateUI();
         }
@@ -129,7 +129,7 @@ namespace JustGame.Scripts.Weapons
         private const float m_armorFactor = 0.05f;
         protected override float ComputeFinalDamage(float rawDamage)
         {
-            var reducePercent = 1 - (m_profile.BaseArmor * m_armorFactor) / (1 + m_profile.BaseArmor * m_armorFactor);
+            var reducePercent = 1 - (attribute.BaseArmor * m_armorFactor) / (1 + attribute.BaseArmor * m_armorFactor);
             var finalDamage = rawDamage * reducePercent;
             finalDamage = Mathf.Round(finalDamage);
             return finalDamage;

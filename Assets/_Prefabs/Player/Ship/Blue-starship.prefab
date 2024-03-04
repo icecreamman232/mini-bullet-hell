@@ -5667,7 +5667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPermit: 0
-  m_profile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  attribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_moveSpeed: 35
@@ -5707,7 +5707,7 @@ MonoBehaviour:
   m_flickingColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
   m_delayBetweenFlicks: 0.1
   m_immuneDamage: 0
-  m_profile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  attribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_deadAnim: {fileID: 1531630398566175568}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}

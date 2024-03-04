@@ -1,8 +1,6 @@
 using System.Collections;
 using JustGame.Scripts.Data;
-using JustGame.Scripts.UI;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Weapons
 {

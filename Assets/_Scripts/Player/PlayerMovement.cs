@@ -11,7 +11,7 @@ namespace JustGame.Scripts.Player
     /// </summary>
     public class PlayerMovement : PlayerAbility
     {
-        [SerializeField] private ShipProfile m_profile;
+        [SerializeField] private ShipAttribute attribute;
         [SerializeField] private PlayerComponentSet m_playerComponentSet;
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField][ReadOnly] private float m_moveSpeed;
@@ -27,7 +27,7 @@ namespace JustGame.Scripts.Player
         public override void Initialize()
         {
             m_inputManager = InputManager.Instance;
-            m_moveSpeed = m_profile.BaseMoveSpeed;
+            m_moveSpeed = attribute.BaseMoveSpeed;
             base.Initialize();
         }
 

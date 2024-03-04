@@ -3,13 +3,14 @@ using JustGame.Scripts.Data;
 using JustGame.Scripts.Enemy;
 using JustGame.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Weapons
 {
     public class DamageHandler : MonoBehaviour
     {
-        [SerializeField] private ShipProfile m_shipProfile;
+        [FormerlySerializedAs("m_shipProfile")] [SerializeField] private ShipAttribute shipAttribute;
         [SerializeField] protected float m_knockBackForce;
         [SerializeField] protected float m_knockBackDuration;
         [SerializeField] protected float m_damageMultiplier;
@@ -27,10 +28,10 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void Start()
         {
-            if (m_shipProfile != null)
+            if (shipAttribute != null)
             {
-                m_minDamageCause = m_shipProfile.BaseMinAtkDamage;
-                m_maxDamageCause = m_shipProfile.BaseMaxAtkDamage;
+                m_minDamageCause = shipAttribute.BaseMinAtkDamage;
+                m_maxDamageCause = shipAttribute.BaseMaxAtkDamage;
             }
             
             SetDamageMultiplier(1);

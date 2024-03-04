@@ -72,17 +72,17 @@ namespace JustGame.Scripts.Managers
         #region Game State
         private void CaseIntro()
         {
-            Instantiate(m_settings.ShipProfile.ShipPrefab, m_spawnPoint.position, Quaternion.identity);
+            Instantiate(m_settings.shipAttribute.ShipPrefab, m_spawnPoint.position, Quaternion.identity);
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }
 
         private void CaseFighting()
         {
             //Activate special ability
-            if (m_settings.ShipProfile.SpecialAbility != null
-                && !m_settings.ShipProfile.SpecialAbility.IsActive)
+            if (m_settings.shipAttribute.SpecialAbility != null
+                && !m_settings.shipAttribute.SpecialAbility.IsActive)
             {
-                m_settings.ShipProfile.SpecialAbility.ApplyPowerUp();
+                m_settings.shipAttribute.SpecialAbility.ApplyPowerUp();
             }
             
             m_inputManager.IsInputActive = true;

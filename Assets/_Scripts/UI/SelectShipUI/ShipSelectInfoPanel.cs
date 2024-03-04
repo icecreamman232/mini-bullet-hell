@@ -11,7 +11,7 @@ public class ShipSelectInfoPanel : MonoBehaviour
     public void OnSelectShipAvatar(ShipAvatarButton avatar)
     {
         m_shipPreviewImage.sprite = avatar.ShipAvatar.sprite;
-        m_settings.ShipProfile = avatar.ShipProfile;
+        m_settings.shipAttribute = avatar.ShipAttribute;
     }
 
     public void OnDeselectShipAvatar(ShipAvatarButton avatar)

@@ -2,6 +2,7 @@ using System;
 using JustGame.Scripts.Data;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace JustGame.Scripts.UI
@@ -9,11 +10,11 @@ namespace JustGame.Scripts.UI
     public class ShipAvatarButton : Selectable
     {
         [SerializeField] private Image m_avatar;
-        [SerializeField] private ShipProfile m_shipProfile;
+        [FormerlySerializedAs("m_shipProfile")] [SerializeField] private ShipAttribute shipAttribute;
         [SerializeField] private ShipSelectInfoPanel m_infoPanel;
         private Action<ShipAvatarButton> OnSelectAction;
         private Action<ShipAvatarButton> OnDeselectAction;
-        public ShipProfile ShipProfile => m_shipProfile;
+        public ShipAttribute ShipAttribute => shipAttribute;
         
         public Image ShipAvatar => m_avatar;
         protected override void Start()
