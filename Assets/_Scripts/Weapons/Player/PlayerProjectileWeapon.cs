@@ -1,11 +1,10 @@
-using System;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.Player;
+using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace JustGame.Scripts.Weapons
 {
@@ -26,7 +25,7 @@ namespace JustGame.Scripts.Weapons
     }
     public class PlayerProjectileWeapon : Weapon
     {
-        [SerializeField] private ShipAttribute shipAttribute;
+        [SerializeField] private ShipAttributeRuntime m_AttributeRuntime;
         [SerializeField] private IntEvent m_magazineSizeEvent;
         [SerializeField] private PlaySoundFX m_shootSFX;
         [SerializeField] private IncreaseAttackSpeedPowerUp m_increaseAttackSpeedPowerUp;
@@ -65,7 +64,7 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void ComputeAtkSpd()
         {
-            DelayBetweenTwoShot = (DelayBetweenTwoShot * ATK_SPD_FACTOR) / shipAttribute.BaseAtkSpd;
+            DelayBetweenTwoShot = (DelayBetweenTwoShot * ATK_SPD_FACTOR) / m_AttributeRuntime.AtkSpd;
         }
         
         public override void ActivateWeapon(bool value)

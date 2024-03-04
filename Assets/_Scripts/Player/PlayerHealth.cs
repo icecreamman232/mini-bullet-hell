@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
+using JustGame.Scripts.Player;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -12,9 +12,9 @@ namespace JustGame.Scripts.Weapons
     public class PlayerHealth : Health
     {
         [SerializeField] private bool m_immuneDamage;
-        [SerializeField] private ShipAttribute attribute;
         [SerializeField] private AnimationParameter m_deadAnim;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
+        [SerializeField] private ShipAttributeRuntime m_attributeRuntime;
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] protected FloatEvent m_healthEvent;
         [SerializeField] protected ResourceEvent m_resourceEvent;
@@ -48,13 +48,13 @@ namespace JustGame.Scripts.Weapons
 
         protected override void Initialize()
         {
-            m_maxHealth = attribute.BaseHealth;
+            m_maxHealth = m_attributeRuntime.Health;
             base.Initialize();
         }
 
         protected override void Update()
         {
-            if (attribute.BaseHPRegeneration > 0)
+            if (m_attributeRuntime.HPRegeneration > 0)
             {
                 m_regenTimer += Time.deltaTime;
                 if (m_regenTimer >= 1)
@@ -68,7 +68,7 @@ namespace JustGame.Scripts.Weapons
 
         private void ComputeHealthRegeneration()
         {
-            m_curHealth += attribute.BaseHPRegeneration;
+            m_curHealth += m_attributeRuntime.HPRegeneration;
             m_curHealth = Mathf.Clamp(m_curHealth, 0, m_maxHealth);
             UpdateUI();
         }
@@ -129,7 +129,8 @@ namespace JustGame.Scripts.Weapons
         private const float m_armorFactor = 0.05f;
         protected override float ComputeFinalDamage(float rawDamage)
         {
-            var reducePercent = 1 - (attribute.BaseArmor * m_armorFactor) / (1 + attribute.BaseArmor * m_armorFactor);
+            var reducePercent = 1 - (m_attributeRuntime.Armor * m_armorFactor) / 
+                (1 + m_attributeRuntime.Armor * m_armorFactor);
             var finalDamage = rawDamage * reducePercent;
             finalDamage = Mathf.Round(finalDamage);
             return finalDamage;

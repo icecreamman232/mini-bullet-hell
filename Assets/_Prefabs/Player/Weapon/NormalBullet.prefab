@@ -31,13 +31,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811207242495551227}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2706779099953236331}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &526645709226466211
 SpriteRenderer:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
   m_knockBackForce: 30
   m_knockBackDuration: 0.3
   m_damageMultiplier: 0
@@ -273,6 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826045983694793967}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -280,7 +281,6 @@ Transform:
   m_Children:
   - {fileID: 8106000571504492118}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4398213999460654538
 MonoBehaviour:
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_moveSpeed: 250
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 5
-  m_shipProfile: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  shipAttribute: {fileID: 0}
   m_bulletBody: {fileID: 8106000571504492118}
   m_damageHandler: {fileID: 6115035109323062156}
   m_destroyAnim: {fileID: 4398213999460654538}

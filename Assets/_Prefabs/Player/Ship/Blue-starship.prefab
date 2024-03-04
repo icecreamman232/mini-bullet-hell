@@ -5651,6 +5651,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
+  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
+  m_attributeData: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_abilityNode:
   - {fileID: 3814976411623533917}
   FacingDirection: 0
@@ -5667,7 +5669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsPermit: 0
-  attribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_moveSpeed: 35
@@ -5707,9 +5709,9 @@ MonoBehaviour:
   m_flickingColor: {r: 0.90196085, g: 0.2784314, b: 0.1764706, a: 1}
   m_delayBetweenFlicks: 0.1
   m_immuneDamage: 0
-  attribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_deadAnim: {fileID: 1531630398566175568}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
+  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_healthEvent: {fileID: 11400000, guid: 22857d3d40e0b3b45b04c8aed5f9566b, type: 2}
   m_resourceEvent: {fileID: 11400000, guid: b64ef2acd89d0ec41ac82eb9b467c6b8, type: 2}

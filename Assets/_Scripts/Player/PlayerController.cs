@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -17,10 +18,14 @@ namespace JustGame.Scripts.Player
     {
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private PlayerComponentSet m_componentSet;
+        [SerializeField] private ShipAttributeRuntime m_attributeRuntime;
+        [SerializeField] private ShipAttribute m_attributeData;
         [SerializeField] private GameObject[] m_abilityNode;
         public FacingDirection FacingDirection;
         private List<PlayerAbility> m_cachedAbilities;
 
+        public ShipAttributeRuntime AttributeRuntime => m_attributeRuntime;
+        
         private void Awake()
         {
             m_componentSet.SetPlayer(this);
@@ -30,6 +35,8 @@ namespace JustGame.Scripts.Player
 
         protected virtual void Initialize()
         {
+            m_attributeRuntime.CopyData(m_attributeData);
+            
             m_cachedAbilities ??= new List<PlayerAbility>();
             m_cachedAbilities = GetComponents<PlayerAbility>().ToList();
 
