@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716966027115406022}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1877210639353782774
 SpriteRenderer:
@@ -145,6 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movingSpeed: 200
   m_playerComponentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
-  m_liveDuration: 3
+  m_liveDuration: 0
   m_resourceEvent: {fileID: 11400000, guid: b64ef2acd89d0ec41ac82eb9b467c6b8, type: 2}
   m_autoCollectPowerUp: {fileID: 11400000, guid: 2f64c679b8934984cafce209859f5f34, type: 2}
