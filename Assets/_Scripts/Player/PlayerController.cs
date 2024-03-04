@@ -20,6 +20,21 @@ namespace JustGame.Scripts.Player
         [SerializeField] private PlayerComponentSet m_componentSet;
         [SerializeField] private ShipAttributeRuntime m_attributeRuntime;
         [SerializeField] private ShipAttribute m_attributeData;
+
+        [Header("Upgrade events")]
+        [SerializeField] private IntEvent m_upgradeMinDamageEvent;
+        [SerializeField] private IntEvent m_upgradeMaxDamageEvent;
+        [SerializeField] private IntEvent m_upgradeAtkSpdEvent;
+        [SerializeField] private FloatEvent m_upgradeCritChanceEvent;
+        [SerializeField] private FloatEvent m_upgradeCritMultipleEvent;
+        [SerializeField] private IntEvent m_upgradeKnockBack;
+        [SerializeField] private IntEvent m_upgradeMoveSpeed;
+        [SerializeField] private IntEvent m_upgradeArmor;
+        [SerializeField] private IntEvent m_upgradeHPRegeneration;
+        [SerializeField] private IntEvent m_upgradeHealth;
+        [SerializeField] private IntEvent m_upgradeCooldownReduce;
+        
+        [Header("Abilities")]
         [SerializeField] private GameObject[] m_abilityNode;
         public FacingDirection FacingDirection;
         private List<PlayerAbility> m_cachedAbilities;
@@ -49,6 +64,18 @@ namespace JustGame.Scripts.Player
             {
                 ability.Initialize();
             }
+            
+            m_upgradeMinDamageEvent.AddListener(UpgradeMinDamage);
+            m_upgradeMaxDamageEvent.AddListener(UpgradeMaxDamage);
+            m_upgradeAtkSpdEvent.AddListener(UpgradeAtkSpd);
+            m_upgradeCritChanceEvent.AddListener(UpgradeCritChance);
+            m_upgradeCritMultipleEvent.AddListener(UpgradeCritMultipleChance);
+            m_upgradeKnockBack.AddListener(UpgradeKnockBack);
+            m_upgradeMoveSpeed.AddListener(UpgradeMoveSpeed);
+            m_upgradeArmor.AddListener(UpgradeArmor);
+            m_upgradeHPRegeneration.AddListener(UpgradeHPRegeneration);
+            m_upgradeHealth.AddListener(UpgradeHealth);
+            m_upgradeCooldownReduce.AddListener(UpgradeCoolDownReduce);
         }
 
         private void OnChangeGameState(GameState prev, GameState current)
@@ -74,11 +101,83 @@ namespace JustGame.Scripts.Player
 
             return null;
         }
+        
+        #region Upgrades Event
 
+        private void UpgradeMinDamage(int addValue)
+        {
+            m_attributeRuntime.MinAtkDamage += addValue;
+        }
+
+        private void UpgradeMaxDamage(int addValue)
+        {
+            m_attributeRuntime.MaxAtkDamage += addValue;
+        }
+
+        private void UpgradeAtkSpd(int addValue)
+        {
+            m_attributeRuntime.AtkSpd += addValue;
+        }
+
+        private void UpgradeCritChance(float addValue)
+        {
+            m_attributeRuntime.CritChance += addValue;
+        }
+        
+        private void UpgradeCritMultipleChance(float addValue)
+        {
+            m_attributeRuntime.CritDamageMultiplier += addValue;
+        }
+
+        private void UpgradeKnockBack(int addValue)
+        {
+            m_attributeRuntime.KnockBack += addValue;
+        }
+
+        private void UpgradeMoveSpeed(int addValue)
+        {
+            m_attributeRuntime.MoveSpeed += addValue;
+        }
+
+        private void UpgradeArmor(int addValue)
+        {
+            m_attributeRuntime.Armor += addValue;
+        }
+
+        private void UpgradeHPRegeneration(int addValue)
+        {
+            m_attributeRuntime.HPRegeneration += addValue;
+        }
+
+        private void UpgradeHealth(int addValue)
+        {
+            m_attributeRuntime.Health += addValue;
+        }
+
+        private void UpgradeCoolDownReduce(int addValue)
+        {
+            m_attributeRuntime.CooldownReduce += addValue;
+        }
+        
+        #endregion
+        
+        
         private void OnDestroy()
         {
             m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+            m_upgradeMinDamageEvent.RemoveListener(UpgradeMinDamage);
+            m_upgradeMaxDamageEvent.RemoveListener(UpgradeMaxDamage);
+            m_upgradeAtkSpdEvent.RemoveListener(UpgradeAtkSpd);
+            m_upgradeCritChanceEvent.RemoveListener(UpgradeCritChance);
+            m_upgradeCritMultipleEvent.RemoveListener(UpgradeCritMultipleChance);
+            m_upgradeKnockBack.RemoveListener(UpgradeKnockBack);
+            m_upgradeMoveSpeed.RemoveListener(UpgradeMoveSpeed);
+            m_upgradeArmor.RemoveListener(UpgradeArmor);
+            m_upgradeHPRegeneration.RemoveListener(UpgradeHPRegeneration);
+            m_upgradeHealth.RemoveListener(UpgradeHealth);
+            m_upgradeCooldownReduce.RemoveListener(UpgradeCoolDownReduce);
         }
+        
     }
 }
 

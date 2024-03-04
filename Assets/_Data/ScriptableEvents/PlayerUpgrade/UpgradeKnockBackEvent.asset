@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50de341fe773c8943912de81be890fb7, type: 3}
-  m_Name: UpgradeHealthEvent
+  m_Name: UpgradeKnockBackEvent
   m_EditorClassIdentifier: 

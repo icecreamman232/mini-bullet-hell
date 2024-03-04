@@ -5653,6 +5653,17 @@ MonoBehaviour:
   m_componentSet: {fileID: 11400000, guid: d84289c4c1237cc46b2f26390402ab70, type: 2}
   m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
   m_attributeData: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
+  m_upgradeMinDamageEvent: {fileID: 11400000, guid: 576852edfd5aee84fad3f18695cecc67, type: 2}
+  m_upgradeMaxDamageEvent: {fileID: 11400000, guid: 31751c812a54f3d4796420eac70446c6, type: 2}
+  m_upgradeAtkSpdEvent: {fileID: 11400000, guid: 7304e498a265d23489c4e87b22ce5cd2, type: 2}
+  m_upgradeCritChanceEvent: {fileID: 11400000, guid: 07cf7d8a04e416b468cc35a8fbddae74, type: 2}
+  m_upgradeCritMultipleEvent: {fileID: 11400000, guid: 2a5e4b43bfacd50468629970cec613a0, type: 2}
+  m_upgradeKnockBack: {fileID: 11400000, guid: 608f1f37b84563f499145326c95d6d7c, type: 2}
+  m_upgradeMoveSpeed: {fileID: 11400000, guid: e56c073aaded1cc47bd17e61f4f30ea2, type: 2}
+  m_upgradeArmor: {fileID: 11400000, guid: 470b3de87f773284fa16a22df856b262, type: 2}
+  m_upgradeHPRegeneration: {fileID: 11400000, guid: 49a9ba3b1eebe3e4bb01d846883a814b, type: 2}
+  m_upgradeHealth: {fileID: 11400000, guid: 128876c4db529e54cbd6cb4ed421e59e, type: 2}
+  m_upgradeCooldownReduce: {fileID: 11400000, guid: e904bf2751bfb224881b2b7167a7b04a, type: 2}
   m_abilityNode:
   - {fileID: 3814976411623533917}
   FacingDirection: 0
