@@ -1,4 +1,5 @@
 using System.Collections;
+using JustGame.Scripts.Attribute;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.RuntimeSet;
@@ -26,6 +27,7 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private IntEvent m_waveCountEvent;
         
         private InputManager m_inputManager;
+        [SerializeField] [ReadOnly] private int m_lastLevel;
         public bool IsPaused => m_isPaused;
 
         private void Awake()
@@ -91,14 +93,29 @@ namespace JustGame.Scripts.Managers
             m_waveEvent.IncreaseWave();
             m_waveCountEvent.Raise(m_waveEvent.CurrentWave);
             TimeManager.Instance.SetTime(m_waveDuration);
+            m_lastLevel = m_playerComponentSet.PlayerLevel;
         }
 
         private void CaseEndWave()
         {
             m_inputManager.IsInputActive = false;
-            Invoke(nameof(SetToPickSkill),0.5f);    
+            
+            
+            if (m_playerComponentSet.PlayerLevel != m_lastLevel)
+            {
+                Invoke(nameof(SetToPickUpgrade),0.5f);    
+            }
+            else
+            {
+                Invoke(nameof(SetToPickSkill),0.5f);    
+            }
+            
         }
-
+        private void SetToPickUpgrade()
+        {
+            m_gameCoreEvent.SetGameState(GameState.PICK_UPGRADE);
+        }
+        
         private void SetToPickSkill()
         {
             m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
