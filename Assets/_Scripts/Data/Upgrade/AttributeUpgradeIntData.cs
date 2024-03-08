@@ -1,3 +1,4 @@
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Data
@@ -6,6 +7,13 @@ namespace JustGame.Scripts.Data
     public class AttributeUpgradeIntData : AttributeUpgradeBase
     {
         public int UpgradeValue;
+        public IntEvent UpgradeEvent;
+
+        public override void ApplyUpgrade()
+        {
+            UpgradeEvent.Raise(UpgradeValue);
+            base.ApplyUpgrade();
+        }
     } 
 }
 

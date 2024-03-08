@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rank: 1
   UpgradeValue: 10
+  UpgradeEvent: {fileID: 11400000, guid: 49a9ba3b1eebe3e4bb01d846883a814b, type: 2}

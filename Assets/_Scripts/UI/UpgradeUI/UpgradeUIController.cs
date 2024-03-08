@@ -36,8 +36,8 @@ namespace JustGame.Scripts.UI
                 Debug.LogError("Not found powerup!");
             }
             
-            //TODO: Apply upgrade to ship
-            //m_selectedUpgrade.
+            m_selectedUpgrade.ApplyUpgrade();
+            
             HideUI();
             m_gameCoreEvent.SetGameState(GameState.FIGHTING);
         }

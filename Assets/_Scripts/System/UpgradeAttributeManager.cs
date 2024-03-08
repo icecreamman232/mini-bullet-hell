@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using JustGame.Scripts.Data;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace JustGame.Scripts.Managers
 {
@@ -9,7 +11,13 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private AttributeUpgradeBase[] m_bronzeList;
         [SerializeField] private AttributeUpgradeBase[] m_silverList;
         [SerializeField] private AttributeUpgradeBase[] m_goldList;
-
+        
+        
+        public void ApplyAttribute()
+        {
+            
+        }
+        
         public List<AttributeUpgradeBase> GetUpgradeList(int numberUpgrade)
         {
             var resultList = new List<AttributeUpgradeBase>();
