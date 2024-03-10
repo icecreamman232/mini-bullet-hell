@@ -511,14 +511,14 @@ MonoBehaviour:
   m_descTxt: {fileID: 3991781289865520770}
   m_rankColors:
   - Rank: 0
-    Foreground: {r: 0.9150943, g: 0.5776486, b: 0.19424175, a: 0}
-    Background: {r: 0.1981132, g: 0.10239956, b: 0, a: 0}
+    Foreground: {r: 0.9150943, g: 0.5776486, b: 0.19424175, a: 1}
+    Background: {r: 0.1981132, g: 0.10239956, b: 0, a: 1}
   - Rank: 1
-    Foreground: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
-    Background: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0}
+    Foreground: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    Background: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
   - Rank: 2
-    Foreground: {r: 1, g: 0.870225, b: 0.3066038, a: 0}
-    Background: {r: 0.5849056, g: 0.4367466, b: 0, a: 0}
+    Foreground: {r: 1, g: 0.870225, b: 0.3066038, a: 1}
+    Background: {r: 0.5849056, g: 0.4367466, b: 0, a: 1}
 --- !u!1 &5506878809373736554
 GameObject:
   m_ObjectHideFlags: 0
