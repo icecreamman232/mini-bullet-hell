@@ -505,8 +505,20 @@ MonoBehaviour:
   m_upgradeData: {fileID: 0}
   m_outline: {fileID: 503386475562403152}
   m_icon: {fileID: 4840808893461071965}
+  m_background: {fileID: 6431767826682154042}
+  m_foreground: {fileID: 120029664562342334}
   m_nameTxt: {fileID: 472606598710304590}
   m_descTxt: {fileID: 3991781289865520770}
+  m_rankColors:
+  - Rank: 0
+    Foreground: {r: 0.9150943, g: 0.5776486, b: 0.19424175, a: 0}
+    Background: {r: 0.1981132, g: 0.10239956, b: 0, a: 0}
+  - Rank: 1
+    Foreground: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
+    Background: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0}
+  - Rank: 2
+    Foreground: {r: 1, g: 0.870225, b: 0.3066038, a: 0}
+    Background: {r: 0.5849056, g: 0.4367466, b: 0, a: 0}
 --- !u!1 &5506878809373736554
 GameObject:
   m_ObjectHideFlags: 0
