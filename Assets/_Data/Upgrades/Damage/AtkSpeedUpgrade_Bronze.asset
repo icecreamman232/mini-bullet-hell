@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834483d1b82eaa246b9f83f342f3682a, type: 3}
   m_Name: AtkSpeedUpgrade_Bronze
   m_EditorClassIdentifier: 
+  UpgradeName: Attack Speed
   Rank: 0
   UpgradeValue: 1
   UpgradeEvent: {fileID: 11400000, guid: 7304e498a265d23489c4e87b22ce5cd2, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562ee628c1c8f3348b9cff06c784a3ef, type: 3}
   m_Name: CritMultipleUpgrade_Bronze
   m_EditorClassIdentifier: 
+  UpgradeName: Critical Multiple
   Rank: 0
   UpgradeValue: 50
   UpgradeEvent: {fileID: 11400000, guid: 2a5e4b43bfacd50468629970cec613a0, type: 2}

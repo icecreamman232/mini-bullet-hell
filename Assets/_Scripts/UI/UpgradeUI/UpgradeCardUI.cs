@@ -29,7 +29,7 @@ namespace JustGame.Scripts.UI
         public void AssignData(AttributeUpgradeBase data)
         {
             m_upgradeData = data;
-            
+            m_nameTxt.text = m_upgradeData.UpgradeName;
         }
 
         public override void OnSelect(BaseEventData eventData)

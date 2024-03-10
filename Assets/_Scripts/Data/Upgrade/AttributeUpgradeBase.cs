@@ -10,6 +10,7 @@ namespace JustGame.Scripts.Data
     }
     public class AttributeUpgradeBase : ScriptableObject
     {
+        public string UpgradeName;
         public UpgradeRank Rank;
 
         public virtual void ApplyUpgrade()

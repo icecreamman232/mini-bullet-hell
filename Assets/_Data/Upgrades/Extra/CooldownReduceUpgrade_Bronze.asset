@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834483d1b82eaa246b9f83f342f3682a, type: 3}
   m_Name: CooldownReduceUpgrade_Bronze
   m_EditorClassIdentifier: 
+  UpgradeName: Cooldown reduce
   Rank: 0
   UpgradeValue: 5
   UpgradeEvent: {fileID: 11400000, guid: e904bf2751bfb224881b2b7167a7b04a, type: 2}

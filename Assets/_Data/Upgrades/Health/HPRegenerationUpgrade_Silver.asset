@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834483d1b82eaa246b9f83f342f3682a, type: 3}
   m_Name: HPRegenerationUpgrade_Silver
   m_EditorClassIdentifier: 
+  UpgradeName: Health regeneration
   Rank: 1
   UpgradeValue: 10
   UpgradeEvent: {fileID: 11400000, guid: 49a9ba3b1eebe3e4bb01d846883a814b, type: 2}

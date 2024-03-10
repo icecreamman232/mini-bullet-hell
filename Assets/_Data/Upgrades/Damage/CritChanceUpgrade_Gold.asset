@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562ee628c1c8f3348b9cff06c784a3ef, type: 3}
   m_Name: CritChanceUpgrade_Gold
   m_EditorClassIdentifier: 
+  UpgradeName: Critical Chance
   Rank: 1
   UpgradeValue: 20
   UpgradeEvent: {fileID: 11400000, guid: 07cf7d8a04e416b468cc35a8fbddae74, type: 2}
