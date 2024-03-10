@@ -21,8 +21,8 @@ namespace JustGame.Scripts.RuntimeSet
 
         [Header("Health")] 
         public int Armor;
-        public int HPRegeneration;
-        public int Health;
+        public float HPRegeneration;
+        public float Health;
 
         [Header("Extra")] 
         public int CooldownReduce;

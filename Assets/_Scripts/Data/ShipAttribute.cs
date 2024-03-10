@@ -31,8 +31,8 @@ namespace JustGame.Scripts.Data
 
         [Header("Health")] 
         public int BaseArmor;
-        public int BaseHPRegeneration;
-        public int BaseHealth;
+        public float BaseHPRegeneration;
+        public float BaseHealth;
 
         [Header("Extra")] 
         public int BaseCooldownReduce;

@@ -30,8 +30,8 @@ namespace JustGame.Scripts.Player
         [SerializeField] private IntEvent m_upgradeKnockBack;
         [SerializeField] private IntEvent m_upgradeMoveSpeed;
         [SerializeField] private IntEvent m_upgradeArmor;
-        [SerializeField] private IntEvent m_upgradeHPRegeneration;
-        [SerializeField] private IntEvent m_upgradeHealth;
+        [SerializeField] private FloatEvent m_upgradeHPRegeneration;
+        [SerializeField] private FloatEvent m_upgradeHealth;
         [SerializeField] private IntEvent m_upgradeCooldownReduce;
         
         [Header("Abilities")]
@@ -144,12 +144,12 @@ namespace JustGame.Scripts.Player
             m_attributeRuntime.Armor += addValue;
         }
 
-        private void UpgradeHPRegeneration(int addValue)
+        private void UpgradeHPRegeneration(float addValue)
         {
             m_attributeRuntime.HPRegeneration += addValue;
         }
 
-        private void UpgradeHealth(int addValue)
+        private void UpgradeHealth(float addValue)
         {
             m_attributeRuntime.Health += addValue;
         }

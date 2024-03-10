@@ -1,4 +1,5 @@
 using System;
+using JustGame.Scripts.Attribute;
 using JustGame.Scripts.Data;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace JustGame.Scripts.UI
 {
     public class UpgradeCardUI : Selectable
     {
-        [SerializeField] private AttributeUpgradeBase m_upgradeData;
+        [SerializeField] [ReadOnly] private AttributeUpgradeBase m_upgradeData;
 
         [Space] 
         [SerializeField] private Image m_outline;
