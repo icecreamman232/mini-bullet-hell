@@ -27,7 +27,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] private IntEvent m_upgradeAtkSpdEvent;
         [SerializeField] private FloatEvent m_upgradeCritChanceEvent;
         [SerializeField] private FloatEvent m_upgradeCritMultipleEvent;
-        [SerializeField] private IntEvent m_upgradeKnockBack;
+        [SerializeField] private FloatEvent m_upgradeKnockBack;
         [SerializeField] private FloatEvent m_upgradeMoveSpeed;
         [SerializeField] private IntEvent m_upgradeArmor;
         [SerializeField] private FloatEvent m_upgradeHPRegeneration;
@@ -133,7 +133,7 @@ namespace JustGame.Scripts.Player
             m_attributeRuntime.CritDamageMultiplier += addValue;
         }
 
-        private void UpgradeKnockBack(int addValue)
+        private void UpgradeKnockBack(float addValue)
         {
             m_attributeRuntime.KnockBack += addValue;
         }

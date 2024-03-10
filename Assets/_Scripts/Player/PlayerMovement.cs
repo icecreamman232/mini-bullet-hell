@@ -27,11 +27,16 @@ namespace JustGame.Scripts.Player
         public override void Initialize()
         {
             m_inputManager = InputManager.Instance;
-            m_upgradeMoveSpeed.AddListener(SetSpeed);
+            m_upgradeMoveSpeed.AddListener(OnUpgradeMoveSpeed);
             SetSpeed(m_attributeRuntime.MoveSpeed);
             base.Initialize();
         }
 
+        private void OnUpgradeMoveSpeed(float addValue)
+        {
+            m_moveSpeed += addValue;
+        }
+        
         public void SetSpeed(float newSpeed)
         {
             m_moveSpeed = newSpeed;

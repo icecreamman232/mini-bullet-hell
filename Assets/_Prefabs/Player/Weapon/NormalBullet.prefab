@@ -205,6 +205,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
+  m_upgradeKnockBackForceEvent: {fileID: 11400000, guid: 608f1f37b84563f499145326c95d6d7c, type: 2}
 --- !u!114 &7979093084698026265
 MonoBehaviour:
   m_ObjectHideFlags: 0

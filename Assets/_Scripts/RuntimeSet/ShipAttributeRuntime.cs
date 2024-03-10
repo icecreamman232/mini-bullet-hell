@@ -14,7 +14,7 @@ namespace JustGame.Scripts.RuntimeSet
         public float CritChance;
         public float CritDamageMultiplier;
         
-        public int KnockBack;
+        public float KnockBack;
         
         [Header("Movement")]
         public float MoveSpeed;

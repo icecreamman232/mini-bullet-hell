@@ -11,17 +11,19 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private AttributeUpgradeBase[] m_bronzeList;
         [SerializeField] private AttributeUpgradeBase[] m_silverList;
         [SerializeField] private AttributeUpgradeBase[] m_goldList;
-        
-        
-        public void ApplyAttribute()
-        {
-            
-        }
+        [SerializeField] private AttributeUpgradeBase[] m_debugList;
+        [SerializeField] private bool m_useDebugList;
         
         public List<AttributeUpgradeBase> GetUpgradeList(int numberUpgrade)
         {
             var resultList = new List<AttributeUpgradeBase>();
-
+            
+            if (m_useDebugList)
+            {
+                resultList.AddRange(m_debugList);
+                return resultList;
+            }
+            
             for (int i = 0; i < numberUpgrade; i++)
             {
                 var randRank = Random.Range(1, 4);

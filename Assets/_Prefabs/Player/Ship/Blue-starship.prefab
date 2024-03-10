@@ -5657,7 +5657,7 @@ MonoBehaviour:
   m_upgradeMaxDamageEvent: {fileID: 11400000, guid: 31751c812a54f3d4796420eac70446c6, type: 2}
   m_upgradeAtkSpdEvent: {fileID: 11400000, guid: 7304e498a265d23489c4e87b22ce5cd2, type: 2}
   m_upgradeCritChanceEvent: {fileID: 11400000, guid: 07cf7d8a04e416b468cc35a8fbddae74, type: 2}
-  m_upgradeCritMultipleEvent: {fileID: 11400000, guid: 2a5e4b43bfacd50468629970cec613a0, type: 2}
+  m_upgradeCritMultipleEvent: {fileID: 11400000, guid: 608f1f37b84563f499145326c95d6d7c, type: 2}
   m_upgradeKnockBack: {fileID: 11400000, guid: 608f1f37b84563f499145326c95d6d7c, type: 2}
   m_upgradeMoveSpeed: {fileID: 11400000, guid: 3fe0938a21f93604489b8897d0efd688, type: 2}
   m_upgradeArmor: {fileID: 11400000, guid: 470b3de87f773284fa16a22df856b262, type: 2}

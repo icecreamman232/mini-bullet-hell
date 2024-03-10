@@ -24,7 +24,7 @@ namespace JustGame.Scripts.Data
         public float BaseCritChance;
         public float BaseCritDamageMultiplier;
         
-        public int BaseKnockBack;
+        public float BaseKnockBack;
         
         [Header("Movement")]
         public float BaseMoveSpeed;
