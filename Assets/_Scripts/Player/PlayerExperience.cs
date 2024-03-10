@@ -22,13 +22,9 @@ namespace JustGame.Scripts.Player
         private void Awake()
         {
             m_gainXPEvent.AddListener(OnGainXP);
-        }
-
-        private void Start()
-        {
             m_playerComponentSet.SetPlayerLevel(m_curLevel);
         }
-
+        
         private void OnGainXP(int xp)
         {
             if (IsMaxLvl) return;
@@ -50,6 +46,7 @@ namespace JustGame.Scripts.Player
             m_curXP = 0;
             m_playerComponentSet.SetPlayerLevel(m_curLevel);
             m_levelUpEvent.Raise(m_curLevel);
+            Debug.Log($"Level up! Current leve {m_curLevel}");
         }
 
         private void OnDestroy()
