@@ -2,7 +2,6 @@ using System.Collections;
 using JustGame.Scripts.Common;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
-using JustGame.Scripts.Player;
 using JustGame.Scripts.RuntimeSet;
 using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
@@ -24,6 +23,8 @@ namespace JustGame.Scripts.Weapons
         [SerializeField] protected SacrificeHPPowerUp m_sacrificeHpPowerUp;
         [SerializeField] protected RevivePowerUp m_revivePowerUp;
         [SerializeField] protected MadnessPowerUp m_madnessPowerUp;
+        [Header("Upgrades")] 
+        [SerializeField] private FloatEvent m_upgradeHealthEvent;
         [Header("Shaking")]
         [SerializeField] private ScreenShakeEvent m_shakeEvent;
         [SerializeField] private ShakeProfile m_shakeProfile;
@@ -44,6 +45,8 @@ namespace JustGame.Scripts.Weapons
             m_healingPowerUp.OnApplyPowerUp += HealingUp;
             m_sacrificeHpPowerUp.OnApplyPowerUp += SacrificeHP;
             m_madnessPowerUp.OnApplyPowerUp += OnTriggerMadness;
+            
+            m_upgradeHealthEvent.AddListener(OnUpgradeHealth);
         }
 
         protected override void Initialize()
@@ -126,6 +129,12 @@ namespace JustGame.Scripts.Weapons
         
         #endif
 
+
+        private void OnUpgradeHealth(float addValue)
+        {
+            m_maxHealth += addValue;
+        }
+        
         private const float m_armorFactor = 0.05f;
         protected override float ComputeFinalDamage(float rawDamage)
         {
@@ -223,7 +232,7 @@ namespace JustGame.Scripts.Weapons
             }
             return true;
         }
-
+        
         protected override IEnumerator KillRoutine(bool isInstantDead = false)
         {
             m_isDead = true;
@@ -233,13 +242,15 @@ namespace JustGame.Scripts.Weapons
             gameObject.SetActive(false);
             m_gameCoreEvent.SetGameState(GameState.GAME_OVER);
         }
-
+        
         private void OnDestroy()
         {
             m_resourceEvent.OnCollectDerbis -= HealingUpByRecycleJunk;
             m_healingPowerUp.OnApplyPowerUp -= HealingUp;
             m_sacrificeHpPowerUp.OnApplyPowerUp -= SacrificeHP;
             m_madnessPowerUp.OnApplyPowerUp -= OnTriggerMadness;
+            
+            m_upgradeHealthEvent.RemoveListener(OnUpgradeHealth);
         }
     } 
 }

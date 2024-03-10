@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8521125407515485922}
   - component: {fileID: 607607816061499673}
   - component: {fileID: 3163968678540281205}
-  - component: {fileID: 6115035109323062156}
+  - component: {fileID: 861063567241742817}
   - component: {fileID: 7979093084698026265}
   - component: {fileID: 6477263748433974968}
   - component: {fileID: 4271559511028302506}
@@ -184,7 +184,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6115035109323062156
+--- !u!114 &861063567241742817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,10 +193,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 811207242495551227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c50d3fd5645a654bb1563840edf37ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dfdfc4c7aa50be47875993d02379254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
   m_knockBackForce: 30
   m_knockBackDuration: 0.3
   m_damageMultiplier: 0
@@ -205,6 +204,7 @@ MonoBehaviour:
   m_targetMask:
     serializedVersion: 2
     m_Bits: 384
+  m_attributeRuntime: {fileID: 11400000, guid: fbee8d9554a14d042b5688a047f3739a, type: 2}
 --- !u!114 &7979093084698026265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_paralyzeCoatingPowerUp: {fileID: 11400000, guid: 066f84d02a80f6a48ae57985a39e9490, type: 2}
-  m_damageHandler: {fileID: 6115035109323062156}
+  m_damageHandler: {fileID: 861063567241742817}
   IsActive: 0
 --- !u!114 &6477263748433974968
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_burningCoatingPowerUp: {fileID: 11400000, guid: 7f2048c1e941e0744bb1a1119432dca0, type: 2}
-  m_damageHandler: {fileID: 6115035109323062156}
+  m_damageHandler: {fileID: 861063567241742817}
 --- !u!114 &4271559511028302506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_slowCoatingPowerUp: {fileID: 11400000, guid: eed1e2fce9617ea47996578daad98cc9, type: 2}
-  m_damageHandler: {fileID: 6115035109323062156}
+  m_damageHandler: {fileID: 861063567241742817}
 --- !u!1 &826045983694793967
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,9 +312,9 @@ MonoBehaviour:
   m_moveSpeed: 250
   m_delayBeforeDestruction: 0
   m_maxDistanceTravel: 5
-  shipAttribute: {fileID: 0}
+  shipAttribute: {fileID: 11400000, guid: 1f47b8647f7faf44da4c493030a56afc, type: 2}
   m_bulletBody: {fileID: 8106000571504492118}
-  m_damageHandler: {fileID: 6115035109323062156}
+  m_damageHandler: {fileID: 861063567241742817}
   m_destroyAnim: {fileID: 4398213999460654538}
   m_spriteRenderer: {fileID: 526645709226466211}
   m_criticalDamagePowerUp: {fileID: 11400000, guid: 7b49bbe82628d7e41939f647e653f6a9, type: 2}

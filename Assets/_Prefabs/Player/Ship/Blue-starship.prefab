@@ -5731,6 +5731,7 @@ MonoBehaviour:
   m_sacrificeHpPowerUp: {fileID: 11400000, guid: 9acc07af0b6e25f41b6fcc5be9c94ae8, type: 2}
   m_revivePowerUp: {fileID: 11400000, guid: e5487ae0574968a4aabf3f36a4449c34, type: 2}
   m_madnessPowerUp: {fileID: 11400000, guid: 54fef78df8f4938478b2742ecacd0fd7, type: 2}
+  m_upgradeHealthEvent: {fileID: 11400000, guid: 2c2433dfaab7c494fa7e938ded7f2156, type: 2}
   m_shakeEvent: {fileID: 11400000, guid: 2f313db4303590048b04cca66b5bdbc4, type: 2}
   m_shakeProfile: {fileID: 11400000, guid: 24758f34594ae9d4582e9cd1306ba222, type: 2}
   m_hitSFX: {fileID: 4558808304399437561}

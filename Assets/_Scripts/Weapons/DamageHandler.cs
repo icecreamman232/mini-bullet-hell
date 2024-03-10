@@ -9,7 +9,7 @@ namespace JustGame.Scripts.Weapons
 {
     public class DamageHandler : MonoBehaviour
     {
-        [SerializeField] private ShipAttributeRuntime m_attributeRuntime;
+        
         [SerializeField] protected float m_knockBackForce;
         [SerializeField] protected float m_knockBackDuration;
         [SerializeField] protected float m_damageMultiplier;
@@ -27,12 +27,6 @@ namespace JustGame.Scripts.Weapons
 
         protected virtual void Start()
         {
-            if (m_attributeRuntime != null)
-            {
-                m_minDamageCause = m_attributeRuntime.MinAtkDamage;
-                m_maxDamageCause = m_attributeRuntime.MaxAtkDamage;
-            }
-            
             SetDamageMultiplier(1);
         }
         

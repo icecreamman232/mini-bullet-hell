@@ -107,6 +107,10 @@ namespace JustGame.Scripts.Player
         private void UpgradeMinDamage(int addValue)
         {
             m_attributeRuntime.MinAtkDamage += addValue;
+            if (m_attributeRuntime.MinAtkDamage >= m_attributeRuntime.MaxAtkDamage)
+            {
+                m_attributeRuntime.MinAtkDamage = m_attributeRuntime.MaxAtkDamage;
+            }
         }
 
         private void UpgradeMaxDamage(int addValue)
