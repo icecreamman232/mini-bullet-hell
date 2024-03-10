@@ -1,6 +1,7 @@
 using JustGame.Scripts.Attribute;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
+using JustGame.Scripts.ScriptableEvent;
 using UnityEngine;
 
 namespace JustGame.Scripts.Player
@@ -15,7 +16,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] private RuntimeWorldSet m_worldSet;
         [SerializeField][ReadOnly] private float m_moveSpeed;
         [SerializeField] private Vector2 m_movingDirection;
-
+        [SerializeField] private FloatEvent m_upgradeMoveSpeed;
         private InputManager m_inputManager;
 
         private void Awake()
@@ -26,7 +27,8 @@ namespace JustGame.Scripts.Player
         public override void Initialize()
         {
             m_inputManager = InputManager.Instance;
-            m_moveSpeed = m_attributeRuntime.MoveSpeed;
+            m_upgradeMoveSpeed.AddListener(SetSpeed);
+            SetSpeed(m_attributeRuntime.MoveSpeed);
             base.Initialize();
         }
 
@@ -87,6 +89,11 @@ namespace JustGame.Scripts.Player
             {
                 transform.position = m_worldSet.LevelBounds.InversedPoint(transform.position);
             }
+        }
+
+        private void OnDestroy()
+        {
+            m_upgradeMoveSpeed.RemoveListener(SetSpeed);
         }
     }  
 }

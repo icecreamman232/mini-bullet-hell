@@ -5659,7 +5659,7 @@ MonoBehaviour:
   m_upgradeCritChanceEvent: {fileID: 11400000, guid: 07cf7d8a04e416b468cc35a8fbddae74, type: 2}
   m_upgradeCritMultipleEvent: {fileID: 11400000, guid: 2a5e4b43bfacd50468629970cec613a0, type: 2}
   m_upgradeKnockBack: {fileID: 11400000, guid: 608f1f37b84563f499145326c95d6d7c, type: 2}
-  m_upgradeMoveSpeed: {fileID: 11400000, guid: e56c073aaded1cc47bd17e61f4f30ea2, type: 2}
+  m_upgradeMoveSpeed: {fileID: 11400000, guid: 3fe0938a21f93604489b8897d0efd688, type: 2}
   m_upgradeArmor: {fileID: 11400000, guid: 470b3de87f773284fa16a22df856b262, type: 2}
   m_upgradeHPRegeneration: {fileID: 11400000, guid: 2f5424fe3ba4c5d44b49118f4d7ad4be, type: 2}
   m_upgradeHealth: {fileID: 11400000, guid: 2c2433dfaab7c494fa7e938ded7f2156, type: 2}
@@ -5685,6 +5685,7 @@ MonoBehaviour:
   m_worldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_moveSpeed: 35
   m_movingDirection: {x: 0, y: 0}
+  m_upgradeMoveSpeed: {fileID: 11400000, guid: 3fe0938a21f93604489b8897d0efd688, type: 2}
 --- !u!114 &1958232211951765236
 MonoBehaviour:
   m_ObjectHideFlags: 0

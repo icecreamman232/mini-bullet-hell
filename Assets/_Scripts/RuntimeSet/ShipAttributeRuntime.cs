@@ -17,7 +17,7 @@ namespace JustGame.Scripts.RuntimeSet
         public int KnockBack;
         
         [Header("Movement")]
-        public int MoveSpeed;
+        public float MoveSpeed;
 
         [Header("Health")] 
         public int Armor;

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834483d1b82eaa246b9f83f342f3682a, type: 3}
-  m_Name: MoveSpeedUpgrade_Gold
+  m_Script: {fileID: 11500000, guid: 562ee628c1c8f3348b9cff06c784a3ef, type: 3}
+  m_Name: UpgradeMoveSpeed_Gold
   m_EditorClassIdentifier: 
   UpgradeName: Movespeed
   Rank: 2
-  UpgradeValue: 10
-  UpgradeEvent: {fileID: 11400000, guid: e56c073aaded1cc47bd17e61f4f30ea2, type: 2}
+  UpgradeValue: 20
+  UpgradeEvent: {fileID: 0}

@@ -11,7 +11,7 @@ namespace JustGame.Scripts.Data
     [CreateAssetMenu(menuName = "JustGame/Data/Ship attribute")]
     public class ShipAttribute : ScriptableObject
     {
-        [Header("Identiciation")] 
+        [Header("Identification")] 
         public SHIP_ID ShipID;
         public string ShipName;
         public GameObject ShipPrefab;
@@ -27,7 +27,7 @@ namespace JustGame.Scripts.Data
         public int BaseKnockBack;
         
         [Header("Movement")]
-        public int BaseMoveSpeed;
+        public float BaseMoveSpeed;
 
         [Header("Health")] 
         public int BaseArmor;
