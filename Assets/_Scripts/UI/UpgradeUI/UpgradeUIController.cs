@@ -39,7 +39,7 @@ namespace JustGame.Scripts.UI
             m_selectedUpgrade.ApplyUpgrade();
             
             HideUI();
-            m_gameCoreEvent.SetGameState(GameState.FIGHTING);
+            m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
         }
 
         private void OnSelectCard(UpgradeCardUI card)

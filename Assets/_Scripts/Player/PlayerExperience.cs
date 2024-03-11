@@ -1,4 +1,3 @@
-using System;
 using JustGame.Scripts.Data;
 using JustGame.Scripts.Managers;
 using JustGame.Scripts.RuntimeSet;
@@ -46,7 +45,7 @@ namespace JustGame.Scripts.Player
             m_curXP = 0;
             m_playerComponentSet.SetPlayerLevel(m_curLevel);
             m_levelUpEvent.Raise(m_curLevel);
-            Debug.Log($"Level up! Current leve {m_curLevel}");
+            Debug.Log($"Level up! Current level {m_curLevel}");
         }
 
         private void OnDestroy()
