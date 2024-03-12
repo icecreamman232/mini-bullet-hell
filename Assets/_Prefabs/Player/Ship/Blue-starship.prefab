@@ -5774,6 +5774,7 @@ MonoBehaviour:
   m_gainXPEvent: {fileID: 11400000, guid: 1d76ac933d7dc474cbf39d4b965685d7, type: 2}
   m_levelUpEvent: {fileID: 11400000, guid: 939e16f3e0380cf4ab5e773477e16a7c, type: 2}
   m_updateUIEvent: {fileID: 11400000, guid: 8473ba0380a8ea64cb2a1ddec9a6e98d, type: 2}
+  m_expMulitple: 3
 --- !u!1001 &4648929994918397430
 PrefabInstance:
   m_ObjectHideFlags: 0

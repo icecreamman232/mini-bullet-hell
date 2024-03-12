@@ -5664,6 +5664,7 @@ MonoBehaviour:
   m_canvasGroup: {fileID: 644664316}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_chooseUpgradeButton: {fileID: 1556169172}
+  m_onPickedUpgradeEvent: {fileID: 11400000, guid: 2edf92c94db707343b610e8ed611faee, type: 2}
   m_upgradeCards:
   - {fileID: 7922546605167778808}
   - {fileID: 35594320}
@@ -5720,6 +5721,7 @@ MonoBehaviour:
   m_runtimeWorldSet: {fileID: 11400000, guid: 0696922297c09cb4fbe9111f8a838fdb, type: 2}
   m_gameCoreEvent: {fileID: 11400000, guid: 6e81d1aee6283b74c9b4a09db02346f1, type: 2}
   m_pauseGameEvent: {fileID: 11400000, guid: 4e5c8b0bbeb358849a6bbea757c75b19, type: 2}
+  m_onPickedUpgradeEvent: {fileID: 11400000, guid: 2edf92c94db707343b610e8ed611faee, type: 2}
   m_isPaused: 0
   m_waveDuration: 60
   m_endless: 0

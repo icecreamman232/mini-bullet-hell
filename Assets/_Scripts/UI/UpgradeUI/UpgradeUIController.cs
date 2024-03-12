@@ -11,6 +11,7 @@ namespace JustGame.Scripts.UI
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private ChooseUpgradeButton m_chooseUpgradeButton;
+        [SerializeField] private ActionEvent m_onPickedUpgradeEvent;
         [SerializeField] private UpgradeCardUI[] m_upgradeCards;
 
         private AttributeUpgradeBase m_selectedUpgrade;
@@ -35,11 +36,12 @@ namespace JustGame.Scripts.UI
             {
                 Debug.LogError("Not found powerup!");
             }
-            
+
+            m_onPickedUpgradeEvent.Raise();
             m_selectedUpgrade.ApplyUpgrade();
             
             HideUI();
-            m_gameCoreEvent.SetGameState(GameState.PICK_SKILL);
+            m_gameCoreEvent.SetGameState(GameState.READY_TO_UPGRADE);
         }
 
         private void OnSelectCard(UpgradeCardUI card)

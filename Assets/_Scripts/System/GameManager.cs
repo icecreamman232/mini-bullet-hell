@@ -19,20 +19,24 @@ namespace JustGame.Scripts.Managers
         [SerializeField] private RuntimeWorldSet m_runtimeWorldSet;
         [SerializeField] private GameCoreEvent m_gameCoreEvent;
         [SerializeField] private BoolEvent m_pauseGameEvent;
+        [SerializeField] private ActionEvent m_onPickedUpgradeEvent;
         [SerializeField] private bool m_isPaused;
         [Header("Wave")] 
         [SerializeField] private float m_waveDuration;
         [SerializeField] private bool m_endless;
         [SerializeField] private WaveEvent m_waveEvent;
         [SerializeField] private IntEvent m_waveCountEvent;
+        [SerializeField] [ReadOnly] private int m_lastLevel;
         
         private InputManager m_inputManager;
-        [SerializeField] [ReadOnly] private int m_lastLevel;
+        private int m_upgradeNumber;
+        
         public bool IsPaused => m_isPaused;
 
         private void Awake()
         {
             m_gameCoreEvent.OnChangeStateCallback += OnChangeGameState;
+            m_onPickedUpgradeEvent.AddListener(OnPickedUpgrade);
         }
 
         private IEnumerator Start()
@@ -60,8 +64,11 @@ namespace JustGame.Scripts.Managers
                 case GameState.END_WAVE:
                     CaseEndWave();
                     break;
+                case GameState.READY_TO_UPGRADE:
+                    CaseReadyToPickUpgrade();
+                    break;
                 case GameState.PICK_UPGRADE:
-                    CasePickUpgrade();
+                    
                     break;
                 case GameState.PICK_SKILL:
                     CasePickSkill();
@@ -99,17 +106,13 @@ namespace JustGame.Scripts.Managers
         private void CaseEndWave()
         {
             m_inputManager.IsInputActive = false;
+
+            //Number of upgrade player can have after the wave ends.
+            //Each level will give player 1 upgrade
+            m_upgradeNumber = m_playerComponentSet.PlayerLevel - m_lastLevel;
             
             
-            if (m_playerComponentSet.PlayerLevel != m_lastLevel)
-            {
-                Invoke(nameof(SetToPickUpgrade),0.5f);    
-            }
-            else
-            {
-                Invoke(nameof(SetToPickSkill),0.5f);    
-            }
-            
+            m_gameCoreEvent.SetGameState(GameState.READY_TO_UPGRADE);
         }
         private void SetToPickUpgrade()
         {
@@ -127,10 +130,21 @@ namespace JustGame.Scripts.Managers
             PauseGame(true);
         }
 
-
-        private void CasePickUpgrade()
+        private void OnPickedUpgrade()
         {
-            
+            m_upgradeNumber--;
+        }
+        
+        private void CaseReadyToPickUpgrade()
+        {
+            if (m_upgradeNumber > 0)
+            {
+                Invoke(nameof(SetToPickUpgrade),0.5f);    
+            }
+            else
+            {
+                Invoke(nameof(SetToPickSkill),0.5f);    
+            }
         }
         
         private void CaseGameOver()
@@ -165,6 +179,7 @@ namespace JustGame.Scripts.Managers
                 TimeManager.Instance.OnEndTime -= OnFinishWaveTime;
             }
             m_gameCoreEvent.OnChangeStateCallback -= OnChangeGameState;
+            m_onPickedUpgradeEvent.RemoveListener(OnPickedUpgrade);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace JustGame.Scripts.ScriptableEvent
         PICK_UPGRADE,
         GAME_OVER,
         INTRO,
+        READY_TO_UPGRADE,
     }
     
     [CreateAssetMenu(menuName = "JustGame/Scriptable Event/Game core event")]

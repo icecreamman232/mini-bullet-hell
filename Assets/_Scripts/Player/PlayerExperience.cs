@@ -15,7 +15,7 @@ namespace JustGame.Scripts.Player
         [SerializeField] private IntEvent m_gainXPEvent;
         [SerializeField] private IntEvent m_levelUpEvent;
         [SerializeField] private FloatEvent m_updateUIEvent;
-
+        [SerializeField] private int m_expMulitple;
         private bool IsMaxLvl => m_curXP >= m_lvlData.Levels[m_curLevel].ExpRequire;
         
         private void Awake()
@@ -28,7 +28,7 @@ namespace JustGame.Scripts.Player
         {
             if (IsMaxLvl) return;
             
-            m_curXP += xp;
+            m_curXP += (xp * m_expMulitple);
             
             m_updateUIEvent.Raise(MathHelpers.Remap(m_curXP,0,m_lvlData.Levels[m_curLevel].ExpRequire,0,1));
             
